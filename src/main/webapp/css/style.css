@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"),
+    url(fonts/montserrat-light-webfont.woff2) format("woff2"),
+    url(fonts/montserrat-light-webfont.woff) format("woff"),
+    url(fonts/montserrat-light-webfont.ttf) format("truetype"),
+    url(fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1#title {
+    font-family: 'Montserrat', 'Georgia', 'Helvetica', 'Arial';
+    font-weight: 300;
+    font-size: 3.125em;
+    color: #463bca;
+    text-shadow: 0 0 30px rgb(230, 230, 230);
+    margin: 0 auto;
+    padding-top: 180px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+h1#title span span {
+    font-weight: 400;
+}
+
+h2 { 
+    font-family: 'Montserrat', 'Georgia', 'Helvetica', 'Arial';
+    color: #fffeff;
+    font-weight: 400;
+    letter-spacing: 9px;
+    font-size: 1.625em;
+    line-height: 2em;
+    text-shadow: 0 0 30px rgb(230, 230, 230);
+}
+
+a {
+    width: inherit;
+    text-decoration: none;
+    color: rgba(34, 50, 123, 0.5);
+}
+
+a:hover {
+    color: #aeaeae;
+}
+
+p.small {
+    font-size: 0.8em;
+    margin: 20px 0 0;
+}

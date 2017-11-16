@@ -1,0 +1,520 @@
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+
+a{
+    width: inherit;
+}
+body {
+    /*Background properties*/
+    background: url(../images/backgroundImage.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+    background-position: 0px 0px;
+    height: 100%;
+    width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+}
+
+
+/*animation homePage background*/
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+
+/*font Montserrat*/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/*header properties*/
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*small open outings logo properties*/
+
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+#logoEnTete img {
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+}
+
+#logoEnTete img:hover {
+    opacity: 1;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+
+
+/*boutton menu on right*/
+
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+}
+
+#BoutonMenuEnTete:hover {
+    opacity: 1;
+}
+
+
+/*search bar properties*/
+
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1%;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+}
+
+#marecherche:hover {
+    opacity: 1;
+}
+
+
+/*loupe properties*/
+
+#marecherche img {
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+    align-self: flex-start;
+}
+
+
+/*textzone properties*/
+
+#zonerecherche {
+    padding-bottom: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    font-size: 18px;
+}
+
+
+/*boutton connection properties*/
+
+#bconnexion {
+    background: url(../images/bouton_connexion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+
+/*boutton inscription properties*/
+
+#binscription {
+    background: url(../images/bouton_inscription.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+#formulaireconnexion {
+    width: 200px;
+    height: 120px;
+    display: none;
+    position: absolute;
+    padding: 2%;
+    background-color: rgba(251, 235, 100, 0.8);
+    border-radius: 10px;
+}
+
+#formulaireconnexion input {
+    margin: 1%;
+    padding: 1%;
+}
+
+.bDevenirMembre {
+    height: 40px;
+    width: 80px;
+}
+
+#formulaireAfficheEvent {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 120px;
+    display: none;
+    position: absolute;
+    padding: 2%;
+    background-color: rgba(251, 235, 100, 0.8);
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: auto;
+}
+
+#formulaireAfficheEvent span {
+    margin: auto;
+}
+
+
+/*bump effect on all buttons*/
+
+#bconnexion:hover,
+#bconnexion:focus,
+#binscription:hover,
+#binscription:focus {
+    transform: scale(1.10);
+    box-shadow: 0 0 40px #7444E6 inset, 0 0 20px #7444E6 inset, 0 0 15px white;
+}
+
+
+/*footer properties*/
+
+footer {
+    width: 100%;
+}
+
+
+/*text citation properties*/
+
+#citation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #7444E6;
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.8), 1px 0 0 rgba(0, 0, 0, 0.8), 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+
+
+/***messaging***/
+
+
+/*grand contener properties*/
+
+#grandcontener {
+    height: 700px;
+    display: flex;
+    margin-right: 1%;
+    padding-left: 1%;
+    border-radius: 10px;
+    background-color: rgba(175, 47, 117, 0.5);
+    position: relative;
+}
+
+
+/*left block*/
+#leftcontener {
+    justify-content: center;
+    margin-top: 1%;
+    margin-right: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 10px;
+    padding: 1%;
+    
+    
+}
+
+
+/*propriétés de la liste des utilisateurs*/
+
+#affichageListeUser {
+    margin-top: 10%;
+    height: 200px;
+    color: white;
+    font-family: "Montserrat";
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.5);
+    overflow-y: auto;
+    border: 2px;
+}
+
+
+/*central contener*/
+
+#centralcontener {
+    display: grid;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 40%;
+    padding: initial;
+    border-radius: 10px;
+    flex: auto;
+}
+
+#centralcontener h2 {
+    width: 60%;
+    height: 35px;
+    margin-top: 5px;
+    margin: auto;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 30px;
+    color: #7444E6;
+    text-align: center;
+}
+
+#centralcontener h3 {
+    margin: 0 0 5px;
+    font-weight: 300;
+    max-width: 100%;
+    text-align: center;
+}
+
+
+/* bouton contact */
+
+#buttonContact {
+    background: #f208dd;
+    background: rgba(116, 68, 230, 0.8);
+    border: 2px solid #556699;
+    border-radius: 5px;
+    padding: 4px 20px;
+    font: normal 700 16px/1 "Montserrat", sans-serif;
+    text-align: center;
+    text-shadow: 0px 0px #000000;
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+    background-color: rgba(116, 68, 230, 0.8);
+    margin-bottom: auto;
+    visibility: hidden;
+}
+
+
+/*affichage de la photo de groupe*/
+
+#logoGroupe {
+    max-width: 100%;
+    height: fit-content;
+    margin-left: 5%;
+    border-radius: 10px;
+    border: 5px solid #7444E6;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+
+/*zone des events*/
+
+#zonevenement {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 100em;
+  overflow: hidden;
+overflow-y:scroll;
+}
+
+.artwork img {
+    max-width: 80%;
+    padding: 5px;
+}
+
+.artwork img:hover {
+    transition: all .3s ease-in-out;
+    transform: scale(.9) rotate(-5deg);
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.artwork {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 5px 0;
+    color: #5f5f5f;
+}
+
+.artwork h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+    max-width: 100%;
+    text-align: center;
+}
+
+
+/*right block*/
+
+#rightcontener {
+     justify-content: center;
+    margin-top: 1%;
+    margin-right: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 10px;
+    padding: 1%;
+   
+}
+
+
+/*propriété du "historique des events"*/
+
+#rightcontener span {
+    font-size: 16px;
+    text-align: center;
+    padding: 1%;
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nomGroupe {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 5px 0;
+    color: #5f5f5f;
+}
+
+
+/*text zone event history*/
+
+#zonehistorique {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 40em;
+    overflow-y: scroll;
+}
+
+#leftcontener span {
+    font-size: 18px;
+    text-align: center;
+    padding: 1%;
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+}
+
+#zonelistemembre {
+    border: 10px double #7444E6;
+    width: 100%;
+    margin: auto;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1px;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 1%;
+    background-color: rgba(251, 235, 100, 0.5);
+    -moz-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    visibility: hidden;
+}
+
+
+/*propriétés div contenant le nb outers*/
+
+.title {
+   font-size: 16px;
+    text-align: center;
+    padding: 1%;
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+    width: 300px;
+    margin-left: auto;
+    
+}
+
+.iconProfil {
+    max-width: 20px;
+    height: 20px;
+    
+}
+/* Resolution petit écran / tablette */
+
+@media all and (min-width: 768px) and (max-width: 1280px) {
+    ul {
+        padding-bottom: 10px;
+    }
+    .img {
+        height: 60px;
+        width: 75px;
+    }
+}
+
+
+/* Resolution Smartphone*/
+
+@media all and (max-width: 767px) {
+    ul {
+        padding-bottom: 10px;
+        overflow-x: scroll;
+    }
+}
+section img {
+    /* Sert à redimensionner l'image dynamiquement au mouvement de la souris*/
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-left: 10px;
+}
+
+

@@ -1,0 +1,667 @@
+
+
+/* défauts */
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+h1#title {
+    font-family: 'Montserrat', 'Georgia', 'Helvetica', 'Arial';
+    font-weight: 300;
+    font-size: 3.125em;
+    color: #463bca;
+    text-shadow: 0 0 30px rgb(230, 230, 230);
+    margin: 0 auto;
+    padding-top: 180px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+h1#title span span {
+    font-weight: 400;
+}
+
+h2 {
+    color: #fffeff;
+    font-weight: 400;
+    letter-spacing: 9px;
+    font-size: 1.625em;
+    line-height: 2em;
+    text-shadow: 0 0 30px rgb(230, 230, 230);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(34, 50, 123, 0.5);
+}
+
+a:hover {
+    color: #aeaeae;
+}
+
+p.small {
+    font-size: 0.8em;
+    margin: 20px 0 0;
+}
+
+
+/* icone de main au survol de la souris */
+
+nav ul li:hover {
+    cursor: pointer;
+}
+
+
+/*bouton pour site*/
+
+#buttonContact {
+    background: #f208dd;
+    background: rgba(116, 68, 230, 0.8);
+    border: 2px solid #556699;
+    border-radius: 5px;
+    padding: 4px 20px;
+    font: normal 700 16px/1 "Montserrat", sans-serif;
+    text-align: center;
+    text-shadow: 0px 0px #000000;
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+    background-color: rgba(116, 68, 230, 0.8);
+    visibility: hidden;
+}
+
+.artwork img {
+    max-width: 100%;
+    margin-left: 1%;
+    padding: 5px;
+}
+
+.artwork img:hover {
+    transition: all .3s ease-in-out;
+    transform: scale(.9) rotate(-5deg);
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.artwork {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 5px 0;
+    color: #5f5f5f;
+    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+}
+
+.artwork h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+    max-width: 100%;
+    text-align: center;
+}
+
+.description {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 5px 0;
+    margin-top: 100px;
+    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+}
+
+.description img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.description figcaption {
+    padding: 25px;
+    position: relative;
+         margin-bottom: 200px;
+}
+
+.description figcaption a:hover {
+    opacity: 1;
+}
+
+.description .profile {
+       border-radius: 50%;
+    bottom: 150%;
+    z-index: 1;
+    max-width: 200px;
+    opacity: 1;
+}
+
+.description.contact {
+    margin-right: 4%;
+    border-color: #2980b9;
+    color: #2980b9;
+}
+
+.description h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+    max-width: 100%;
+}
+
+.description p {
+    letter-spacing: 1px;
+    opacity: 0.8;
+    max-width: 100%;
+    height: auto;
+}
+
+.profile {
+    border-radius: 50%;
+    position: relative;
+    bottom: 50%;
+    left: 50%;
+    max-width: 220px;
+    opacity: 1;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+
+#eventlist {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 100em;
+    overflow-y: auto;
+    /* ascenseur vertical au besoin */
+    background: white;
+    box-shadow: 0 0 .625em black;
+    /* 10/16 */
+}
+
+#zonetexte {
+    text-align: start;
+    width: 90%;
+    height: 80%;
+    padding-bottom: 0%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: "Montserrat";
+    font-size: 16px;
+}
+
+.crop {
+    position: relative;
+    width: 160px;
+    height: 14px;
+    border-left: 2px solid #69f;
+    background: #c0c0c0;
+    color: #000;
+    margin: 10px 8px 0 0;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+}
+
+.crop img {
+    border: 2px solid black;
+    margin-left: 1%;
+    padding: 5px;
+}
+
+.crop img:hover {
+    transition: all .3s ease-in-out;
+    transform: scale(.9) rotate(-5deg);
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.progress {
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    margin-top: 100px;
+    visibility: hidden;
+}
+
+.progress-bar {
+    height: 16px;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.navi ul {
+    float: left;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    color: #5f5f5f;
+    text-decoration: none;
+    list-style: none;
+    max-width: 100%;
+    height: auto;
+}
+
+.navi ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.navi ul li a {
+    display: block;
+    text-decoration: none;
+    margin: 0 0 50px 0px;
+    padding: 12px 8px;
+    color: #5f5f5f;
+    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+}
+
+.navi ul li a:hover {
+    background: #69f;
+    color: #fff;
+    -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
+}
+
+
+/*---- MENU DEROULANT COMPATIBLE CROSS BROWSER ----*/
+
+ul.drop a {
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    text-decoration: none;
+}
+
+ul.drop,
+ul.drop li,
+ul.drop ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul.drop {
+    position: relative;
+    z-index: 597;
+    float: left;
+}
+
+ul.drop li {
+    float: left;
+    line-height: 1.3em;
+    vertical-align: middle;
+    zoom: 1;
+    padding: 5px 10px;
+}
+
+ul.drop li.hover,
+ul.drop li:hover {
+    position: relative;
+    z-index: 599;
+    cursor: default;
+}
+
+ul.drop ul {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 598;
+    width: 195px;
+}
+
+ul.drop ul li {
+    float: none;
+}
+
+ul.drop ul ul {
+    top: -2px;
+    left: 100%;
+}
+
+ul.drop li:hover>ul {
+    visibility: visible
+}
+
+
+/*groupe de boutton*/
+
+#boutonGroup {
+    margin-left: 10px;
+    margin-bottom: 100px;
+}
+
+#buttongroup1 {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.4);
+    margin-top: 100px;
+}
+
+#buttongroup2 {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.4);
+}
+
+#buttongroup3 {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.4);
+}
+
+aside {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+
+/* Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       https://css-tricks.com/webkit-sibling-bug/
+ */
+
+#five:checked~.progress>.progress-bar {
+    width: 5%;
+    background-color: #f63a0f;
+}
+
+#twentyfive:checked~.progress>.progress-bar {
+    width: 25%;
+    background-color: #f27011;
+}
+
+#fifty:checked~.progress>.progress-bar {
+    width: 50%;
+    background-color: #f2b01e;
+}
+
+#seventyfive:checked~.progress>.progress-bar {
+    width: 75%;
+    background-color: #f2d31b;
+}
+
+#onehundred:checked~.progress>.progress-bar {
+    width: 100%;
+    background-color: #86e01e;
+}
+
+
+/* Resolution petit écran / tablette */
+
+@media all and (min-width: 768px) and (max-width: 1280px) {
+    ul {
+        padding-bottom: 10px;
+    }
+    #gallery img {
+        height: 60px;
+        width: 75px;
+    }
+}
+
+
+/* Resolution Smartphone*/
+
+@media all and (max-width: 767px) {
+    ul {
+        padding-bottom: 10px;
+        overflow-x: scroll;
+    }
+}
+
+section img {
+    /* Sert à redimensionner l'image dynamiquement au mouvement de la souris*/
+    max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin-left: 10px;
+}
+
+#bodyLeft input {
+    border: 1px solid lightgrey;
+    visibility: hidden;
+}
+
+#bodyLeft label {
+    border: 1px solid lightgrey;
+    visibility: hidden;
+}
+
+
+/* */
+
+
+/*Bloc Header */
+
+
+/*Body */
+
+body {
+    /*Background properties*/
+    background: url(../images/backgroundImage.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+    background-position: 0px 0px;
+    height: 80%;
+    width: 100%;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+    
+}
+
+a {
+    width: inherit;
+}
+
+
+/*animation homePage background*/
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+
+/*Bloc Header */
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*small open outings logo properties*/
+
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+#logoEnTete img {
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+}
+
+#logoEnTete img:hover {
+    opacity: 1;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+
+
+/*boutton menu on right*/
+
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+}
+
+#BoutonMenuEnTete:hover {
+    opacity: 1;
+}
+
+
+/*search bar properties*/
+
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1%;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+}
+
+#marecherche:hover {
+    opacity: 1;
+}
+
+
+/*loupe properties*/
+
+#marecherche img {
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+    align-self: flex-start;
+}
+
+
+/*textzone properties*/
+
+#zonerecherche {
+    padding-bottom: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    font-size: 18px;
+}
+
+
+/*boutton connection properties*/
+
+#bconnexion {
+    background: url(../images/bouton_connexion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+
+/*bump effect on all buttons*/
+
+#bconnexion:hover,
+#bconnexion:focus,
+#binscription:hover,
+#binscription:focus {
+    transform: scale(1.10);
+    box-shadow: 0 0 40px #7444E6 inset, 0 0 20px #7444E6 inset, 0 0 15px white;
+}
+
+
+/*boutton inscription properties*/
+
+#binscription {
+    background: url(../images/bouton_inscription.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+
+/*Bloc Central*/
+
+#bodyContainer {
+  height: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 1%;
+    padding-left: 1%;
+    border-radius: 10px;
+    background-color: rgba(175, 47, 117, 0.5);
+}
+
+#bodyLeft {
+   
+    width: 200px;
+}
+
+#bodyCenter {
+
+    flex: 1;
+}
+
+#bodyRight {
+     justify-content: center;
+    margin-top: 1%;
+    margin-right: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 400px;
+    border-radius: 10px;
+    padding: 1%;
+}

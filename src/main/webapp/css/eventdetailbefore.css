@@ -1,0 +1,330 @@
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+
+body {
+    /*Background properties*/
+    background: url(../images/backgroundImage.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+    background-position: 0px 0px;
+    height: 100%;
+    width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+}
+
+a {
+    width: inherit;
+}
+
+/*animation homePage background*/
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+
+/*font Montserrat*/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/*header properties*/
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*small open outings logo properties*/
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+}
+
+#logoEnTete img {
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+}
+#logoEnTete img:hover {
+    opacity: 1;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+
+/*boutton menu on right*/
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+}
+#BoutonMenuEnTete:hover {
+    opacity: 1;
+}
+
+
+/*search bar properties*/
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+    align-items: center;
+}
+#marecherche:hover {
+    opacity: 1;
+}
+
+/*loupe properties*/
+#marecherche img {
+
+}
+#marecherche p {
+    display: flex;
+}
+
+/*textzone properties*/
+#zonerecherche {
+    width: 300px
+}
+
+/*boutton deconnection properties*/
+#bdeconnexion {
+    background-color: #e69c50;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border-radius: 10px;  
+    color: rgba(116, 68, 230, 1);
+}
+    
+
+/*boutton profil properties*/
+#bprofil {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;    
+}
+
+/*footer properties*/
+
+footer {
+    width: 100%;
+}
+
+/***grand contener properties***/
+#grandcontener {    
+    display: flex;
+    justify-content: center;    
+    margin: 1%;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: rgba(175, 47, 117, 0.5);
+    height: 800px;
+}
+
+
+/**left block**/
+#leftcontener {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 25%;
+    padding: 1%;
+}
+/*propriétés de la liste des utilisateurs*/
+#afficheListeParticipants {    
+    height: 100%;      
+    background-color: rgba(116, 68, 230, 0.5);
+    overflow-y: auto;
+    padding: 1%;
+    margin: 1%;
+    font-weight: bold;
+    color: white;    
+    border-radius: 10px;
+    align-content: center;
+}
+#afficheListeParticipants img {
+    height: 60px;
+    width: auto;
+    align-content: center;
+}
+#afficheListeParticipants a {
+    align-items: center;
+}
+/*éléments leftcontener eventdetail*/
+#afficheTheme,
+#afficheParticipant,
+#afficheNbPlaceDispo,
+#afficheContacter,
+#longDescriptionEvent,
+#villeEvent,
+#dateEvent,
+#tarifEvent {    
+    padding: 1%;
+    margin-top: 1%;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+}
+
+/**central contener**/
+#centralcontener {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    position: relative;
+    min-width: 400px;
+    width: 50%;
+}
+
+/*bloc corps central bar titre event et bouton*/
+#titreEvent {    
+        
+}
+#textTitre {
+    color: white;    
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.8);
+}
+#blocEvent {    
+    padding: 1%;    
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+    height: 200px;
+}
+#blocEvent img {
+    height: auto;
+    width: 100px;
+    float: left;    
+}
+#blocEvent p {
+    font-weight: lighter;
+    font-size :12px;
+}
+
+/**right block**/
+#rightcontener {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 1%;  
+}
+
+/*propriété du "historique des conversations"*/
+#rightcontener span {    
+    font-size: 18px;
+    text-align: center;
+    padding: 1%;
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: white;
+    background-color: rgba(116, 68, 230, 0.8);
+    border-radius: 10px;
+}
+
+
+/*text zone events history*/
+#affichageHistoEvents {
+    margin: 1%;
+    padding: 1%;
+    text-align: left;
+    height: 100%;
+    color: white;    
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.5);
+    overflow-y: auto;   
+}
+#affichageHistoEvents img {
+    height: auto;
+    width: 100px;
+}
+
+/*effet bump sur les bouttons*/
+#bjoindre:hover,
+#bjoindre:focus,
+#benvoyer:hover,
+#benvoyer:focus,
+#bconnexion:hover,
+#bconnexion:focus,
+#binscription:hover,
+#binscription:focus,
+#afficheContacter:hover,
+#afficheContacter:focus,
+#afficheListeParticipants img:hover,
+#afficheListeParticipants img:focus,
+#participerEvent:hover,
+#participerEvent:focus,
+#affichageHistoEvents img:hover,
+#affichageHistoEvents img:focus,
+#buttongroup1:focus,
+#buttongroup1:hover,
+#buttongroup2:focus,
+#buttongroup2:hover,
+#buttongroup3:hover,
+#buttongroup3:focus,
+#bdeconnexion:hover,
+#bdeconnexion:focus,
+#bprofil:hover,
+#bprofil:focus,
+#BoutonMenuEnTete:hover,
+#BoutonMenuEnTete:focus,
+#marecherche img:hover,
+#marecherche img:focus,
+#zonerecherche:hover+ img,
+#zonerecherche:focus+ img,
+#mesemoticons img:hover,
+#mesemoticons img:focus {
+transform: scale(1.10);
+}
+
+/*boutton participer */
+#participerEvent {
+    width: 160px;
+    font-size: 22px;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgba(116, 68, 230, 0.8);    
+}
+
+#shortDescriptionEvent {
+    position: relative;
+    float: left;
+    margin: 1%;
+    font-weight: lighter;
+    font-weight: normal;
+    background-color: rgba(116, 68, 230, 0.5);
+}
+

@@ -1,0 +1,288 @@
+/*Body */
+body {
+    /*Background properties*/
+    background: url(../images/backgroundImage.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+    background-position: 0px 0px;
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+    font-family: "Montserrat"
+}
+/*animation homePage background*/
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+
+
+/*header properties*/
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*small open outings logo properties*/
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+}
+
+#logoEnTete img {
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+}
+#logoEnTete img:hover {
+    opacity: 1;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+
+/*boutton menu on right*/
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+}
+#BoutonMenuEnTete:hover {
+    opacity: 1;
+}
+
+
+/*search bar properties*/
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+    align-items: center;
+}
+#marecherche:hover {
+    opacity: 1;
+}
+
+/*loupe properties*/
+#marecherche img {
+
+}
+#marecherche p {
+    display: flex;
+}
+
+/*textzone properties*/
+#zonerecherche {
+    width: 300px
+}
+
+/*boutton deconnection properties*/
+#bdeconnexion {
+    background-color: #e69c50;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border-radius: 10px;  
+    color: rgba(116, 68, 230, 1);
+}
+    
+
+/*boutton inscription properties*/
+#bprofil {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;    
+}
+
+/*bump effect on all buttons*/
+#bPROPOSER:hover,
+#bPROPOSER:focus,
+#bTROUVER:hover,
+#bTROUVER:focus,
+#bdeconnexion:hover,
+#bdeconnexion:focus,
+#bprofil:hover,
+#bprofil:focus,
+#BoutonMenuEnTete:hover,
+#BoutonMenuEnTete:focus,
+#marecherche img:hover,
+#marecherche img:focus,
+#zonerecherche:hover+ img,
+#zonerecherche:focus+ img {
+    transform: scale(1.10);
+ 
+}
+
+
+/*Bloc Central*/
+#bodyContainer {
+    min-width: 600px;
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 1%;
+    padding-left: 1%;
+    border-radius: 10px;
+    background-color: rgba(175, 47, 117, 0.5);
+}
+
+#bodyLeft {
+	
+    width: 100px; height: auto;
+}
+
+#bodyCenter {
+
+    flex: 1; display: flex; height: 800px;
+    justify-content: space-between; align-items: center; flex-wrap: wrap;
+    align-content: flex-start; flex-direction: column;
+}
+
+#bodyRight {
+    display: flex;
+    flex-direction: column;
+     display: flex;
+    justify-content: space-around;
+    align-content: baseline;
+    margin-top: 5%;
+    
+    width: 200px;  
+}
+#bodyRight img{
+    max-width: 100%;
+    height: auto;
+    
+        margin-left: 1%;
+        padding: 2px;
+}
+#bodyRight img:hover{
+     transition: all .3s ease-in-out;
+        transform: scale(.9) rotate(-5deg);
+        border: 5px solid yellow;
+        cursor: pointer;
+}
+#bodyRight2 {
+    display: flex;
+    flex-direction: column;
+     justify-content: space-around;
+    align-content: baseline;
+    margin-top: 2%;
+    
+    width: 200px;  
+}
+#bodyRight2 img{
+    max-width: 100%;
+    height: auto;
+    
+        margin-left: 1%;
+        padding: 2px;
+}
+#bodyRight2 img:hover{
+     transition: all .3s ease-in-out;
+        transform: scale(.9) rotate(-5deg);
+        border: 5px solid white;
+        cursor: pointer;
+}
+.parent{
+     justify-content: space-between;
+     flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%; height: 500px;
+    margin: auto; margin-top: 30%;
+     padding:5px;
+    }
+.edit{
+    color: #7444E6; font-family: "Montserrat"; 
+}
+#iChoixEdit{
+   color: #7444E6; font-family: "Montserrat";border-radius: 5px;
+}
+#iChoixLieux{
+    color: #7444E6; font-family: "Montserrat";border-radius: 5px;
+}
+#iChoixTheme{
+    color: #7444E6; font-family: "Montserrat";border-radius: 5px;
+}
+th{
+    border : 5px solid  #7444E6; color: white;
+}
+#content{ 
+    border:10px double #7444E6; padding:5px; width:25%;
+  height: 300px;display: flex;
+ flex-wrap: wrap;margin: auto;
+    justify-content: space-between; margin-top: 1%;
+  background-color: rgba(251, 235, 100, 0.5);; -moz-border-radius:20px;
+  -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;
+}
+#content2 {
+     border:10px double #7444E6; ; width:25%;
+ margin:auto; height: 300px;display: flex; flex-wrap: wrap;
+padding: 1px; flex-direction: column;
+    justify-content: space-around; margin-top: 1%;
+  background-color: rgba(251, 235, 100, 0.5);; -moz-border-radius:20px;
+  -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;
+}
+#contentCenter{ 
+      width:100%;
+ margin:auto; height: 300px;display: flex; margin-top: 100px;
+ flex-wrap: wrap;
+    justify-content: space-between;
+  -moz-border-radius:20px;
+  -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;
+}
+.title{
+    font-family: "Montserrat"; text-decoration: underline;color: #7444E6;
+    
+}
+#imagePlus{
+  max-width: 20px; height:20px; float: right;
+}
+#imageProfil{
+     max-width: 100%; height:auto;margin-left: 5%;border-radius: 10px;
+     border : 5px solid #7444E6;
+}
+#vBoutton{
+    font-family: "Montserrat"; color: white;
+    background-color:#7444E6; margin: auto;margin-bottom: 10%;
+}
+#vBoutton:hover{
+    background-color: white; font-family: "Montserrat";
+    color:#7444E6; box-shadow: 2px;
+}
+.iconProfil{
+    max-width: 20px ; height: 20px;
+}
+#nomGroupe{
+    width: 60%; height:35px;margin-top: 5px;margin: auto;font-family: "Montserrat";
+    font-weight: bold; font-size: 30px; color: #7444E6;
+}
+#ajoutPhotoBoutton{
+    background-color: #7444E6; font-family: "Montserrat";
+    color:white; box-shadow: 2px;
+}
+#ajoutPhotoBoutton:hover{
+   background-color: white; font-family: "Montserrat";
+    color:#7444E6; box-shadow: 2px;
+}

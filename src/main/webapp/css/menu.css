@@ -1,0 +1,105 @@
+body{
+	
+	background-image: url(../images/backgroundImage.jpg);
+	opacity: 0.95;
+	 height: 100%;
+    width: 100%;
+   background-position: center;
+     background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+
+
+}
+h1{
+	font-family: "Montserrat"; text-align: center;
+	vertical-align: bottom; font-weight: bold;
+	color: whitesmoke; text-shadow: 2px 2px 4px #000000;
+}
+.parent{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.menu{
+	position: relative;
+	top: 20% ;  margin-top: 3%;
+}
+@font-face{
+	font-family: "Montserrat";
+	src :local("Montserrat_Bold"),url (montserrat_bold.ttf);
+	font-weight: bold;
+}
+a {
+	color: white;text-decoration: none;
+}
+.menu:hover{
+	text-decoration: underline; 
+}
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+#logoEnTete img {
+    opacity: 0.4;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+    
+}
+#logoEnTete img:hover {
+    opacity: 0.8;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+   
+}
+#BoutonMenuEnTete:hover {
+    opacity: 0.8;
+}
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Montserrat";
+    margin-top: 1%;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+}
+
+#marecherche:hover {
+    opacity: 1;
+}
+
+#marecherche img {
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+    align-self: flex-start;
+}
+
+#zonerecherche {
+    width: 90%;
+    height: 80%;
+    padding-bottom: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    font-family: "Montserrat";
+    font-size: 24px;
+}

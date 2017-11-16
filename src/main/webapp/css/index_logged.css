@@ -1,0 +1,274 @@
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+body {
+    /*Background properties*/
+    background: url(../images/backgroundImage.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: snow;
+    background-position: 0px 0px;
+    height: 100%;
+    width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+}
+
+a {
+    width: inherit;
+}
+
+/*animation homePage background*/
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/*font Montserrat*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"),
+        url(../fonts/montserrat-light-webfont.woff2) format("woff2"), 
+        url(../fonts/montserrat-light-webfont.woff) format("woff"), 
+        url(../fonts/montserrat-light-webfont.ttf) format("truetype"), 
+        url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*header properties*/
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*small open outings logo properties*/
+#logoEnTete {
+    transition: transform .9s;
+    position: relative;
+}
+
+#logoEnTete img {
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform .9s; // Chrome Safari
+    -moz-transition: -moz-transform .9s; // Mozilla
+    -o-transition: -o-transform .9s; // Opéra
+    -ms-transition: -ms-transform .9s; // IE
+}
+#logoEnTete img:hover {
+    opacity: 1;
+    -webkit-transform: rotate(540deg);
+    -moz-transform: rotate(540deg);
+    -o-transform: rotate(540deg);
+    -ms-transform: rotate(540deg);
+    transform: rotate(540deg);
+}
+
+/*boutton menu on right*/
+#BoutonMenuEnTete {
+    position: relative;
+    margin-right: 1%;
+    opacity: 0.5;
+}
+#BoutonMenuEnTete:hover {
+    opacity: 1;
+}
+
+
+/*search bar properties*/
+#marecherche {
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    width: 600px;
+    opacity: 0.5;
+    align-items: center;
+}
+#marecherche:hover {
+    opacity: 1;
+}
+
+/*loupe properties*/
+#marecherche img {
+
+}
+#marecherche p {
+    display: flex;
+}
+
+/*textzone properties*/
+#zonerecherche {
+    width: 300px
+}
+
+/*boutton deconnection properties*/
+#bdeconnexion {
+    background-color: #e69c50;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border-radius: 10px;  
+    color: rgba(116, 68, 230, 1);
+}
+    
+
+/*boutton inscription properties*/
+#bprofil {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;    
+}
+
+
+/***central block properties***/
+/*grand logo properties*/
+#grandlogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grandlogo img {
+    height: 20%;
+    width: 20%;
+    align-content: center;
+}
+
+/*titre open outing properties*/
+#titrelogo {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 0 #eee, 0 2px 0 #e5e5e5, -1px 3px 0 #C8C8C8, -1px 4px 0 #C1C1C1, -2px 5px 0 #B9B9B9, -2px 6px 0 #B2B2B2, -2px 7px 2px rgba(0, 0, 0, 0.6), -2px 7px 8px rgba(0, 0, 0, 0.2), -2px 7px 45px rgba(0, 0, 0, 0.4);
+    color: #7444E6;
+}
+
+/*bouttons block properties*/
+#contener {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    flex-wrap: wrap;
+}
+
+
+/*boutton PROPOSER properties*/
+#bPROPOSER {
+    background: url(../images/Bproposer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60px;
+    width: 280px;
+    border-radius: 10px;
+}
+#formulaireconnexion {
+    width: 200px;
+    height: 120px;
+    display: none;
+    position: absolute;
+    padding: 2%;
+    background-color: rgba(251, 235, 100, 0.5);
+    border-radius: 10px;
+}
+#formulaireconnexion input {
+    margin: 1%;
+    padding: 1%;
+}
+.bDevenirMembre {
+    height: 40px;
+    width: 80px;
+}
+#formulaireAfficheEvent {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: absolute;
+    padding: 2%;
+    background-color: rgba(251, 235, 100, 0.5);
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: auto;
+    width: 200px;
+    height: 120px;
+}
+
+#formulaireAfficheEvent img {
+    margin: auto;
+    height: 80px;
+    width: auto;
+}
+
+#bPROPOSER:hover+#formulaireconnexion,
+#bPROPOSER:focus+#formulaireconnexion,
+#formulaireconnexion:focus,
+#formulaireconnexion:hover {
+    display: block;
+}
+
+#bTROUVER:hover+#formulaireAfficheEvent,
+#bTROUVER:focus+#formulaireAfficheEvent,
+#formulaireAfficheEvent:focus,
+#formulaireAfficheEvent:hover {
+    display: block;
+}
+
+/*boutton TROUVER properties*/
+#bTROUVER {
+    background: url(../images/Btrouver.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60px;
+    width: 280px;
+    border-radius: 10px;
+}
+
+/*bump effect on all buttons*/
+#bPROPOSER:hover,
+#bPROPOSER:focus,
+#bTROUVER:hover,
+#bTROUVER:focus,
+#bdeconnexion:hover,
+#bdeconnexion:focus,
+#bprofil:hover,
+#bprofil:focus,
+#BoutonMenuEnTete:hover,
+#BoutonMenuEnTete:focus,
+#marecherche img:hover,
+#marecherche img:focus,
+#zonerecherche:hover+ img,
+#zonerecherche:focus+ img {
+    transform: scale(1.10);
+ 
+}
+
+/*footer properties*/
+footer {
+    width: 100%;
+}
+
+/*text citation properties*/
+#citation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #7444E6;
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.8), 1px 0 0 rgba(0, 0, 0, 0.8), 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+}
+
