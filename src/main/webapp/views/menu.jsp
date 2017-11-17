@@ -35,9 +35,7 @@
 	</div>
 <script type="text/javascript" src="page_menu.js"></script>
 
-<footer id="citation">
-		"Le bonheur est la seule chose qui se multiplie quand il se partage."
-		<br />Paulo Cuelho
+<footer>
 		<!-- pied de page a inclure dans les pages -->
 		<%@include file="/views/footer.jsp"%>
 	</footer>
