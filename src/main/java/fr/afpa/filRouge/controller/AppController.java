@@ -14,4 +14,16 @@ public class AppController {
 	public String index(Model model) {
 		return "index";
 	}
+	
+	// affiche page sign_in
+	@GetMapping("sign_in")
+	public String sign_in(Model model) {
+		return "sign_in";
+	}
+	
+	// affiche page sign_in
+		@GetMapping("sign_up")
+		public String sign_up(Model model) {
+			return "sign_up";
+		}
 }
