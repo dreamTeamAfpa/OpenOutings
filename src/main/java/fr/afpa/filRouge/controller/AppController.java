@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+package fr.afpa.filRouge.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/")
+public class AppController {
+
+	// affiche page index
+	@GetMapping("")
+	public String index(Model model) {
+		return "index";
+	}
+@GetMapping("menu")
+public String menu(Model model) {
+	return "menu";
+}
+}
+=======
 package fr.afpa.filRouge.controller;
 
 import org.springframework.stereotype.Controller;
@@ -40,3 +63,4 @@ public class AppController {
 
 	}
 }
+>>>>>>> 49dacf01e4ced0efd65af3e77d047338e084820d
