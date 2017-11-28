@@ -16,27 +16,27 @@ public class AppController {
 	}
 
 	// affiche page profil user
-		@GetMapping("profiluser")
-		public String profilUser(Model model) {
-			return "UserProfil";
-		}
+	@GetMapping("profiluser")
+	public String profilUser(Model model) {
+		return "UserProfil";
+	}
 
-		//affiche page menu
-		@GetMapping("menu")
-		public String menu(Model model) {
-			return "menu";
+	// affiche page menu
+	@GetMapping("menu")
+	public String menu(Model model) {
+		return "menu";
+	}
 
-	
 	// affiche page sign_in
 	@GetMapping("sign_in")
 	public String sign_in(Model model) {
 		return "sign_in";
 	}
-	
-	// affiche page sign_in
-		@GetMapping("sign_up")
-		public String sign_up(Model model) {
-			return "sign_up";
 
-		}
+	// affiche page sign_in
+	@GetMapping("sign_up")
+	public String sign_up(Model model) {
+		return "sign_up";
+
+	}
 }
