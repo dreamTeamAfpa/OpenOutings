@@ -1,4 +1,4 @@
-package fr.apfa.filrouge.model;
+package fr.afpa.filRouge.model;
 
 import java.util.Calendar;
 import java.util.Set;
@@ -9,12 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.tools.DocumentationTool.Location;
 
 @Entity
 @Table(name = "person")
@@ -53,6 +50,9 @@ public class Person {
 		this.genderUser = genderUser;
 		this.emailUser = emailUser;
 		this.phoneUser = phoneUser;
+	}
+	public Person() {
+		
 	}
 
 	// GETTERS & SETTERS

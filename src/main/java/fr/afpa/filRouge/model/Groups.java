@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Groups")
+@Table(name = "groups")
 public class Groups {
 	int idGroup;
 	String nameGroup;

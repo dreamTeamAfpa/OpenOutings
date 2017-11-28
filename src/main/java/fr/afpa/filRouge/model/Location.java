@@ -1,4 +1,4 @@
-package fr.apfa.filrouge.model;
+package fr.afpa.filRouge.model;
 
 import java.util.Set;
 
