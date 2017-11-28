@@ -14,4 +14,15 @@ public class AppController {
 	public String index(Model model) {
 		return "index";
 	}
+	// affiche page profil user
+		@GetMapping("profiluser")
+		public String profilUser(Model model) {
+			return "UserProfil";
+		}
+
+		//affiche page menu
+		@GetMapping("menu")
+		public String menu(Model model) {
+			return "menu";
+		}
 }
