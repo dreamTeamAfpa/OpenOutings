@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Page Menu</title>
+ <link rel="stylesheet" type="text/css" href="css/menu.css">
 </head>
 <body>
 	<header>
-        <div id="blockheader">
             <div id="logoEnTete"><img src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png" title="Page d'Accueil"/></div>
 
             <div id="marecherche" title="Rechercher">
@@ -20,7 +20,6 @@
                 <a href="page_acceuil"><img src="images/icone mainMenu_60x60orange_EnTete_close.png" /></a>
             </div>
 
-        </div>
     </header>
 	<div class= "parent">
         <H1 class="menu" id="ilienRechEvt"><a href="page_recherche_evtV1.4.html">RECHERCHE EVENEMENTS</a></H1>
@@ -33,7 +32,6 @@
 		
 
 	</div>
-<script type="text/javascript" src="page_menu.js"></script>
 
 <footer>
 		<!-- pied de page a inclure dans les pages -->
