@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.util.Set;
@@ -54,8 +55,7 @@ public class Location {
 	 */
 	public void setNameLocation(String nameLocation) {
 		this.nameLocation = nameLocation;
-		
-		
+
 	}
 
 	/**
@@ -66,7 +66,8 @@ public class Location {
 	}
 
 	/**
-	 * @param location the location to set
+	 * @param location
+	 *            the location to set
 	 */
 	public void setLocation(Set<Location> location) {
 		this.location = location;
