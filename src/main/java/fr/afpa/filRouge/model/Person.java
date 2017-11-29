@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.tools.DocumentationTool.Location;
 
 @Entity
 @Table(name = "person")
@@ -35,6 +36,24 @@ public class Person {
 	private String emailUser;
 	@Column(name = "phone_person")
 	private int phoneUser;
+	@Column(name = "description_person")
+	private String descriptionPerson;
+
+	/**
+	 * @return the descriptionPerson
+	 */
+	public String getDescriptionPerson() {
+		return descriptionPerson;
+	}
+
+	/**
+	 * @param descriptionPerson
+	 *            the descriptionPerson to set
+	 */
+	public void setDescriptionPerson(String descriptionPerson) {
+		this.descriptionPerson = descriptionPerson;
+	}
+
 	@ManyToOne
 	@JoinTable(name = "locations", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "postal_code"))
 	private Set<Location> location;
@@ -50,9 +69,6 @@ public class Person {
 		this.genderUser = genderUser;
 		this.emailUser = emailUser;
 		this.phoneUser = phoneUser;
-	}
-	public Person() {
-		
 	}
 
 	// GETTERS & SETTERS
