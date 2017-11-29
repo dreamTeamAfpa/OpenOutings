@@ -1,31 +1,31 @@
-
 <!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
-
 
 <html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Open Outings</title>
-    <link rel="stylesheet" type="text/css" href="css/profilMembre2.css">
+    <link rel="stylesheet" type="text/css" href="css/profilVisiteur.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
     <header>
-            <div id="logoEnTete"><a href="index.html"><img src="images/isotype_logo_openOutings_1.6.1_60x60_petitLogoEnTete.png" title="Page d'Accueil" /></a></div>
-            <div id="marecherche" title="Rechercher">
-                <p><img src="images/iconeMainMenu_loupe_EnTete_orange32x32.png" />
-                <input type="search" id="zonerecherche" title="Votre recherche ici...">
-                </p>
-                <a href="signIn.html"><button id="bdeconnexion">DECONNEXION</button></a>
-                <a href="editprofilmembre.html"><button id="bprofil"></button></a>
-            </div>
-            <div id="BoutonMenuEnTete">
-                <a href="menu.html"><img src="images/icone mainMenu_60x60orange_EnTete.png" title="AccÃ©der au menu" /></a>
-            </div>
-        </header>
+        <div id="logoEnTete">
+            <a href="index.html"><img src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png" title="Page d'Accueil" /></a>
+        </div>
+        <div id="marecherche" title="Rechercher">
+            <a href="rechercheEvent.html">
+                <img src="images/iconeMainMenu_loupe_EnTete_orange32x32.png" /></a>
+            <input type="search" id="zonerecherche" title="Votre recherche ici...">
+            <a href="signIn.html"><input type="button" id="bconnexion"></a>
+            <a href="signUp.html"><input type="button" id="binscription"></a>
+        </div>
+        <div id="BoutonMenuEnTete">
+            <a href="menu.html"><img src="images/iconeMainMenu_60x60orange_EnTete.png" title="Accéder au menu" /></a>
+        </div>
+    </header>
 
     <div id="bodyContainer">
 
@@ -50,9 +50,9 @@
             </div>
             <div class="navi">
                 <ul>
-                    <li id="pseudo"><a target="_blank" href="">PSEUDO</a></li>
-                    <li id="age"><a target="_blank" href="">AGE</a></li>
-                    <li id="ville"><a target="_blank" href="">VILLE</a></li>
+                    <li id="pseudo"><a  href="">PSEUDO</a></li>
+                    <li id="age"><a  href="">AGE</a></li>
+                    <li id="ville"><a href="">VILLE</a></li>
                     <li>
                 </ul>
             </div>
@@ -67,10 +67,10 @@
                 </li>
             </ul>
 
-            <div id="boutonGroup">
-                <a href="groupe.html"><button id="buttongroup1" title="Bowling"></button></a>
-                <button id="buttongroup2"></button>
-                <button id="buttongroup3"></button>
+           <div id="boutonGroup">
+                <a href="groupe.html"> <button id="buttongroup1" title="bowling"> </button></a>
+                <button id="buttongroup2" title="Restaurant"></button>
+                <button id="buttongroup3" title="Cinema"></button>
             </div>
 
 
@@ -78,9 +78,9 @@
         <div id="bodyCenter">
 
             <figure class="description">
-                
+               
                 <figcaption>
-                    <img src="" alt="picprofil" class="profile" />
+                    <img src="images/the-big-lebowski-white-russian.jpeg" alt="picprofil" class="profile" />
                     <h2>MON PROFIL </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In blandit tincidunt orci tempor gravida. Nulla ac lectus ut metus tempor imperdiet. Fusce maximus dignissim neque, ut placerat nisl pellentesque ac. Suspendisse volutpat at massa quis malesuada. Cras sed pulvinar erat, et aliquam nisi. Proin vitae est velit. </p>
 
@@ -90,6 +90,8 @@
                 <a href="Messaging.html">Me CONTACTER</a>
             </div>
 
+
+
         </div>
 
         <div id="bodyRight">
@@ -97,12 +99,11 @@
                 <div class="artwork">
 
                     <h2>EVENTS</h2> <br />
-                    <div id="zonehistorique">
-                    <class="crop"><a href="eventdetailBefore.html" /></a><img id="img5" onclick="affiche(this)" src="" alt="description" title="event 1"></class>
-                        <class="crop"> <a href="eventdetailBefore.html" /></a><img id="img5" onclick="affiche(this)" src="" alt="description" title="event 2"></class>
-                            <class="crop"><a href="eventdetailBefore.html" /></a> <img id="img5" onclick="affiche(this)" src="" alt="description" title="event 3"></class>
-                                <class="crop"><a  href="eventdetailBefore.html" /></a> <img id="img5" onclick="affiche(this)" src="" alt="description" title="event 4"></class>
-                    </div>           
+                    <class="crop"><a href="eventdetailAfter.html"/></a><img id="img5" onclick="affiche(this)" src="" alt="description" title="event 1"></class>
+                        <class="crop"> <a href="eventdetailAfter.html" /></a><img id="img5" onclick="affiche(this)" src="" alt="description" title="event 2"></class>
+                            <class="crop"><a href="eventdetailAfter.html" /></a> <img id="img5" onclick="affiche(this)" src="" alt="description" title="event 3"></class>
+                                <class="crop"><a href="eventdetailAfter.html" /></a> <img id="img5" onclick="affiche(this)" src="" alt="description" title="event 5"></class>
+
                 </div>
             </aside>
         </div>
