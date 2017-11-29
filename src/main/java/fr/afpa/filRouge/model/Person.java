@@ -51,8 +51,9 @@ public class Person {
 		this.emailUser = emailUser;
 		this.phoneUser = phoneUser;
 	}
+
 	public Person() {
-		
+
 	}
 
 	// GETTERS & SETTERS
@@ -205,3 +206,4 @@ public class Person {
 	public void setPhoneUser(int phoneUser) {
 		this.phoneUser = phoneUser;
 	}
+}
