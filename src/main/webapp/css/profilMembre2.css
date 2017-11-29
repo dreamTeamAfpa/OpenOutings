@@ -136,9 +136,9 @@ nav ul li:hover {
 
 .description .profile {
     border-radius: 50%;
-    position: absolute;
+   
     bottom: 150%;
-    left: 150px;
+    
     z-index: 1;
     max-width: 200px;
     opacity: 1;
@@ -647,4 +647,15 @@ header {
 #bodyRight {
     border: 1px solid lightgrey;
     width: 200px;
+}
+/*text citation properties*/
+#citation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #7444E6;
+    text-shadow: -1px 0 0 rgba(0, 0, 0, 0.8), 1px 0 0 rgba(0, 0, 0, 0.8), 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
 }
