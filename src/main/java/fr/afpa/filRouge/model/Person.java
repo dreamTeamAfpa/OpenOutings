@@ -71,6 +71,7 @@ public class Person {
 		this.phoneUser = phoneUser;
 	}
 
+
 	// GETTERS & SETTERS
 	/**
 	 * @return the idUser
