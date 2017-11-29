@@ -8,9 +8,11 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.mapping.Set;
+
 @Entity
-@Table(name = "Groups")
-public class Groups {
+@Table(name = "Groupe")
+public class Groupe {
 	int idGroup;
 	String nameGroup;
 	String descriptionGroup;
