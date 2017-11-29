@@ -1,10 +1,6 @@
-/**
- * 
- */
 package fr.afpa.filRouge.model;
 
 import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -18,33 +14,37 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table (name="interest")
+@Table(name = "interest")
 public class Interest {
 
-	private String nameInterest ;
+	private String nameInterest;
 	private String descriptionInterest;
-	private Set<Groups> groups;
-	
-	
+	private Set<Groupe> groups;
+
 	@Id
 	public String getNameInterest() {
 		return nameInterest;
 	}
+
 	public void setNameInterest(String nameInterest) {
 		this.nameInterest = nameInterest;
 	}
+
 	public String getDescriptionInterest() {
 		return descriptionInterest;
 	}
+
 	public void setDescriptionInterest(String descriptionInterest) {
 		this.descriptionInterest = descriptionInterest;
 	}
-	
+
 	@ManyToMany
-	@JoinTable(name="groups", joinColumns = @JoinColumn(name = "name_interest"),inverseJoinColumns = @JoinColumn(name = "id_group"))
-	public Set<Groups> getGroups(){
+	@JoinTable(name = "groups", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
+	public Set<Groupe> getGroups() {
 		return groups;
 	}
-	public void setGroups(Set<Groups> groups) {
-        this.groups = groups;
+
+	public void setGroups(Set<Groupe> groups) {
+		this.groups = groups;
+	}
 }
