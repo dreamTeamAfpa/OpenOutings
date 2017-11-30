@@ -15,4 +15,6 @@ import fr.afpa.filRouge.model.Theme;
 @Repository
 public interface ThemeRepository extends JpaRepository<Theme, Integer> {
 
+	Theme findOneByNameTheme(String nameTheme);
+
 }
