@@ -1,31 +1,19 @@
 package fr.afpa.filRouge.model;
 
+import java.util.Calendar;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import fr.apfa.filrouge.model.Person;
 
 @Entity
 @Table(name = "user")
-public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idUser;
+public class User extends Person {
 
-	/**
-	 * @return the idUser
-	 */
-	public int getIdUser() {
-		return idUser;
-	}
-
-	/**
-	 * @param idUser
-	 *            the idUser to set
-	 */
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public User(int idUser, String pseudoUser, String passwordUser, String firstNameUser, String lastNameUser,
+			Calendar dobUser, char genderUser, String emailUser, int phoneUser) {
+		super(idUser, pseudoUser, passwordUser, firstNameUser, lastNameUser, dobUser, genderUser, emailUser, phoneUser);
 	}
 
 }
