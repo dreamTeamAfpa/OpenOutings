@@ -5,6 +5,8 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Interest;
 import fr.afpa.filRouge.repository.InterestRepository;
 
@@ -12,6 +14,7 @@ import fr.afpa.filRouge.repository.InterestRepository;
  * @author PH GUIGUE
  *
  */
+@Service
 public class ServiceInterest implements IserviceInterest {
 	
 	private InterestRepository interestRepository;
