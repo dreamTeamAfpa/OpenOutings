@@ -39,7 +39,7 @@ public class Interest {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "groups", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
+	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
 	public Set<Groupe> getGroups() {
 		return groups;
 	}
