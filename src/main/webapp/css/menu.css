@@ -51,7 +51,7 @@ header {
     opacity: 0.4;
     -webkit-transition: -webkit-transform .9s; // Chrome Safari
     -moz-transition: -moz-transform .9s; // Mozilla
-    -o-transition: -o-transform .9s; // OpÃ©ra
+    -o-transition: -o-transform .9s; // Opéra
     -ms-transition: -ms-transform .9s; // IE
     
 }

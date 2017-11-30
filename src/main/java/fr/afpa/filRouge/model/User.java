@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.util.Calendar;
@@ -17,3 +18,4 @@ public class User extends Person {
 	}
 
 }
+
