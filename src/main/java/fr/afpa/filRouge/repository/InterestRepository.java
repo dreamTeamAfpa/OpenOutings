@@ -12,4 +12,5 @@ import fr.afpa.filRouge.model.Interest;
 @Repository
 public interface InterestRepository extends JpaRepository<Interest, Integer> {
 
+	 Interest findByNameInterestAllIgnoreCase(String nameInterest);
 }
