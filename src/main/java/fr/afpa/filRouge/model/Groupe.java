@@ -61,7 +61,7 @@ public class Groupe {
 
 	@OneToOne(mappedBy = "Administrator")
 	@JoinTable(name = "administrator", joinColumns = @JoinColumn(name = "id_Group"), inverseJoinColumns = @JoinColumn(name = "id_person"))
-	public Administrator getAdministratorByGroup() {
+	public Administrator getAdministratorByGroup(int idGroup) {
 		return administrator;
 	}
 	public void setAdministratorByGroup(Administrator administrator) {
@@ -88,12 +88,4 @@ public class Groupe {
 	
 	@ManyToOne
 	private GeographicalArea geographicalArea;
-	
-	
-	
-	
-	
-	
-
-	
 }
