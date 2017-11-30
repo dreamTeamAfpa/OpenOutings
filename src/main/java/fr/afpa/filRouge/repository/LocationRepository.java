@@ -14,5 +14,5 @@ import fr.afpa.filRouge.model.Location;
  */
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Integer> {
-
+	Location findOne(String nameLocation);
 }
