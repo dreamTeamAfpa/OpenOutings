@@ -1,4 +1,10 @@
-/*Body */
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+a{
+    width: inherit;
+}
 body {
     /*Background properties*/
     background: url(../images/backgroundImage.jpg);
@@ -8,11 +14,18 @@ body {
     background-position: 0px 0px;
     height: 100%;
     width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
     background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
 }
-/*animation homePage background*/
 
+a {
+    width: inherit;
+}
+
+/*animation homePage background*/
 @keyframes animatedBackground {
     from {
         background-position: 0 0;
@@ -22,23 +35,28 @@ body {
     }
 }
 
-/*Bloc Header */
+/*font Montserrat*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*header properties*/
 header {
     height: 80px;
-}
-
-#blockheader {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-/*small open outings logo properties*/
 
+/*small open outings logo properties*/
 #logoEnTete {
     transition: transform .9s;
     position: relative;
-    margin-left: 1%;
-    margin-top: 1%;
 }
 
 #logoEnTete img {
@@ -48,7 +66,6 @@ header {
     -o-transition: -o-transform .9s; // Opéra
     -ms-transition: -ms-transform .9s; // IE
 }
-
 #logoEnTete img:hover {
     opacity: 1;
     -webkit-transform: rotate(540deg);
@@ -58,58 +75,65 @@ header {
     transform: rotate(540deg);
 }
 
-
 /*boutton menu on right*/
-
 #BoutonMenuEnTete {
     position: relative;
     margin-right: 1%;
     opacity: 0.5;
 }
-
 #BoutonMenuEnTete:hover {
     opacity: 1;
 }
 
 
 /*search bar properties*/
-
 #marecherche {
     display: flex;
     justify-content: space-around;
-    margin-top: 1%;
     height: 40px;
     width: 600px;
     opacity: 0.5;
+    align-items: center;
 }
-
 #marecherche:hover {
     opacity: 1;
 }
 
-
 /*loupe properties*/
-
 #marecherche img {
-    margin-top: 1%;
-    margin-left: 1%;
-    padding-bottom: 1%;
-    align-self: flex-start;
-}
 
+}
+#marecherche p {
+    display: flex;
+}
 
 /*textzone properties*/
-
 #zonerecherche {
-    padding-bottom: 1%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 1%;
-    font-size: 18px;
+    width: 300px
 }
 
-/*boutton connection properties*/
+/*boutton deconnection properties*/
+#bdeconnexion {
+    background-color: #e69c50;
+    font-family: "Montserrat";
+    font-weight: bold;
+    border-radius: 10px;  
+    color: rgba(116, 68, 230, 1);
+}
+    
 
+/*boutton profil properties*/
+#bprofil {
+    background-image: url(../images/006-social-2-red.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;    
+}
+
+
+/*boutton connection properties*/
 #bconnexion {
     background: url(../images/bouton_connexion.png);
     background-repeat: no-repeat;
@@ -123,18 +147,7 @@ header {
     padding-bottom: 1%;
 }
 
-/*bump effect on all buttons*/
-#bconnexion:hover,
-#bconnexion:focus,
-#binscription:hover,
-#binscription:focus {
-    transform: scale(1.10);
-    box-shadow: 0 0 40px #7444E6 inset, 0 0 20px #7444E6 inset, 0 0 15px white;
-}
-
-
 /*boutton inscription properties*/
-
 #binscription {
     background: url(../images/bouton_inscription.png);
     background-repeat: no-repeat;
