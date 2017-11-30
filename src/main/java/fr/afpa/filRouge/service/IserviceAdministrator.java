@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import fr.afpa.filRouge.model.Administrator;
 
 /**
- * @author PH GUIGUE
+ * @author RTI
  *
  */
 @Service
