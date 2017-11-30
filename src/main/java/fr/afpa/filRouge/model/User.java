@@ -22,8 +22,8 @@ public class User extends Person {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "group", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "id_group))"))
-	public Set<Groupe> getGroup() {
+	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "id_group))"))
+	public Set<Groupe> getGroupByUser() {
 		return group;
 	}
 

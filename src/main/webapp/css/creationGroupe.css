@@ -1,4 +1,10 @@
-/*Body */
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+a{
+    width: inherit;
+}
 body {
     /*Background properties*/
     background: url(../images/backgroundImage.jpg);
@@ -8,12 +14,18 @@ body {
     background-position: 0px 0px;
     height: 100%;
     width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
     background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
-    font-family: "Montserrat"
 }
-/*animation homePage background*/
 
+a {
+    width: inherit;
+}
+
+/*animation homePage background*/
 @keyframes animatedBackground {
     from {
         background-position: 0 0;
@@ -23,7 +35,14 @@ body {
     }
 }
 
-
+/*font Montserrat*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
 
 /*header properties*/
 header {
@@ -103,7 +122,7 @@ header {
 }
     
 
-/*boutton inscription properties*/
+/*boutton profil properties*/
 #bprofil {
     background-image: url(../images/006-social-2-red.png);
     background-repeat: no-repeat;
@@ -113,24 +132,35 @@ header {
     border-radius: 10px;    
 }
 
-/*bump effect on all buttons*/
-#bPROPOSER:hover,
-#bPROPOSER:focus,
-#bTROUVER:hover,
-#bTROUVER:focus,
-#bdeconnexion:hover,
-#bdeconnexion:focus,
-#bprofil:hover,
-#bprofil:focus,
-#BoutonMenuEnTete:hover,
-#BoutonMenuEnTete:focus,
-#marecherche img:hover,
-#marecherche img:focus,
-#zonerecherche:hover+ img,
-#zonerecherche:focus+ img {
-    transform: scale(1.10);
- 
+
+/*boutton connection properties*/
+#bconnexion {
+    background: url(../images/bouton_connexion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
 }
+
+/*boutton inscription properties*/
+#binscription {
+    background: url(../images/bouton_inscription.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
 
 
 /*Bloc Central*/

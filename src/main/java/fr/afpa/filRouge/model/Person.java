@@ -3,7 +3,6 @@ package fr.afpa.filRouge.model;
 import java.util.Calendar;
 import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,39 +19,15 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idUser;
-	@Column(name = "pseudo_person")
 	private String pseudoUser;
-	@Column(name = "password_person")
 	private String passwordUser;
-	@Column(name = "firstName_person")
 	private String firstNameUser;
-	@Column(name = "lastName_person")
 	private String lastNameUser;
-	@Column(name = "birthDate_person")
 	private Calendar dobUser;
-	@Column(name = "gender_person")
 	private char genderUser;
-	@Column(name = "email_person")
 	private String emailUser;
-	@Column(name = "phone_person")
 	private int phoneUser;
-	@Column(name = "description_person")
 	private String descriptionPerson;
-
-	/**
-	 * @return the descriptionPerson
-	 */
-	public String getDescriptionPerson() {
-		return descriptionPerson;
-	}
-
-	/**
-	 * @param descriptionPerson
-	 *            the descriptionPerson to set
-	 */
-	public void setDescriptionPerson(String descriptionPerson) {
-		this.descriptionPerson = descriptionPerson;
-	}
 
 	@ManyToOne
 	@JoinTable(name = "locations", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "postal_code"))
@@ -70,7 +45,6 @@ public class Person {
 		this.emailUser = emailUser;
 		this.phoneUser = phoneUser;
 	}
-
 
 	// GETTERS & SETTERS
 	/**
@@ -221,5 +195,20 @@ public class Person {
 	 */
 	public void setPhoneUser(int phoneUser) {
 		this.phoneUser = phoneUser;
+	}
+
+	/**
+	 * @return the descriptionPerson
+	 */
+	public String getDescriptionPerson() {
+		return descriptionPerson;
+	}
+
+	/**
+	 * @param descriptionPerson
+	 *            the descriptionPerson to set
+	 */
+	public void setDescriptionPerson(String descriptionPerson) {
+		this.descriptionPerson = descriptionPerson;
 	}
 }
