@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import fr.afpa.filRouge.controller.AppController;
+import fr.afpa.filRouge.controller.IndexController;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses=AppController.class)
+@ComponentScan(basePackageClasses=IndexController.class)
 public class OpenOutingsSpringBootApplication {
 
 	public static void main(String[] args) {
