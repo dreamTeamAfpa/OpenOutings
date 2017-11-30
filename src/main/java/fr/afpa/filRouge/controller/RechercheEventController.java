@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class RechcercheEventController {
+public class RechercheEventController {
 	
 	//affiche page rechercheEvent
-	@GetMapping("")
+	@GetMapping("rechercheEvent")
 	public String rechercheEvent(Model model) {
-		return "";
+		return "rechercheEvent";
 	}
 }
