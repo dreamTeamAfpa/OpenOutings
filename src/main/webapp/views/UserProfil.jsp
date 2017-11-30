@@ -23,7 +23,7 @@
                 <a href="editprofilmembre.html"><button id="bprofil"></button></a>
             </div>
             <div id="BoutonMenuEnTete">
-                <a href="menu.html"><img src="images/icone mainMenu_60x60orange_EnTete.png" title="Accéder au menu" /></a>
+                <a href="menu.html"><img src="images/icone mainMenu_60x60orange_EnTete.png" title="AccÃ©der au menu" /></a>
             </div>
         </header>
 
@@ -89,8 +89,6 @@
             <div id="buttonContact">
                 <a href="Messaging.html">Me CONTACTER</a>
             </div>
-
-
 
         </div>
 
