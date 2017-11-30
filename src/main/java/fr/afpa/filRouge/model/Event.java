@@ -9,6 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,7 +20,7 @@ import javax.persistence.Table;
  *
  */
 @Entity 
-@Table
+@Table(name="event")
 public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,12 +28,10 @@ public class Event {
 	private String titleEvent;
 	private String resumeEvent;
 	private String detailsEvent;
-	/*
-	private Administrator creator;
+	private Administrator administrator;
 	private Theme theme;
 	private Location location;
-	private Group group;
-	*/
+	//private Groupe groupe; //voir methode ManyToOne GeetGroup() , a tester
 	private int maxParticipants;
 	private int rateEvent;
 	
@@ -48,13 +50,13 @@ public class Event {
 	 */
 	public Event(int idEvent, String titleEvent, String resumeEvent, String detailsEvent, int maxParticipants,
 			int rateEvent, Calendar dateEvent) {
-		this.idEvent = idEvent;
-		this.titleEvent = titleEvent;
-		this.resumeEvent = resumeEvent;
-		this.detailsEvent = detailsEvent;
-		this.maxParticipants = maxParticipants;
-		this.rateEvent = rateEvent;
-		this.dateEvent = dateEvent;
+		setIdEvent(idEvent);
+		setTitleEvent(titleEvent);
+		setResumeEvent(resumeEvent);
+		setDetailsEvent(detailsEvent);
+		setMaxParticipants(maxParticipants);
+		setRateEvent(rateEvent);
+		setDateEvent(dateEvent);
 	}
 	
 	/**
@@ -63,12 +65,13 @@ public class Event {
 	 * @param rateEvent
 	 * @param dateEvent
 	 */
-	public Event(String titleEvent, String resumeEvent,
+	public Event(String titleEvent, String resumeEvent, Administrator administrator,
 			int rateEvent, Calendar dateEvent) {
-		this.titleEvent = titleEvent;
-		this.resumeEvent = resumeEvent;
-		this.rateEvent = rateEvent;
-		this.dateEvent = dateEvent;
+		setTitleEvent(titleEvent);
+		setResumeEvent(resumeEvent);
+		setAdministrator(administrator);
+		setRateEvent(rateEvent);
+		setDateEvent(dateEvent);
 	}
 	
 	
@@ -96,6 +99,47 @@ public class Event {
 	public void setDetailsEvent(String detailsEvent) {
 		this.detailsEvent = detailsEvent;
 	}
+	
+@OneToMany(mappedBy = "Administrator")
+@JoinTable(name = "administrator", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "id_event"))
+	public Administrator getAdministrator() {
+		return administrator;
+	}
+
+	public void setAdministrator(Administrator creator) {
+		this.administrator = creator;
+	}
+
+@OneToMany(mappedBy = "Theme")
+@JoinTable(name = "theme", joinColumns = @JoinColumn(name = "name_theme"), inverseJoinColumns = @JoinColumn(name="id_event"))
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
+
+@OneToMany(mappedBy = "Location")
+@JoinTable(name = "location", joinColumns = @JoinColumn(name = "id_location"), inverseJoinColumns = @JoinColumn(name="id_event"))
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	@ManyToOne
+	private Groupe groupe;
+	// a Tester les methodes  ManyToOne mirroir dans 2 classes
+	//public Groupe getGroupe() {
+		//return groupe;
+	//}
+
+	public void setGroupe(Groupe groupe) {
+		this.groupe = groupe;
+	}
+
 	public Calendar getDateEvent() {
 		return dateEvent;
 	}
