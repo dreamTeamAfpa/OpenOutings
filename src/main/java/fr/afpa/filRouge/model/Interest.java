@@ -19,7 +19,7 @@ public class Interest {
 
 	private String nameInterest;
 	private String descriptionInterest;
-	private Set<Groupe> groups;
+	private Set<Groupe> groupes;
 
 	@Id
 	public String getNameInterest() {
@@ -39,12 +39,12 @@ public class Interest {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "groups", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
+	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
 	public Set<Groupe> getGroups() {
-		return groups;
+		return groupes;
 	}
 
 	public void setGroups(Set<Groupe> groups) {
-		this.groups = groups;
+		this.groupes = groups;
 	}
 }
