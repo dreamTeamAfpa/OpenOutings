@@ -4,10 +4,8 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.stereotype.Service;
-
 
 import fr.afpa.filRouge.model.GeographicalArea;
 
@@ -23,13 +21,12 @@ public interface IserviceGeographicalArea {
 
 	    public GeographicalArea getOne(String nameArea);
 
-	    public void modifiedOne(String nameArea, String descriptionArea);
+	    public void modifiedOne(GeographicalArea geographicalArea);
 
 	    public void addGeographicalArea(GeographicalArea geographicalArea);
 
-	    public void delGeographicalArea(String nameArea);
+	    public void delGeographicalArea(GeographicalArea geographicalArea);
 
-	    public Set<GeographicalArea> findGeographicalArea();
+	
 
-	    public  GeographicalArea getOne(String nameArea, String descriptionArea);
 	}

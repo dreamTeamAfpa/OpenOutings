@@ -4,8 +4,6 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
-import java.util.Set;
-
 
 import fr.afpa.filRouge.model.GeographicalArea;
 import fr.afpa.filRouge.repository.GeographicalAreaRepository;
@@ -29,36 +27,26 @@ public class ServiceGeographicalArea implements IserviceGeographicalArea {
 	@Override
 	public GeographicalArea getOne(String nameArea) {
 		// TODO Auto-generated method stub
-		return geographicalAreaRepository.findOne(nameArea);
+		return geographicalAreaRepository.findByNameAreaAllIgnoreCase(nameArea);
 	}
 
 	@Override
-	public void modifiedOne(String nameArea, String descriptionArea) {
-		geographicalAreaRepository.modifiedOne(nameArea, descriptionArea);
+	public void modifiedOne(GeographicalArea geographicalArea) {
+		geographicalAreaRepository.save(geographicalArea);
 		
 	}
 
 	@Override
 	public void addGeographicalArea(GeographicalArea geographicalArea) {
-		geographicalAreaRepository.addGeographicalArea(geographicalArea);		
+		geographicalAreaRepository.save(geographicalArea);		
 	}
 
 	@Override
-	public void delGeographicalArea(String nameArea) {
-		geographicalAreaRepository.delGeographicalArea(nameArea);
+	public void delGeographicalArea(GeographicalArea geographicalArea) {
+		geographicalAreaRepository.delete(geographicalArea);
 		
 	}
 
-	@Override
-	public Set<GeographicalArea> findGeographicalArea() {
-		// TODO Auto-generated method stub
-		return geographicalAreaRepository.findGeographicalArea();
-	}
 
-	@Override
-	public GeographicalArea getOne(String nameArea, String descriptionArea) {
-		// TODO Auto-generated method stub
-		return geographicalAreaRepository.findOne(nameArea, descriptionArea);
-	}
 
 }
