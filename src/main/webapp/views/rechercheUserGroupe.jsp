@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>recherche utilisateurs et groupes</title>
+ <link rel="stylesheet" type="text/css" href="css/rechercheUserGroupe.css">
 </head>
 <body>
 <header>
@@ -26,14 +27,7 @@
 <div id="bodyCenter">
     <div id="content" ><span class="titleMain"><a href="Groupe.Html"> Montpellier Bowling <img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/></a></span>
        
-        <span class="title"><a href="ProfilMembre.Html" ><img class="iconProfil" src="images/006-social-2-red.png"/>The Dude</a></br></span>
-        <span class="title"><img class="iconProfil" src="images/006-social-2-red.png"/>Riri</br></span>
-        <span class="title"><img class="iconProfil" src="images/006-social-2-red.png"/>Fifi</br></span>
-        <span class="titleMain">Montpellier Musique <img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/> </span>
-        <span class="title"><img class="iconProfil" src="images/006-social-2-red.png"/>Titi</br></span>
-        <span class="title"><img class="iconProfil" src="images/006-social-2-red.png"/>Tutu</br></span>
-        <span class="title"><img class="iconProfil" src="images/006-social-2-red.png"/>Toto</br></span>
-        
+	        
     </div>
     <div class="parent">
         <th class="choix"><select id="iChoixLieux">
