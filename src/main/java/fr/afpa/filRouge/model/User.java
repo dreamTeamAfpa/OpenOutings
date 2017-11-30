@@ -6,7 +6,7 @@ import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import fr.apfa.filrouge.model.Person;
+
 
 @Entity
 @Table(name = "user")
