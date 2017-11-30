@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "geographicalArea")
-public class GeographicalAral {
+public class GeographicalArea {
 
 	private String nameArea;
 	private String descriptionArea;

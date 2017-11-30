@@ -1,16 +1,15 @@
-/**
- * 
- */
 package fr.afpa.filRouge.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import fr.afpa.filRouge.model.Interest;
+
 /**
  * @author 34011-79-09
  *
  */
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import fr.afpa.filRouge.model.Event;
-
 @Repository
-public interface EventRepository extends JpaRepository<Event,Integer>{
+public interface InterestRepository extends JpaRepository<Interest, Integer> {
+
 }
