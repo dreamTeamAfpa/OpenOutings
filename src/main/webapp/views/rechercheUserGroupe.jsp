@@ -25,12 +25,14 @@
     
 </div>
 <div id="bodyCenter">
-    <div id="content" ><span class="titleMain"><a href="Groupe.Html"> Montpellier Bowling <img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/></a></span>
+    <div id="content" ><span class="titleMain"><a href="Groupe.Html">${nameGroup}<img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/></a></span>
        
 	        
     </div>
     <div class="parent">
-        <th class="choix"><select id="iChoixLieux">
+    <form name="rechercheGroup" action="<c:url value='rechercheUserGroupe'/>"
+					method="get">
+       <select name ="iChoixLieux" id="iChoixLieux">
             <option value="Lieux">LIEUX</option>
             <option  value="Montpellier">MONTPELLIER</option>
             <option value="Sete">SETE</option>
@@ -38,18 +40,19 @@
             <option value="Paris">PARIS</option>
             <option value="Marseille">MARSEILLE</option>
             <option value="Lille">LILLE</option>
-        </select></th>
-        <th class="choix"><select id="iChoixGroupe">
+        </select>
+        <select name ="iChoixGroupe"id="iChoixGroupe">
             <option value="Groupe">GROUPES</option>
             <option  value="Sport">SPORT</option>
             <option value="Culture">CULTURE</option>
             <option value="GoOut">GO OUT</option>
-        </select></th>
+        </select>
+        </form>
         <br/>
         <input type="text" name="Pseudo" placeholder="Pseudo ou Details recherche" class="choix"/>
         <br/>
         <br/>
-        <input type="button" name="valider" value="Valider" id="vBoutton"/>
+        <input type="button" name="valider" value="Valider" id="vBoutton" onclick="document.rechercheGroup.submit()"/>
     </div>
 </div>
 <div id="bodyRight"> 
