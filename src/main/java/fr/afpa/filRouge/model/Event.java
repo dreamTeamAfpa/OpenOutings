@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author 34011-79-08
+ * @author L. CASTAGNEDOLI
  *
  */
 @Entity 
@@ -37,7 +37,8 @@ public class Event {
 	
 	
 	
-	
+	public Event() {
+	}
 	
 	/**
 	 * @param idEvent

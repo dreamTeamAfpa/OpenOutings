@@ -3,7 +3,7 @@
  */
 package fr.afpa.filRouge.repository;
 /**
- * @author 34011-79-09
+ * @author L. CASTAGNEDOLI
  *
  */
 import org.springframework.data.jpa.repository.JpaRepository;
