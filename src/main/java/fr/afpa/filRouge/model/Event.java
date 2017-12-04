@@ -4,7 +4,6 @@
 package fr.afpa.filRouge.model;
 
 import java.util.Calendar;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author 34011-79-08
+ * @author L. CASTAGNEDOLI
  *
  */
 @Entity 
@@ -28,6 +27,7 @@ public class Event {
 	private String titleEvent;
 	private String resumeEvent;
 	private String detailsEvent;
+	private Calendar dateEvent;
 	private Administrator administrator;
 	private Theme theme;
 	private Location location;
@@ -37,7 +37,8 @@ public class Event {
 	
 	
 	
-	
+	public Event() {
+	}
 	
 	/**
 	 * @param idEvent
@@ -158,19 +159,7 @@ public class Event {
 	public void setRateEvent(int rateEvent) {
 		this.rateEvent = rateEvent;
 	}
-	private Calendar dateEvent;
+	
 	
 
 }
-/*
-`id_event` INT(11) NOT NULL AUTO_INCREMENT,
-  `title_event` VARCHAR(50) NULL DEFAULT NULL,
-  `description_event` VARCHAR(240) NULL DEFAULT NULL,
-  `details_event` VARCHAR(240) NULL DEFAULT NULL,
-  `date_event` DATE NULL DEFAULT NULL,
-  `rate_event` DECIMAL(15,3) NULL DEFAULT NULL,
-  `maxParticipants` INT(11) NOT NULL,
-  `postal_code` INT(11) NOT NULL,
-  `id_Groupe` INT(11) NOT NULL,
-  `administrator_id_person` INT(11) NOT NULL,
-*/
