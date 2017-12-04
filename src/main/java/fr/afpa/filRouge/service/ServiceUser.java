@@ -32,6 +32,11 @@ public class ServiceUser implements IserviceUser {
 		return users;
 	}
 
+	public User findOneByUsername(String username) {
+		User users = userRepository.findOne(username);
+		return null;
+	}
+
 	@Override
 	public void addUser(User user) {
 		userRepository.save(user);
@@ -45,7 +50,7 @@ public class ServiceUser implements IserviceUser {
 	@Override
 	public void modifiedOne(User user) {
 		userRepository.save(user);
-		
+
 	}
 
 }

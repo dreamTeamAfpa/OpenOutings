@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Page de connexion</title>
+<title>Login Page</title>
 <link rel="stylesheet" href="/css/animate.css">
 <link rel="stylesheet" href="/css/signIn.css">
 <link rel="stylesheet"
@@ -38,16 +38,17 @@
 				<h2>Connexion</h2>
 			</div>
 
-			<form class="form" method="get" action="#">
-				<label for="username">Nom d'utilisateur</label> <br> <input
-					type="text" id="username" required="" autofocus=""> <br>
-				<label for="password">Mot de passe</label> <br> <input
-					type="password" id="password" required=""> <br>
+			<form class="form" method="get" action="validateSignIn">
+				<label for="username">Nom d'utilisateur</label> <br> 
+				<input type="text" id="username" required="" autofocus=""> <br>
+				<label for="password">Mot de passe</label> <br> 
+				<input type="password" id="password" required=""> <br>
+				<p ${messageReturn}>
 				<button type="submit" id="connectBtn">Se connecter</button>
 				<br> <a href="#"><p class="small">Mot de passe perdu?</p></a>
 			</form>
 		</div>
-
+		
 		<!-- on inclut la bibliothèque depuis les serveurs de Google -->
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="/script/OO_signIn.js"></script>

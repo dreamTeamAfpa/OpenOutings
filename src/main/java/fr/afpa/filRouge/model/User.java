@@ -1,4 +1,3 @@
-
 package fr.afpa.filRouge.model;
 
 import java.util.Set;
