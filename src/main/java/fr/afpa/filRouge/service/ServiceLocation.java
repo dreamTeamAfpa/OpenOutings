@@ -3,13 +3,12 @@
  */
 package fr.afpa.filRouge.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Location;
-import fr.afpa.filRouge.repository.LocationRepository;
+import fr.afpa.filRouge.repository.ILocationRepository;
 
 /**
  * @author FR DESCOMBES
@@ -18,9 +17,9 @@ import fr.afpa.filRouge.repository.LocationRepository;
 @Service
 public class ServiceLocation implements IserviceLocation {
 
-	private LocationRepository locationRepository;
+	private ILocationRepository locationRepository;
 
-	public ServiceLocation(LocationRepository locationRepository) {
+	public ServiceLocation(ILocationRepository locationRepository) {
 		this.locationRepository = locationRepository;
 	}
 

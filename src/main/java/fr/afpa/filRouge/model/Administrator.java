@@ -1,8 +1,10 @@
 package fr.afpa.filRouge.model;
 
-import java.util.Calendar;
+
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -10,14 +12,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="administrator")
 public class Administrator extends Person{
-	
 
-	public Administrator(int idUser, String pseudoUser, String passwordUser, String firstNameUser, String lastNameUser,
-			Calendar dobUser, char genderUser, String emailUser, int phoneUser) {
-		super(idUser, pseudoUser, passwordUser, firstNameUser, lastNameUser, dobUser, genderUser, emailUser, phoneUser);
-		// TODO Auto-generated constructor stub
-	}
+@OneToMany
+private List<Groupe> groupes;
 
+/**
+ * @return the groupes
+ */
+public List<Groupe> getGroupes() {
+	return groupes;
+}
+
+/**
+ * @param groupes the groupes to set
+ */
+public void setGroupes(List<Groupe> groupes) {
+	this.groupes = groupes;
+}
 
 
 }

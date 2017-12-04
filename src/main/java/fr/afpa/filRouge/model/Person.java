@@ -7,17 +7,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.tools.DocumentationTool.Location;
 
 @Entity
-@Table(name = "person")
+@Table(name = "Person")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private int idUser;
 	private String pseudoUser;
 	private String passwordUser;
@@ -29,35 +32,20 @@ public class Person {
 	private int phoneUser;
 	private String descriptionPerson;
 
-	@ManyToOne
-	@JoinTable(name = "locations", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "postal_code"))
-	private Set<Location> location;
-
-	// CONSTRUCTOR USING ALL FIELDS
-	public Person(int idUser, String pseudoUser, String passwordUser, String firstNameUser, String lastNameUser,
-			Calendar dobUser, char genderUser, String emailUser, int phoneUser) {
-		this.idUser = idUser;
-		this.pseudoUser = pseudoUser;
-		this.firstNameUser = firstNameUser;
-		this.lastNameUser = lastNameUser;
-		this.dobUser = dobUser;
-		this.genderUser = genderUser;
-		this.emailUser = emailUser;
-		this.phoneUser = phoneUser;
-	}
+	private Location location;
+	private Set<Interest> interests;
 
 	// GETTERS & SETTERS
-	/**
-	 * @return the idUser
-	 */
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getIdUser() {
 		return idUser;
 	}
 
-	/**
-	 * @return the location
-	 */
-	public Set<Location> getLocation() {
+	@OneToOne(mappedBy = "Location")
+	@JoinTable(name = "location", joinColumns = @JoinColumn(name = "postal_code"))
+	public Location getLocation() {
 		return location;
 	}
 
@@ -65,8 +53,22 @@ public class Person {
 	 * @param location
 	 *            the location to set
 	 */
-	public void setLocation(Set<Location> location) {
+	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	@OneToMany(mappedBy = "Interest")
+	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_person"))
+	public Set<Interest> getInterests() {
+		return interests;
+	}
+
+	/**
+	 * @param interests
+	 *            the interests to set
+	 */
+	public void setInterests(Set<Interest> interests) {
+		this.interests = interests;
 	}
 
 	/**

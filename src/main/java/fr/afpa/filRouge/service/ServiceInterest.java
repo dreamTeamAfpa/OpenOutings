@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Interest;
-import fr.afpa.filRouge.repository.InterestRepository;
+import fr.afpa.filRouge.repository.IInterestRepository;
 
 /**
  * @author PH GUIGUE
@@ -17,8 +17,8 @@ import fr.afpa.filRouge.repository.InterestRepository;
 @Service
 public class ServiceInterest implements IserviceInterest {
 	
-	private InterestRepository interestRepository;
-	public ServiceInterest(InterestRepository interestRepository) {
+	private IInterestRepository interestRepository;
+	public ServiceInterest(IInterestRepository interestRepository) {
 		this.interestRepository= interestRepository;
 		}
 
