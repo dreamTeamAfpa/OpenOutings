@@ -1,12 +1,9 @@
 
 package fr.afpa.filRouge.model;
 
-import java.util.Calendar;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -14,21 +11,22 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User extends Person {
 
-	private Set<Groupe> group;
+@ManyToMany
+private Set<Groupe> groupes;
 
-	public User(int idUser, String pseudoUser, String passwordUser, String firstNameUser, String lastNameUser,
-			Calendar dobUser, char genderUser, String emailUser, int phoneUser) {
-		super(idUser, pseudoUser, passwordUser, firstNameUser, lastNameUser, dobUser, genderUser, emailUser, phoneUser);
-	}
+/**
+ * @return the groupes
+ */
+public Set<Groupe> getGroupes() {
+	return groupes;
+}
 
-	@ManyToMany
-	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "id_group))"))
-	public Set<Groupe> getGroupByUser() {
-		return group;
-	}
+/**
+ * @param groupes the groupes to set
+ */
+public void setGroupes(Set<Groupe> groupes) {
+	this.groupes = groupes;
+}
 
-	public void setGroup(Set<Groupe> group) {
-		this.group = group;
-	}
 
 }
