@@ -7,30 +7,30 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import fr.afpa.filRouge.model.Administrator;
+import fr.afpa.filRouge.model.Person;
 
-public class AdministratorRepository implements IAdministratorRepository{
+public class PersonneRepository implements IPersonRepository {
 
 	@Override
-	public List<Administrator> findAll() {
+	public List<Person> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Administrator> findAll(Sort sort) {
+	public List<Person> findAll(Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Administrator> findAll(Iterable<Integer> ids) {
+	public List<Person> findAll(Iterable<Integer> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> List<S> save(Iterable<S> entities) {
+	public <S extends Person> List<S> save(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -38,59 +38,59 @@ public class AdministratorRepository implements IAdministratorRepository{
 	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public <S extends Administrator> S saveAndFlush(S entity) {
+	public <S extends Person> S saveAndFlush(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteInBatch(Iterable<Administrator> entities) {
+	public void deleteInBatch(Iterable<Person> entities) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteAllInBatch() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public Administrator getOne(Integer id) {
+	public Person getOne(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> List<S> findAll(Example<S> example) {
+	public <S extends Person> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> List<S> findAll(Example<S> example, Sort sort) {
+	public <S extends Person> List<S> findAll(Example<S> example, Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Page<Administrator> findAll(Pageable pageable) {
+	public Page<Person> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> S save(S entity) {
+	public <S extends Person> S save(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Administrator findOne(Integer id) {
+	public Person findOne(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -110,50 +110,49 @@ public class AdministratorRepository implements IAdministratorRepository{
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void delete(Administrator entity) {
+	public void delete(Person entity) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void delete(Iterable<? extends Administrator> entities) {
+	public void delete(Iterable<? extends Person> entities) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteAll() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public <S extends Administrator> S findOne(Example<S> example) {
+	public <S extends Person> S findOne(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> Page<S> findAll(Example<S> example, Pageable pageable) {
+	public <S extends Person> Page<S> findAll(Example<S> example, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Administrator> long count(Example<S> example) {
+	public <S extends Person> long count(Example<S> example) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public <S extends Administrator> boolean exists(Example<S> example) {
+	public <S extends Person> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	
 }

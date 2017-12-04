@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Administrator;
-import fr.afpa.filRouge.repository.AdministratorRepository;
+import fr.afpa.filRouge.repository.IAdministratorRepository;
 
 /**
  * @author RTI
@@ -17,22 +17,20 @@ import fr.afpa.filRouge.repository.AdministratorRepository;
 @Service
 public class ServiceAdministrator implements IserviceAdministrator {
 	
-	private AdministratorRepository administratorRepository;
+	private IAdministratorRepository administratorRepository;
 	
-	public ServiceAdministrator(AdministratorRepository administratorRepository) {
+	public ServiceAdministrator(IAdministratorRepository administratorRepository) {
 		this.administratorRepository = administratorRepository;
 	}
 
 	@Override
-	public List<Administrator> getAll() {
-		List<Administrator> administrators = administratorRepository.findAll();
-		return administrators;
+	public List<Administrator> getAll() {		
+		return administratorRepository.findAll();
 	}
 
 	@Override
 	public Administrator getOne(int id) {
-		Administrator administrator = administratorRepository.getOne(id);
-		return administrator;
+		return administratorRepository.findOne(id);
 	}
 
 	@Override

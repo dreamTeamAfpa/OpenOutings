@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.GeographicalArea;
-import fr.afpa.filRouge.repository.GeographicalAreaRepository;
+import fr.afpa.filRouge.repository.IGeographicalAreaRepository;
 
 /**
  * @author PH GUIGUE
@@ -16,8 +16,8 @@ import fr.afpa.filRouge.repository.GeographicalAreaRepository;
  */
 @Service
 public class ServiceGeographicalArea implements IserviceGeographicalArea {
-	private GeographicalAreaRepository geographicalAreaRepository;
-	public ServiceGeographicalArea(GeographicalAreaRepository geographicalAreaRepository) {
+	private IGeographicalAreaRepository geographicalAreaRepository;
+	public ServiceGeographicalArea(IGeographicalAreaRepository geographicalAreaRepository) {
 		this.geographicalAreaRepository= geographicalAreaRepository;
 		}
 

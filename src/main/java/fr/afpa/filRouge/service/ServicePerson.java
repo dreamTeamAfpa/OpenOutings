@@ -6,7 +6,7 @@ package fr.afpa.filRouge.service;
 import java.util.List;
 
 import fr.afpa.filRouge.model.Person;
-import fr.afpa.filRouge.repository.PersonRepository;
+import fr.afpa.filRouge.repository.IPersonRepository;
 
 /**
  * @author FR DESCOMBES
@@ -14,9 +14,9 @@ import fr.afpa.filRouge.repository.PersonRepository;
  */
 public class ServicePerson implements IservicePerson {
 
-	private PersonRepository personRepository;
+	private IPersonRepository personRepository;
 
-	public ServicePerson(PersonRepository personRepository) {
+	public ServicePerson(IPersonRepository personRepository) {
 		this.personRepository = personRepository;
 	}
 
