@@ -33,7 +33,7 @@ public class ServiceUser implements IserviceUser {
 	}
 
 	public User findOneByUsername(String username) {
-		User users = userRepository.findOne(username);
+		User users = ((ServiceUser) userRepository).findOneByUsername(username);
 		return null;
 	}
 
