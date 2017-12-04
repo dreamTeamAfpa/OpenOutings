@@ -18,5 +18,5 @@ public interface IserviceEvent {
 	
 	public void updateEvent(Event event);
 	
-	public void deleteEvent(int idEvent);
+	public void deleteEvent(Event event);
 }

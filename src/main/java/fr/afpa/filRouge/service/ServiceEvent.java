@@ -6,41 +6,39 @@ package fr.afpa.filRouge.service;
 import java.util.ArrayList;
 
 import fr.afpa.filRouge.model.Event;
+import fr.afpa.filRouge.repository.EventRepository;
 
 /**
  * @author L. CASTAGNEDOLI
  *
  */
 public class ServiceEvent implements IserviceEvent {
-
-	@Override
+	
+	private EventRepository eventRepository;
+	
+	public ServiceEvent(EventRepository eventRepository) {
+		this.eventRepository = eventRepository;
+	}
+	
 	public void addEvent(Event event) {
-		// TODO Auto-generated method stub
+		eventRepository.save(event);
 		
 	}
 
-	@Override
 	public Event getOneEvent(int idEvent) {
-		// TODO Auto-generated method stub
-		return null;
+		return eventRepository.getOne(idEvent);
 	}
 
-	@Override
 	public ArrayList<Event> getAllEvent() {
-		// TODO Auto-generated method stub
-		return null;
+		return (ArrayList<Event>) eventRepository.findAll();
 	}
 
-	@Override
 	public void updateEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+		eventRepository.save(event);
 	}
 
-	@Override
-	public void deleteEvent(int idEvent) {
-		// TODO Auto-generated method stub
-		
+	public void deleteEvent(Event event) {
+		eventRepository.delete(event);
 	}
 
 }
