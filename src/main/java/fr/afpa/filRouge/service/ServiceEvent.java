@@ -21,7 +21,7 @@ public class ServiceEvent implements IserviceEvent {
 	}
 	
 	public void addEvent(Event event) {
-		eventRepository.save(event);
+		eventRepository.create(event);
 		
 	}
 
@@ -34,11 +34,11 @@ public class ServiceEvent implements IserviceEvent {
 	}
 
 	public void updateEvent(Event event) {
-		eventRepository.save(event);
+		eventRepository.update(event);
 	}
 
 	public void deleteEvent(Event event) {
-		eventRepository.delete(event);
+		eventRepository.delete(event.getIdEvent());
 	}
 
 }
