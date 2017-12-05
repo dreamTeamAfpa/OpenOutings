@@ -1,26 +1,43 @@
 package fr.afpa.filRouge.repository;
-/**
- * @author L. CASTAGNEDOLI
- *
- */
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.ArrayList;
 import java.util.List;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-
-
 import fr.afpa.filRouge.model.Event;
+import fr.afpa.filRouge.model.Location;
+import fr.afpa.filRouge.model.Theme;
 
-public class EventRepository implements IEventRepository {
+public class EventRepository {
 
-	@Override
-	public List<Event> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	IEventRepository eventRepo;
+	
+	public ArrayList<Event> findByTheme(Theme theme) {
+		return eventRepo.findByTheme(theme);
 	}
+	
+	public List<Event> findByLocation(Location location) {
+		return eventRepo.findByLocation(location);
+	}
+	
+	public List<Event> findAll() {
+		return eventRepo.findAll();
+	}
+	
+	public Event getOne(int idEvent) {
+		return eventRepo.getOne(idEvent);
+	}
+	
+	public void delete(int idEvent) {
+		eventRepo.delete(idEvent);
+	}
+	
+	public void update(Event event) {
+		eventRepo.save(event);
+	}
+	
+	public void create(Event event) {
+		eventRepo.save(event);
+	}
+/*	
+	
 
 	@Override
 	public List<Event> findAll(Sort sort) {
@@ -64,11 +81,7 @@ public class EventRepository implements IEventRepository {
 
 	}
 
-	@Override
-	public Event getOne(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public <S extends Event> List<S> findAll(Example<S> example) {
@@ -112,11 +125,7 @@ public class EventRepository implements IEventRepository {
 		return 0;
 	}
 
-	@Override
-	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void delete(Event entity) {
@@ -159,5 +168,5 @@ public class EventRepository implements IEventRepository {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+*/
 }
