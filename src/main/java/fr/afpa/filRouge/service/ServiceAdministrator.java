@@ -5,8 +5,8 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import fr.afpa.filRouge.model.Administrator;
 import fr.afpa.filRouge.repository.IAdministratorRepository;
 
@@ -16,15 +16,16 @@ import fr.afpa.filRouge.repository.IAdministratorRepository;
  */
 @Service
 public class ServiceAdministrator implements IserviceAdministrator {
-	
+
+	@Autowired
 	private IAdministratorRepository administratorRepository;
-	
+
 	public ServiceAdministrator(IAdministratorRepository administratorRepository) {
 		this.administratorRepository = administratorRepository;
 	}
 
 	@Override
-	public List<Administrator> getAll() {		
+	public List<Administrator> getAll() {
 		return administratorRepository.findAll();
 	}
 
@@ -47,10 +48,5 @@ public class ServiceAdministrator implements IserviceAdministrator {
 	public void modifiedOne(Administrator administrator) {
 		administratorRepository.save(administrator);
 	}
-	
-	
-	
-	
-	
 
 }
