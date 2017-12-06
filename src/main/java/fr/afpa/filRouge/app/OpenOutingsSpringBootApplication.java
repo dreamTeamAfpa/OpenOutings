@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import fr.afpa.filRouge.controller.IndexController;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses=IndexController.class)
+@ComponentScan("fr.afpa.filRouge")
 public class OpenOutingsSpringBootApplication {
 
 	public static void main(String[] args) {
