@@ -12,22 +12,7 @@
 </head>
 
 <body>
-	<header>
-		<div id="blockheader">
-			<a href="../ImplementationHomePage/index(1).html">
-				<div id="logoEnTete">
-					<img
-						src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png"
-						title="Page d'Accueil" />
-				</div>
-
-				<div id="BoutonMenuEnTete">
-					<a href="../Implementation Menu/page_menuV1.3.html"><img
-						src="images/iconeMainMenu_60x60orange_EnTete.png"
-						title="Accéder au menu" /></a>
-				</div>
-		</div>
-	</header>
+	<header> </header>
 
 	<div class="container">
 		<div class="top">
@@ -40,18 +25,20 @@
 
 			<form class="form" method="get" action="#">
 				<label for="username">Nom d'utilisateur</label> <br> <input
-					type="text" id="username" required="" autofocus=""> <br>
-				<label for="password">Mot de passe</label> <br> <input
-					type="password" id="password" required=""> <br>
+					type="text" id="username"> <br> <label for="password">Mot
+					de passe</label> <br> <input type="password" id="password"> <br>
 				<button type="submit" id="connectBtn">Se connecter</button>
-				<br> <a href="#"><p class="small">Mot de passe perdu?</p></a>
+				<p>
+					<a href="#" class="small">Mot de passe perdu?</a>
+				</p>
 			</form>
 		</div>
+	</div>
+	<!-- on inclut la bibliothèque depuis les serveurs de Google -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/script/OO_signIn.js"></script>
 
-		<!-- on inclut la bibliothèque depuis les serveurs de Google -->
-		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="/script/OO_signIn.js"></script>
-		
 	<%@include file="/views/footer.jsp"%>
 
 </body>

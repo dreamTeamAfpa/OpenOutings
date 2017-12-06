@@ -1,5 +1,4 @@
 body{
-	
 	background-image: url(../images/backgroundImage.jpg);
 	opacity: 0.95;
 	 height: 100%;
@@ -8,23 +7,25 @@ body{
      background-attachment: fixed;
     background-size: cover;
     background-color: snow;
-
-
 }
+
 h1{
 	font-family: "Montserrat"; text-align: center;
 	vertical-align: bottom; font-weight: bold;
 	color: whitesmoke; text-shadow: 2px 2px 4px #000000;
 }
+
 .parent{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
+
 .menu{
 	position: relative;
 	top: 20% ;  margin-top: 3%;
 }
+
 @font-face{
 	font-family: "Montserrat";
 	src :local("Montserrat_Bold"),url (montserrat_bold.ttf);

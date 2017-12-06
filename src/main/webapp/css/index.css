@@ -4,6 +4,7 @@ html {
 }
 a{
     width: inherit;
+	color: white;text-decoration: none;
 }
 body {
     /*Background properties*/
@@ -20,7 +21,20 @@ body {
     background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
 }
-
+h1{
+	font-family: "Montserrat"; text-align: center;
+	vertical-align: bottom; font-weight: bold;
+	color: whitesmoke; text-shadow: 2px 2px 4px #000000;
+}
+.parent{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.menu{
+	position: relative;
+	top: 20% ;  margin-top: 3%;
+}
 a {
     width: inherit;
 }
@@ -272,7 +286,9 @@ header {
 #bconnexion:hover,
 #bconnexion:focus,
 #binscription:hover,
-#binscription:focus {
+#binscription:focus,
+.parent a:focus,
+.parent a:hover {
     transform: scale(1.10);
     box-shadow: 0 0 40px rgba(254, 101, 57, 0.5) inset, 0 0 20px rgba(116, 68, 230, 1) inset, 0 0 15px rgba(251, 235, 100, 1);
 }

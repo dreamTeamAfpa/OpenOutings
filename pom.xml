@@ -23,17 +23,16 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<!-- <dependency>
+		 <dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-		</dependency> -->
-		<!-- Use MySQL Connector-J -->
-<!-- 		<dependency>
+		</dependency> 
+		
+ 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency> -->
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>

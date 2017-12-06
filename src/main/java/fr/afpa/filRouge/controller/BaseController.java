@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BaseController {
 
 	// affiche page index
-	@GetMapping("")
+	@GetMapping({"","index"})
 	public String index(Model model) {
 		return "index";
 	}
+	
 	
 	// affiche page menu
 	@GetMapping("menu")
