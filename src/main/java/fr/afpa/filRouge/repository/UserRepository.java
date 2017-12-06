@@ -11,6 +11,8 @@ import fr.afpa.filRouge.model.User;
 
 public class UserRepository implements IUserRepository {
 
+	private User user;
+
 	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
@@ -153,6 +155,12 @@ public class UserRepository implements IUserRepository {
 	public <S extends User> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public User findByUsername(String username) {
+
+		// TODO Auto-generated method stub
+		return user;
 	}
 
 }

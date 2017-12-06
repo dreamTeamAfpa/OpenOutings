@@ -50,7 +50,10 @@ public class ServiceUser implements IserviceUser {
 	@Override
 	public void modifiedOne(User user) {
 		userRepository.save(user);
+	}
 
+	public void save(User userForm) {
+		userRepository.save(userForm);
 	}
 
 }
