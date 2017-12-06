@@ -7,12 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class IndexController {
+public class BaseController {
 
 	// affiche page index
 	@GetMapping("")
 	public String index(Model model) {
 		return "index";
+	}
+	
+	// affiche page menu
+	@GetMapping("menu")
+	public String menu(Model model) {
+		return "menu";
 	}
 
 }

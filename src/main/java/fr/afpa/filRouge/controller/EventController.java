@@ -15,11 +15,11 @@ public class EventController {
 	//affiche pas CreateEvent
 	@GetMapping("createEvent")
 	public String createEvent(Model model) {
-		return "CreateEvent";
+		return "createEvent";
 	}
 	//affiche page rechercheEvent
-	@GetMapping("rechercheEvent")
+	@GetMapping("findEvent")
 	public String rechercheEvent(Model model) {
-		return "rechercheEvent";
+		return "findEvent";
 	}
 }

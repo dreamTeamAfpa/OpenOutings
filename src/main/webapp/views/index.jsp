@@ -20,28 +20,12 @@
     <div id="titrelogo">Open Outings</div>
     <div id="contener">
         <div>
-            <a href="signIn.html"><input type="button" id="bPROPOSER" title="Proposer une sortie !" /></a>
-            <div id="formulaireconnexion">
-                <input type="text" value="Login" />
-                <br/>
-                <input type="text" value="Password" />
-                <br/>
-                <input type="button" value="VALIDER" />
-                <br/>
-                <a href="#" class="bDevenirMembre">Pas encore OUTER! Veuillez créer un compte</a>
-            </div>
+            <a href="createEvent"><input type="button" id="bPROPOSER" title="Proposer une sortie !" /></a>
+           
         </div>
         <div>
-            <a href="rechercheEvent.html"><input type="button" id="bTROUVER" title="Trouver une sortie !" /></a>
-            <div id="formulaireAfficheEvent">
-                <span><img src="images/aaron-paul-213841.jpg"></span>
-                <span><img src="images/adam-birkett-347694.jpg"></span>
-                <span><img src="images/andre-hunter-254689.jpg"></span>
-                <span><img src="images/annie-spratt-125331.jpg"></span>
-                <span><img src="images/annie-spratt-125331.jpg"></span>
-                <span><img src="images/annie-spratt-125331.jpg"></span>
-                <span><img src="images/annie-spratt-125331.jpg"></span>
-            </div>
+            <a href="findEvent"><input type="button" id="bTROUVER" title="Trouver une sortie !" /></a>
+            
         </div>
     </div>
     

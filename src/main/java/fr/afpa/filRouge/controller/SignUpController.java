@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SignUpController {
 
 	//affiche page signUp
-	@GetMapping("sign_up")
+	@GetMapping("signUp")
 	public String signUp(Model model) {
 		return "sign_up";
 	}

@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class MenuController {
 	
-	// affiche page menu
-	@GetMapping("menu")
-	public String menu(Model model) {
-		return "menu";
-	}
+
 
 }
