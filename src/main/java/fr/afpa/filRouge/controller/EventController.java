@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class CreateEventController {
+public class EventController {
 	
 	//affiche pas CreateEvent
 	@GetMapping("createEvent")
 	public String createEvent(Model model) {
 		return "CreateEvent";
 	}
-
+	//affiche page rechercheEvent
+	@GetMapping("rechercheEvent")
+	public String rechercheEvent(Model model) {
+		return "rechercheEvent";
+	}
 }

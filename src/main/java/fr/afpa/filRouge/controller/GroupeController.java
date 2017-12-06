@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class RechercheUserGroupeController {
+public class GroupeController {
 	
 	//affiche la page rechercheUserGroupe
 	@GetMapping("rechercheUserGroupe")
