@@ -282,11 +282,11 @@ header {
     color: black;
 }
 .titleMain{
-    background-color:  rgba(175, 47, 117, 0.5);font-family: "Montserrat"; color: white;
+    background-color:  rgba(251, 235, 100, 0.5);font-family: "Montserrat"; color: white;
     border-radius: 10px;
 }
 .titleMain a{
-    color: white;
+    color: red;font-weight: bold;
 }
 #iChoixGroupe{
     background-color: white; font-family: "Montserrat";

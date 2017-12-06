@@ -26,6 +26,24 @@ public class Groupe {
 	private Set<Event> events;
 	private Set<User> users;
 
+	public Groupe(int idGroup, String nameGroup, String descriptionGroup, Boolean permanent) {
+		// TODO Auto-generated constructor stub
+		this.idGroup = idGroup;
+		this.nameGroup = nameGroup;
+		this.descriptionGroup = descriptionGroup;
+		this.permanent = permanent;
+		
+	}
+
+	public Groupe() {
+	}
+
+	@Override
+	public String toString() {
+		return "Groupe [idGroup=" + idGroup + ", nameGroup=" + nameGroup + ", descriptionGroup=" + descriptionGroup
+				+ ", permanent=" + permanent + ", administrator=" + administrator + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getIdGroup() {
@@ -43,6 +61,7 @@ public class Groupe {
 	public void setNameGroup(String nameGroup) {
 		this.nameGroup = nameGroup;
 	}
+
 	public Boolean getPermanent() {
 		return permanent;
 	}
@@ -64,28 +83,43 @@ public class Groupe {
 	public Administrator getAdministratorByGroup(int idGroup) {
 		return administrator;
 	}
+
 	public void setAdministratorByGroup(Administrator administrator) {
 		this.administrator = administrator;
 	}
+
 	@OneToMany(mappedBy = "Event")
-	@JoinTable( name = "event",joinColumns= @JoinColumn(name ="id_Groupe"),inverseJoinColumns =  @JoinColumn(name = "id_event"))
-	public Set<Event> getEventByGroup(){
+	@JoinTable(name = "event", joinColumns = @JoinColumn(name = "id_Groupe"), inverseJoinColumns = @JoinColumn(name = "id_event"))
+	public Set<Event> getEventByGroup() {
 		return events;
 	}
-	public void setEventByGroup( Set<Event> events) {
+
+	public void setEventByGroup(Set<Event> events) {
 		this.events = events;
 	}
-	@ManyToMany(mappedBy ="User")
-	@JoinTable( name ="participate", joinColumns=@JoinColumn(name ="id_Group"),inverseJoinColumns = @JoinColumn(name="user_id_person"))
-	public Set<User> getAllUserByGroup(){
+
+	@ManyToMany(mappedBy = "User")
+	@JoinTable(name = "participate", joinColumns = @JoinColumn(name = "id_Group"), inverseJoinColumns = @JoinColumn(name = "user_id_person"))
+	public Set<User> getAllUserByGroup() {
 		return users;
 	}
+
 	public void setUserByGroup(Set<User> users) {
-		this.users= users;
+		this.users = users;
 	}
+
 	@ManyToMany
 	public Set<Interest> interests = new HashSet<Interest>();
-	
+
 	@ManyToOne
 	private GeographicalArea geographicalArea;
+
+	@Override
+	public boolean equals(Object obj) {
+
+		Groupe groupe = (Groupe) obj;
+
+		return this.idGroup == groupe.getIdGroup();
+	}
+
 }

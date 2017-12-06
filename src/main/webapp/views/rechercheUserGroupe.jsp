@@ -25,9 +25,10 @@
     
 </div>
 <div id="bodyCenter">
-    <div id="content" ><span class="titleMain"><a href="Groupe.Html">${nameGroup}<img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/></a></span>
-       
-	        
+    <div id="content" >
+    <c:forEach var="myGroup" items="${nameGroup}">
+    <span class="titleMain"><a href="Groupe.Html"><c:out value="${myGroup.nameGroup}"/><img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png"/></a></span>
+       </c:forEach>
     </div>
     <div class="parent">
     <form name="rechercheGroup" action="<c:url value='rechercheUserGroupe'/>"

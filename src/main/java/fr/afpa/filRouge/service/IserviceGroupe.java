@@ -25,7 +25,7 @@ public interface IserviceGroupe {
 	
 	public void editGroup(Groupe groupe) ;
 	
-	public void deleteGroup(Groupe group) ;
+	public void deleteGroup(int idGroup) ;
 	
 	/*
 	public void setAdministratorByGroup(Administrator administrator);

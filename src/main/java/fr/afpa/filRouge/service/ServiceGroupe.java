@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Groupe;
-import fr.afpa.filRouge.repository.GroupeRepository;
+import fr.afpa.filRouge.repository.IGroupRepository;
 
 /**
  * @author Y LE BIHAN
@@ -17,9 +17,9 @@ import fr.afpa.filRouge.repository.GroupeRepository;
 @Service
 public class ServiceGroupe implements IserviceGroupe {
 	
-	private GroupeRepository groupeRepository;
+	private IGroupRepository groupeRepository;
 	
-	public ServiceGroupe(GroupeRepository groupeRepository) {
+	public ServiceGroupe(IGroupRepository groupeRepository) {
 		this.groupeRepository = groupeRepository;
 	}
 	public void addGroup(Groupe groupe) {
@@ -36,8 +36,8 @@ public class ServiceGroupe implements IserviceGroupe {
 		groupeRepository.save(groupe);
 	}
 	
-	public void deleteGroup(Groupe group) {
-		groupeRepository.delete(group);
+	public void deleteGroup(int idGroup) {
+		 groupeRepository.delete(idGroup);
 	}
 	/*
 	@Override

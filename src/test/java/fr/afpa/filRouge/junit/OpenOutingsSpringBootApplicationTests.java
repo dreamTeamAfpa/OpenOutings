@@ -1,4 +1,4 @@
-package fr.afpa.filRouge.app;
+package fr.afpa.filRouge.junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
