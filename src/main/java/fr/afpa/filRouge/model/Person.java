@@ -11,6 +11,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -33,7 +34,7 @@ public class Person {
 	private String descriptionPerson;
 
 	private Location location;
-	private Set<Interest> interests;
+	//private Set<Interest> interests;
 
 	// GETTERS & SETTERS
 
@@ -57,11 +58,11 @@ public class Person {
 		this.location = location;
 	}
 
-	@OneToMany(mappedBy = "Interest")
-	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_person"))
-	public Set<Interest> getInterests() {
-		return interests;
-	}
+	@ManyToMany //(mappedBy = "Interest")
+//	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_person"))
+	public Set<Interest> interests; // getInterests() {
+		//return interests;
+	//}
 
 	/**
 	 * @param interests

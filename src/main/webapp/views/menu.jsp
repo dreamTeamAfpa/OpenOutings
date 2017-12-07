@@ -24,7 +24,7 @@
 	<div class= "parent">
         <H1 class="menu" id="ilienRechEvt"><a href="page_recherche_evtV1.4.html">RECHERCHE EVENEMENTS</a></H1>
         <H1 class="menu" id="ilienCreationEvt"><a href="page_creation_evt">CREATION EVENEMENT</a></H1>
-		<H1 class="menu" id="ilienProfil" ><a href="page_edit_profil">MON PROFIL</a></H1>
+		<H1 class="menu" id="ilienProfil" ><a href="profiluser">MON PROFIL</a></H1>
 		<H1 class="menu" id="ilienOutters"><a href="rechercheUserGroupe">OUTTERS</a></H1>
 		<H1 class="menu" id="ilienCreationGrp"><a href="groupe">CREATION GROUPE</a></H1>
         <h1 class="menu" id="ilienMessagerie"><a href ="page_messagerie">MESSAGERIE</a></h1>

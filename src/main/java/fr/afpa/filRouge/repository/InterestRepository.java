@@ -1,30 +1,39 @@
 package fr.afpa.filRouge.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Repository;
 
 import fr.afpa.filRouge.model.Interest;
+@Repository
+public class InterestRepository  {
 
-public class InterestRepository implements IInterestRepository {
-
-	@Override
-	public List<Interest> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	IInterestRepository IInterestRepo;
+	
+	public ArrayList<Interest> findAll() {	
+		return (ArrayList<Interest>) IInterestRepo.findAll();
+	}
+	
+public Interest getOne(String name) {
+		
+		
+		return IInterestRepo.findByNameInterestAllIgnoreCase(name);
 	}
 
-	@Override
+/*	
+@Override
 	public List<Interest> findAll(Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Interest> findAll(Iterable<Integer> ids) {
+	public List<Interest> findAll(Iterable<String> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -59,11 +68,8 @@ public class InterestRepository implements IInterestRepository {
 
 	}
 
-	@Override
-	public Interest getOne(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 
 	@Override
 	public <S extends Interest> List<S> findAll(Example<S> example) {
@@ -90,13 +96,13 @@ public class InterestRepository implements IInterestRepository {
 	}
 
 	@Override
-	public Interest findOne(Integer id) {
+	public Interest findOne(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean exists(Integer id) {
+	public boolean exists(String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -108,7 +114,7 @@ public class InterestRepository implements IInterestRepository {
 	}
 
 	@Override
-	public void delete(Integer id) {
+	public void delete(String name) {
 		// TODO Auto-generated method stub
 
 	}
@@ -160,5 +166,5 @@ public class InterestRepository implements IInterestRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+*/
 }
