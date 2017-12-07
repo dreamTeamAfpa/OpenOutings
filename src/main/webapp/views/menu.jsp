@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Page Menu</title>
- <link rel="stylesheet" type="text/css" href="css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
 </head>
 <body>
 	<header>

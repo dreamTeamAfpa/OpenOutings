@@ -18,10 +18,9 @@
 
 <title>Login Page</title>
 
-<link href="${contextPath}/css/animate.css" rel="stylesheet">
-<link href="${contextPath}/css/signIn.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/index.css"
-	rel="stylesheet" />
+<link href="/css/animate.css" type="text/css" rel="stylesheet">
+<link href="/css/signIn.css" type="text/css" rel="stylesheet">
+<link href="/css/index.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
