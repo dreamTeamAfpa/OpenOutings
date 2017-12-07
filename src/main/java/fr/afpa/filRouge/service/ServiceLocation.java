@@ -4,17 +4,13 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
-import fr.afpa.filRouge.model.Location;
+import fr.afpa.filRouge.model.Locations;
 import fr.afpa.filRouge.repository.ILocationRepository;
 
 /**
  * @author FR DESCOMBES
  *
  */
-@Service
 public class ServiceLocation implements IserviceLocation {
 
 	private ILocationRepository locationRepository;
@@ -24,32 +20,32 @@ public class ServiceLocation implements IserviceLocation {
 	}
 
 	@Override
-	public List<Location> getAll() {
+	public List<Locations> getAll() {
 		return locationRepository.findAll();
 	}
 
 	@Override
-	public Location getOne(int postalCode) {
+	public Locations getOne(int postalCode) {
 		return locationRepository.findOne(postalCode);
 	}
 
 	@Override
-	public Location getOne(String nameLocation) {
+	public Locations getOne(String nameLocation) {
 		return locationRepository.findOne(nameLocation);
 	}
 
 	@Override
-	public void modifiedOne(Location location) {
+	public void modifiedOne(Locations location) {
 		locationRepository.save(location);
 	}
 
 	@Override
-	public void addLocation(Location location) {
+	public void addLocation(Locations location) {
 		locationRepository.save(location);
 	}
 
 	@Override
-	public void delLocation(Location location) {
+	public void delLocation(Locations location) {
 		locationRepository.delete(location);
 	}
 

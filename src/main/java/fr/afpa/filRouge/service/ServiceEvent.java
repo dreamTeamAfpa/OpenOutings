@@ -4,7 +4,6 @@
 package fr.afpa.filRouge.service;
 
 import java.util.ArrayList;
-
 import fr.afpa.filRouge.model.Event;
 import fr.afpa.filRouge.repository.EventRepository;
 

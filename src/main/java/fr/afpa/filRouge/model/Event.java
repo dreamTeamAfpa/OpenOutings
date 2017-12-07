@@ -3,6 +3,7 @@
  */
 package fr.afpa.filRouge.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +21,11 @@ import javax.persistence.Table;
  */
 @Entity 
 @Table(name="event")
-public class Event {
+public class Event implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idEvent;
@@ -30,7 +35,8 @@ public class Event {
 	private Calendar dateEvent;
 	private Administrator administrator;
 	private Theme theme;
-	private Location location;
+	
+	private Locations location;
 	//private Groupe groupe; //voir methode ManyToOne GeetGroup() , a tester
 	private int maxParticipants;
 	private int rateEvent;
@@ -123,11 +129,11 @@ public class Event {
 
 @OneToMany(mappedBy = "Location")
 @JoinTable(name = "location", joinColumns = @JoinColumn(name = "id_location"), inverseJoinColumns = @JoinColumn(name="id_event"))
-	public Location getLocation() {
+	public Locations getLocation() {
 		return location;
 	}
 
-	public void setLocation(Location location) {
+	public void setLocation(Locations location) {
 		this.location = location;
 	}
 	@ManyToOne

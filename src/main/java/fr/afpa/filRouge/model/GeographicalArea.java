@@ -3,8 +3,10 @@
  */
 package fr.afpa.filRouge.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,15 +19,22 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "geographicalArea")
-public class GeographicalArea {
+@Table(name = "geographical_area")
+public class GeographicalArea implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "name_area")
 	private String nameArea;
+	@Column(name = "description_area")
 	private String descriptionArea;
-	private Set<Location> locations;
+	
+	private Set<Locations> locations;
 	private Set<Groupe> groupes;
 	
-	@Id
 	public String getNameArea() {
 		return nameArea;
 	}
@@ -40,10 +49,10 @@ public class GeographicalArea {
 	}
 	@ManyToMany
 	@JoinTable(name = "location", joinColumns = @JoinColumn(name = "name_area"), inverseJoinColumns = @JoinColumn(name = "postal_code"))
-	public Set<Location> getLocations() {
+	public Set<Locations> getLocations() {
 		return locations;
 	}
-	public void setLocations(Set<Location> locations) {
+	public void setLocations(Set<Locations> locations) {
 		this.locations = locations;
 	}
 	

@@ -2,12 +2,15 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Person;
 
 /**
  * @author FR DESCOMBES
  *
  */
+@Service
 public interface IservicePerson {
 
 	public List<Person> getAll();

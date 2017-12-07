@@ -7,30 +7,30 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import fr.afpa.filRouge.model.Location;
+import fr.afpa.filRouge.model.Locations;
 
 public class LocationRepository implements ILocationRepository {
 
 	@Override
-	public List<Location> findAll() {
+	public List<Locations> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Location> findAll(Sort sort) {
+	public List<Locations> findAll(Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Location> findAll(Iterable<Integer> ids) {
+	public List<Locations> findAll(Iterable<Integer> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> List<S> save(Iterable<S> entities) {
+	public <S extends Locations> List<S> save(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -42,13 +42,13 @@ public class LocationRepository implements ILocationRepository {
 	}
 
 	@Override
-	public <S extends Location> S saveAndFlush(S entity) {
+	public <S extends Locations> S saveAndFlush(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteInBatch(Iterable<Location> entities) {
+	public void deleteInBatch(Iterable<Locations> entities) {
 		// TODO Auto-generated method stub
 
 	}
@@ -60,37 +60,37 @@ public class LocationRepository implements ILocationRepository {
 	}
 
 	@Override
-	public Location getOne(Integer id) {
+	public Locations getOne(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> List<S> findAll(Example<S> example) {
+	public <S extends Locations> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> List<S> findAll(Example<S> example, Sort sort) {
+	public <S extends Locations> List<S> findAll(Example<S> example, Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Page<Location> findAll(Pageable pageable) {
+	public Page<Locations> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> S save(S entity) {
+	public <S extends Locations> S save(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Location findOne(Integer id) {
+	public Locations findOne(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -114,13 +114,13 @@ public class LocationRepository implements ILocationRepository {
 	}
 
 	@Override
-	public void delete(Location entity) {
+	public void delete(Locations entity) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void delete(Iterable<? extends Location> entities) {
+	public void delete(Iterable<? extends Locations> entities) {
 		// TODO Auto-generated method stub
 
 	}
@@ -132,31 +132,31 @@ public class LocationRepository implements ILocationRepository {
 	}
 
 	@Override
-	public <S extends Location> S findOne(Example<S> example) {
+	public <S extends Locations> S findOne(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> Page<S> findAll(Example<S> example, Pageable pageable) {
+	public <S extends Locations> Page<S> findAll(Example<S> example, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Location> long count(Example<S> example) {
+	public <S extends Locations> long count(Example<S> example) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public <S extends Location> boolean exists(Example<S> example) {
+	public <S extends Locations> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Location findOne(String nameLocation) {
+	public Locations findOne(String nameLocation) {
 		// TODO Auto-generated method stub
 		return null;
 	}
