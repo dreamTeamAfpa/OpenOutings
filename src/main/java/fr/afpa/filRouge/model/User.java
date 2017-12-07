@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +16,10 @@ public class User extends Person {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
+	
+	@OneToOne
+	private Person person;
+	
 	@ManyToMany
 	private Set<Groupe> groupes;
 

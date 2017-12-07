@@ -3,11 +3,16 @@ package fr.afpa.filRouge.model;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
@@ -44,10 +49,17 @@ public class Person implements Serializable {
 	private int phoneUser;
 	@Column(name = "description_person")
 	private String descriptionPerson;
-	@ManyToOne
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinTable(name="user_roles",
+	joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+	inverseJoinColumns={@JoinColumn(name="role_id", referencedColumnName="id")})
+	private Role role;
+	@OneToMany(mappedBy="persons")
 	@JoinColumn(name="postal_code")
 	private Locations location;
 	@ManyToMany
+	@JoinTable(name="person_have_interests", joinColumns={@JoinColumn(name="person_id_person")},
+    inverseJoinColumns={@JoinColumn(name="name_interest")})
 	private Set<Interest> interests;
 
 	// GETTERS & SETTERS

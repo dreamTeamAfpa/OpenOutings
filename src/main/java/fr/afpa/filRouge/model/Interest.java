@@ -30,14 +30,11 @@ public class Interest implements Serializable{
 	@Column(name="description_interest")
 	private String descriptionInterest;
 	@ManyToMany
-	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
 	private Set<Groupe> groupes;
-	@ManyToMany(mappedBy = "Interest")
-	@JoinTable(name = "person_have_interest", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "person_id_person"))
+	@ManyToMany(mappedBy = "interests")
 	private Set<Person> persons;
 	
 	//GETTERS & SETTERS
-	
 	public String getNameInterest() {
 		return nameInterest;
 	}
