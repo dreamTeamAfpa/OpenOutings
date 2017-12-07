@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Qualifier;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.repository.GroupeRepository;
+import fr.afpa.filRouge.repository.IGroupeRepository;
 
 /**
  * @author Y LE BIHAN
@@ -16,7 +17,7 @@ import fr.afpa.filRouge.repository.GroupeRepository;
 public class ServiceGroupe implements IserviceGroupe {
 
 	@Qualifier("fr.afpa.filRouge.repository.GroupeRepository")
-	private GroupeRepository groupeRepository;
+	private IGroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
 		this.groupeRepository = groupeRepository;
