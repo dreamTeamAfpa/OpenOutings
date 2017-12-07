@@ -35,7 +35,7 @@ public class Theme implements Serializable{
 	}
 
 	@ManyToMany
-	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_theme"), inverseJoinColumns = @JoinColumn(name = "name_interest"))
+	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_theme"), inverseJoinColumns = @JoinColumn(name = "name_theme"))
 	public Set<Interest> getInterests() {
 		return interests;
 	}

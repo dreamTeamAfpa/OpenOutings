@@ -28,9 +28,9 @@ public class Locations implements Serializable{
 	private String nameLocation;
 	@OneToOne
 	private GeographicalArea geographicalArea;
-	@OneToMany(mappedBy = "location")
+	@OneToMany
 	private Set<Event> events;
-	@OneToMany(mappedBy="location")
+	@OneToMany(mappedBy = "location")
 	private Set<Person> persons;
 
 
