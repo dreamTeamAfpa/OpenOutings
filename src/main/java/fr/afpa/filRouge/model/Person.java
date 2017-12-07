@@ -47,7 +47,7 @@ public class Person implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="postal_code")
 	private Locations location;
-	@ManyToMany(mappedBy = "Interest")
+	@ManyToMany
 	private Set<Interest> interests;
 
 	// GETTERS & SETTERS

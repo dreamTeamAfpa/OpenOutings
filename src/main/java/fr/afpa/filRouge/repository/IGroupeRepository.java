@@ -13,6 +13,6 @@ import fr.afpa.filRouge.model.Groupe;
  *
  */
 @Repository
-public interface GroupeRepository extends JpaRepository<Groupe, Integer> {
+public interface IGroupeRepository extends JpaRepository<Groupe, Integer> {
 
 }

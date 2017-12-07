@@ -32,7 +32,7 @@ public class Interest implements Serializable{
 	@ManyToMany
 	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "id_group"))
 	private Set<Groupe> groupes;
-	@ManyToMany
+	@ManyToMany(mappedBy = "Interest")
 	@JoinTable(name = "person_have_interest", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "person_id_person"))
 	private Set<Person> persons;
 	
