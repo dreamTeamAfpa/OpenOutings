@@ -5,6 +5,8 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author L. CASTAGNEDOLI
@@ -28,17 +33,26 @@ public class Event implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id_event")
 	private int idEvent;
+	@Column(name="title_event")
 	private String titleEvent;
+	@Column(name="description_event")
 	private String resumeEvent;
+	@Column(name="details_event")
 	private String detailsEvent;
+	@Column(name="date_event")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar dateEvent;
+	@OneToOne(mappedBy="administrator")
 	private Administrator administrator;
 	private Theme theme;
-	
+	@OneToOne(mappedBy="location")
 	private Locations location;
 	//private Groupe groupe; //voir methode ManyToOne GeetGroup() , a tester
+	@Column(name="maxParticipants")
 	private int maxParticipants;
+	@Column(name="rate_event")
 	private int rateEvent;
 	
 	
