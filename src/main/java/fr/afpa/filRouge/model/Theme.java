@@ -1,5 +1,6 @@
 package fr.afpa.filRouge.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,9 +15,13 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "Theme")
-public class Theme {
+@Table(name = "theme")
+public class Theme implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nameTheme;
 	private Set<Interest> interests;
 

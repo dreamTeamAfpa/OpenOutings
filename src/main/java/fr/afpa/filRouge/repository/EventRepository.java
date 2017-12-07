@@ -2,7 +2,7 @@ package fr.afpa.filRouge.repository;
 import java.util.ArrayList;
 import java.util.List;
 import fr.afpa.filRouge.model.Event;
-import fr.afpa.filRouge.model.Location;
+import fr.afpa.filRouge.model.Locations;
 import fr.afpa.filRouge.model.Theme;
 
 public class EventRepository {
@@ -13,7 +13,7 @@ public class EventRepository {
 		return eventRepo.findByTheme(theme);
 	}
 	
-	public List<Event> findByLocation(Location location) {
+	public List<Event> findByLocation(Locations location) {
 		return eventRepo.findByLocation(location);
 	}
 	

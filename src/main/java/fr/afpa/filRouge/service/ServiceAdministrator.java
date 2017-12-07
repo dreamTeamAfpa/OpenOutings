@@ -2,24 +2,19 @@
  * 
  */
 package fr.afpa.filRouge.service;
-
 import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import fr.afpa.filRouge.model.Administrator;
-import fr.afpa.filRouge.repository.IAdministratorRepository;
+import fr.afpa.filRouge.repository.AdministratorRepository;
 
 /**
  * @author RTI
  *
  */
-@Service
 public class ServiceAdministrator implements IserviceAdministrator {
 	
-	private IAdministratorRepository administratorRepository;
-	
-	public ServiceAdministrator(IAdministratorRepository administratorRepository) {
+	private AdministratorRepository administratorRepository;
+
+	public ServiceAdministrator(AdministratorRepository administratorRepository) {
 		this.administratorRepository = administratorRepository;
 	}
 

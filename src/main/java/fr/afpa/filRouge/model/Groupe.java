@@ -1,8 +1,10 @@
 package fr.afpa.filRouge.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,18 +18,34 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Groupe")
-public class Groupe {
-	private int idGroup;
-	private String nameGroup;
-	private String descriptionGroup;
-	private Boolean permanent;
-	private Administrator administrator;
-	private Set<Event> events;
-	private Set<User> users;
-
+@Table(name = "groupe")
+public class Groupe implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
+	@Column(name="id_group")
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int idGroup;
+	@Column(name="name_Groupe")
+	private String nameGroup;
+	@Column(name="description_Groupe")
+	private String descriptionGroup;
+	
+	private Boolean permanent;
+	@ManyToOne
+	private Administrator administrator;
+	@OneToOne
+	private Event event;
+	private Set<Event> events;
+	@OneToMany
+	private Set<User> users;
+	@ManyToMany
+	public Set<Interest> interests = new HashSet<Interest>();
+	@ManyToOne
+	private GeographicalArea geographicalArea;
+
 	public int getIdGroup() {
 		return idGroup;
 	}
@@ -59,33 +77,23 @@ public class Groupe {
 		this.descriptionGroup = descriptionGroup;
 	}
 
-	@OneToOne(mappedBy = "Administrator")
-	@JoinTable(name = "administrator", joinColumns = @JoinColumn(name = "id_Group"), inverseJoinColumns = @JoinColumn(name = "id_person"))
 	public Administrator getAdministratorByGroup(int idGroup) {
 		return administrator;
 	}
 	public void setAdministratorByGroup(Administrator administrator) {
 		this.administrator = administrator;
 	}
-	@OneToMany(mappedBy = "Event")
-	@JoinTable( name = "event",joinColumns= @JoinColumn(name ="id_Groupe"),inverseJoinColumns =  @JoinColumn(name = "id_event"))
-	public Set<Event> getEventByGroup(){
+		public Set<Event> getEventByGroup(){
 		return events;
 	}
 	public void setEventByGroup( Set<Event> events) {
 		this.events = events;
 	}
-	@ManyToMany(mappedBy ="User")
-	@JoinTable( name ="participate", joinColumns=@JoinColumn(name ="id_Group"),inverseJoinColumns = @JoinColumn(name="user_id_person"))
+
 	public Set<User> getAllUserByGroup(){
 		return users;
 	}
 	public void setUserByGroup(Set<User> users) {
 		this.users= users;
 	}
-	@ManyToMany
-	public Set<Interest> interests = new HashSet<Interest>();
-	
-	@ManyToOne
-	private GeographicalArea geographicalArea;
 }

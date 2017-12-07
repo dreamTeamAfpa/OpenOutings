@@ -2,12 +2,15 @@ package fr.afpa.filRouge.service;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Event;
 
 /**
  * @author L. CASTAGNEDOLI
  *
  */
+@Service
 public interface IserviceEvent {
 
 	public void addEvent(Event event);

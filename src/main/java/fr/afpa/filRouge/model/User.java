@@ -11,22 +11,26 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User extends Person {
 
-@ManyToMany
-private Set<Groupe> groupes;
+	/**
+		 * 
+		 */
+	private static final long serialVersionUID = 1L;
+	@ManyToMany
+	private Set<Groupe> groupes;
 
-/**
- * @return the groupes
- */
-public Set<Groupe> getGroupes() {
-	return groupes;
-}
+	/**
+	 * @return the groupes
+	 */
+	public Set<Groupe> getGroupes() {
+		return groupes;
+	}
 
-/**
- * @param groupes the groupes to set
- */
-public void setGroupes(Set<Groupe> groupes) {
-	this.groupes = groupes;
-}
-
+	/**
+	 * @param groupes
+	 *            the groupes to set
+	 */
+	public void setGroupes(Set<Groupe> groupes) {
+		this.groupes = groupes;
+	}
 
 }
