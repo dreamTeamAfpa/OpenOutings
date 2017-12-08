@@ -45,7 +45,7 @@ public class Person implements Serializable {
 	@Column(name = "description_person")
 	private String descriptionPerson;
 	@ManyToOne
-	@JoinColumn(name="postal_code")
+	//@JoinColumn(name="postal_code")
 	private Locations location;
 	@ManyToMany
 	private Set<Interest> interests;
