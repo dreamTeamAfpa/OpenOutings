@@ -3,11 +3,13 @@ package fr.afpa.filRouge.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,10 +24,13 @@ public class Theme implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name="name_theme")
 	private String nameTheme;
+	@OneToMany
 	private Set<Interest> interests;
 
-	@Id
+	
 	public String getNameTheme() {
 		return nameTheme;
 	}
@@ -34,8 +39,7 @@ public class Theme implements Serializable{
 		this.nameTheme = nameTheme;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "interest", joinColumns = @JoinColumn(name = "name_theme"), inverseJoinColumns = @JoinColumn(name = "name_theme"))
+	
 	public Set<Interest> getInterests() {
 		return interests;
 	}

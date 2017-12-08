@@ -13,6 +13,8 @@ import fr.afpa.filRouge.model.Person;
 @Service
 public interface IservicePerson {
 
+	public Person findByPseudoUserAndPasswordUser(String username,String password);
+
 	public List<Person> getAll();
 
 	public Person getOne(int idUser);

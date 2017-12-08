@@ -4,23 +4,25 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
+import java.util.Set;
+
 import fr.afpa.filRouge.model.GeographicalArea;
-import fr.afpa.filRouge.repository.IGeographicalAreaRepository;
+import fr.afpa.filRouge.repository.GeographicalAreaRepository;
 
 /**
  * @author PH GUIGUE
  *
  */
 public class ServiceGeographicalArea implements IserviceGeographicalArea {
-	private IGeographicalAreaRepository geographicalAreaRepository;
-	public ServiceGeographicalArea(IGeographicalAreaRepository geographicalAreaRepository) {
-		this.geographicalAreaRepository= geographicalAreaRepository;
-		}
+	private GeographicalAreaRepository geographicalAreaRepository;
+
+	public ServiceGeographicalArea(GeographicalAreaRepository geographicalAreaRepository) {
+		this.geographicalAreaRepository = geographicalAreaRepository;
+	}
 
 	@Override
 	public List<GeographicalArea> getAll() {
-		
-		return geographicalAreaRepository.findAll();
+		return (List<GeographicalArea>) geographicalAreaRepository.findAll();
 	}
 
 	@Override
@@ -32,20 +34,18 @@ public class ServiceGeographicalArea implements IserviceGeographicalArea {
 	@Override
 	public void modifiedOne(GeographicalArea geographicalArea) {
 		geographicalAreaRepository.save(geographicalArea);
-		
+
 	}
 
 	@Override
 	public void addGeographicalArea(GeographicalArea geographicalArea) {
-		geographicalAreaRepository.save(geographicalArea);		
+		geographicalAreaRepository.save(geographicalArea);
 	}
 
 	@Override
 	public void delGeographicalArea(GeographicalArea geographicalArea) {
 		geographicalAreaRepository.delete(geographicalArea);
-		
+
 	}
-
-
 
 }

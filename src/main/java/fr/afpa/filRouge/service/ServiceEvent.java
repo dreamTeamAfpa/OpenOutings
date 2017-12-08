@@ -20,12 +20,12 @@ public class ServiceEvent implements IserviceEvent {
 	}
 	
 	public void addEvent(Event event) {
-		eventRepository.create(event);
+		eventRepository.save(event);
 		
 	}
 
 	public Event getOneEvent(int idEvent) {
-		return eventRepository.getOne(idEvent);
+		return eventRepository.findOne(idEvent);
 	}
 
 	public ArrayList<Event> getAllEvent() {
@@ -33,7 +33,7 @@ public class ServiceEvent implements IserviceEvent {
 	}
 
 	public void updateEvent(Event event) {
-		eventRepository.update(event);
+		eventRepository.save(event);
 	}
 
 	public void deleteEvent(Event event) {

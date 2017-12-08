@@ -40,9 +40,8 @@ public class Groupe implements Serializable{
 	private Set<Person> usersGroupe;
 	@ManyToMany
 	public Set<Interest> interests = new HashSet<Interest>();
-	@ManyToOne
+	@OneToOne
 	private GeographicalArea geographicalArea;
-	
 	
 	//GETTERS & SETTERS
 	/**
@@ -153,6 +152,9 @@ public class Groupe implements Serializable{
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
+	
+	
+
 	
 
 	

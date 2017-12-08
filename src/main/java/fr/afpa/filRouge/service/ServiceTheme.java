@@ -6,7 +6,7 @@ package fr.afpa.filRouge.service;
 import java.util.List;
 
 import fr.afpa.filRouge.model.Theme;
-import fr.afpa.filRouge.repository.IThemeRepository;
+import fr.afpa.filRouge.repository.ThemeRepository;
 
 /**
  * @author PH GUIGUE
@@ -14,15 +14,15 @@ import fr.afpa.filRouge.repository.IThemeRepository;
  */
 public class ServiceTheme implements IserviceTheme {
 
-	private IThemeRepository themeRepository;
+	private ThemeRepository themeRepository;
 
-	public ServiceTheme(IThemeRepository themeRepository) {
+	public ServiceTheme(ThemeRepository themeRepository) {
 		this.themeRepository = themeRepository;
 	}
 
 	@Override
 	public List<Theme> getAll() {
-		List<Theme> themes = themeRepository.findAll();
+		List<Theme> themes = (List<Theme>) themeRepository.findAll();
 		return themes;
 	}
 

@@ -5,7 +5,7 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 import fr.afpa.filRouge.model.Interest;
-import fr.afpa.filRouge.repository.IInterestRepository;
+import fr.afpa.filRouge.repository.InterestRepository;
 
 /**
  * @author PH GUIGUE
@@ -13,15 +13,15 @@ import fr.afpa.filRouge.repository.IInterestRepository;
  */
 public class ServiceInterest implements IserviceInterest {
 	
-	private IInterestRepository interestRepository;
-	public ServiceInterest(IInterestRepository interestRepository) {
+	private InterestRepository interestRepository;
+	public ServiceInterest(InterestRepository interestRepository) {
 		this.interestRepository= interestRepository;
 		}
 
 	@Override
 	public List<Interest> getAll() {
 		// TODO Auto-generated method stub
-		return interestRepository.findAll();
+		return (List<Interest>) interestRepository.findAll();
 	}
 
 	@Override
