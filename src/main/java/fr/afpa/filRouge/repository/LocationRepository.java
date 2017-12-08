@@ -14,5 +14,6 @@ import fr.afpa.filRouge.model.Locations;
  */
 @Repository
 public interface LocationRepository extends CrudRepository<Locations, Integer> {
-	Locations findOne(String nameLocation);
+	
+	Locations findByNameLocation(String nameLocation);
 }

@@ -3,7 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/index.css" />
+<title>Accueil Open Outings</title>
 </head>
 <body>
 	<header>

@@ -29,15 +29,15 @@ public class Person implements Serializable {
 	private String pseudoUser;
 	@Column(name = "password_person")
 	private String passwordUser;
-	@Column(name = "firstName_person")
+	@Column(name = "first_name_person")
 	private String firstNameUser;
-	@Column(name = "lastName_person")
+	@Column(name = "last_name_person")
 	private String lastNameUser;
-	@Column(name = "birthDate_person")
+	@Column(name = "birth_date_person")
 	private Calendar dobUser;
 	@Column(name = "gender_person")
 	private char genderUser;
-	@Column(name = "eMail_person")
+	@Column(name = "e_mail_person")
 	private String emailUser;
 	@Column(name = "phone_person")
 	private int phoneUser;
@@ -212,6 +212,13 @@ public class Person implements Serializable {
 	 */
 	public void setInterests(Set<Interest> interests) {
 		this.interests = interests;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
 	}
 
 

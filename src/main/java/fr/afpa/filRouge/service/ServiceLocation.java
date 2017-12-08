@@ -31,7 +31,7 @@ public class ServiceLocation implements IserviceLocation {
 
 	@Override
 	public Locations getOne(String nameLocation) {
-		return locationRepository.findOne(nameLocation);
+		return locationRepository.findByNameLocation(nameLocation);
 	}
 
 	@Override
