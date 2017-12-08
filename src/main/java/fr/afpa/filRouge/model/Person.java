@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
@@ -47,7 +48,8 @@ public class Person implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="postal_code")
 	private Locations location;
-	@ManyToMany
+	@ManyToMany(mappedBy="persons")
+	@JoinTable(name = "person_have_interests", joinColumns = @JoinColumn(name = "name_interest"), inverseJoinColumns = @JoinColumn(name = "person_id_person"))
 	private Set<Interest> interests;
 
 	// GETTERS & SETTERS

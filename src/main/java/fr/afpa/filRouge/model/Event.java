@@ -46,6 +46,9 @@ public class Event implements Serializable {
 	private Calendar dateEvent;
 	@OneToOne(mappedBy="administrator")
 	private Administrator administrator;
+	@ManyToOne
+	private Groupe groupe;
+	
 	private Theme theme;
 	@OneToOne(mappedBy="location")
 	private Locations location;
@@ -150,12 +153,11 @@ public class Event implements Serializable {
 	public void setLocation(Locations location) {
 		this.location = location;
 	}
-	@ManyToOne
-	private Groupe groupe;
+	
 	// a Tester les methodes  ManyToOne mirroir dans 2 classes
-	//public Groupe getGroupe() {
-		//return groupe;
-	//}
+	public Groupe getGroupe() {
+		return groupe;
+	}
 
 	public void setGroupe(Groupe groupe) {
 		this.groupe = groupe;
