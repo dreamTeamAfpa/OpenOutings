@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Qualifier;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.repository.GroupeRepository;
-import fr.afpa.filRouge.repository.IGroupeRepository;
+import fr.afpa.filRouge.repository.GroupeRepository;
 
 /**
  * @author Y LE BIHAN
@@ -16,8 +16,7 @@ import fr.afpa.filRouge.repository.IGroupeRepository;
  */
 public class ServiceGroupe implements IserviceGroupe {
 
-	@Qualifier("fr.afpa.filRouge.repository.GroupeRepository")
-	private IGroupeRepository groupeRepository;
+	private GroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
 		this.groupeRepository = groupeRepository;
@@ -28,7 +27,7 @@ public class ServiceGroupe implements IserviceGroupe {
 	}
 
 	public Groupe getOneGroup(int idGroup) {
-		return groupeRepository.getOne(idGroup);
+		return groupeRepository.findOne(idGroup);
 	}
 
 	public ArrayList<Groupe> getAllGroup() {
@@ -42,20 +41,5 @@ public class ServiceGroupe implements IserviceGroupe {
 	public void deleteGroup(Groupe group) {
 		groupeRepository.delete(group);
 	}
-	/*
-	 * @Override public Administrator getAdministratorByGroup(int idGroup) {
-	 * return groupeRepository.getAdministratorByGroup(idGroup); }
-	 * 
-	 * @Override public void setAdministratorByGroup(Administrator
-	 * administrator) { // TODO Auto-generated method stub
-	 * 
-	 * this.setAdministratorByGroup(administrator); }
-	 */
-	// INUTILE ???
 
-	/*
-	 * public Administrator getAdministrator() { return administrator; } public
-	 * void setAdministrator(Administrator administrator) { this.administrator =
-	 * administrator; }
-	 */
 }

@@ -23,10 +23,11 @@
 				<h2>Connexion</h2>
 			</div>
 
-			<form class="form" method="get" action="#">
+			<form class="form" method="post" action="">
 				<label for="username">Nom d'utilisateur</label> <br> <input
-					type="text" id="username"> <br> <label for="password">Mot
-					de passe</label> <br> <input type="password" id="password"> <br>
+					type="text" id="username" name="username"> <br> <label
+					for="password">Mot de passe</label> <br> <input
+					type="password" id="password" name="password"> <br>
 				<button type="submit" id="connectBtn">Se connecter</button>
 				<p>
 					<a href="#" class="small">Mot de passe perdu?</a>

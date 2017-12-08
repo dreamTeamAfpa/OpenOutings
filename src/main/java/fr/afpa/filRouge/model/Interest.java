@@ -34,56 +34,56 @@ public class Interest implements Serializable{
 	@ManyToMany(mappedBy = "interests")
 	private Set<Person> persons;
 	
-	//GETTERS & SETTERS
+	//GETTERS & SETTERS	
+	/**
+	 * @return the nameInterest
+	 */
 	public String getNameInterest() {
 		return nameInterest;
 	}
-
+	/**
+	 * @param nameInterest the nameInterest to set
+	 */
+	public void setNameInterest(String nameInterest) {
+		this.nameInterest = nameInterest;
+	}
+	/**
+	 * @return the descriptionInterest
+	 */
+	public String getDescriptionInterest() {
+		return descriptionInterest;
+	}
+	/**
+	 * @param descriptionInterest the descriptionInterest to set
+	 */
+	public void setDescriptionInterest(String descriptionInterest) {
+		this.descriptionInterest = descriptionInterest;
+	}
 	/**
 	 * @return the groupes
 	 */
 	public Set<Groupe> getGroupes() {
 		return groupes;
 	}
-
 	/**
 	 * @param groupes the groupes to set
 	 */
 	public void setGroupes(Set<Groupe> groupes) {
 		this.groupes = groupes;
 	}
-
 	/**
 	 * @return the persons
 	 */
 	public Set<Person> getPersons() {
 		return persons;
 	}
-
 	/**
 	 * @param persons the persons to set
 	 */
 	public void setPersons(Set<Person> persons) {
 		this.persons = persons;
 	}
-
-	public void setNameInterest(String nameInterest) {
-		this.nameInterest = nameInterest;
-	}
-
-	public String getDescriptionInterest() {
-		return descriptionInterest;
-	}
-
-	public void setDescriptionInterest(String descriptionInterest) {
-		this.descriptionInterest = descriptionInterest;
-	}
-
-	public Set<Groupe> getGroups() {
-		return groupes;
-	}
-
-	public void setGroups(Set<Groupe> groups) {
-		this.groupes = groups;
-	}
+	
+	
+	
 }

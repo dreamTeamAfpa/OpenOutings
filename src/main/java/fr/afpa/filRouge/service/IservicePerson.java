@@ -2,7 +2,7 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.Person;
 
@@ -10,8 +10,10 @@ import fr.afpa.filRouge.model.Person;
  * @author FR DESCOMBES
  *
  */
-@Service
+@Component
 public interface IservicePerson {
+
+	public Person findByPseudoUserAndPasswordUser(String username,String password);
 
 	public List<Person> getAll();
 

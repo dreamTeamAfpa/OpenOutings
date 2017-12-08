@@ -5,7 +5,7 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 import fr.afpa.filRouge.model.Locations;
-import fr.afpa.filRouge.repository.ILocationRepository;
+import fr.afpa.filRouge.repository.LocationRepository;
 
 /**
  * @author FR DESCOMBES
@@ -13,15 +13,15 @@ import fr.afpa.filRouge.repository.ILocationRepository;
  */
 public class ServiceLocation implements IserviceLocation {
 
-	private ILocationRepository locationRepository;
+	private LocationRepository locationRepository;
 
-	public ServiceLocation(ILocationRepository locationRepository) {
+	public ServiceLocation(LocationRepository locationRepository) {
 		this.locationRepository = locationRepository;
 	}
 
 	@Override
 	public List<Locations> getAll() {
-		return locationRepository.findAll();
+		return (List<Locations>) locationRepository.findAll();
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class ServiceLocation implements IserviceLocation {
 
 	@Override
 	public Locations getOne(String nameLocation) {
-		return locationRepository.findOne(nameLocation);
+		return locationRepository.findByNameLocation(nameLocation);
 	}
 
 	@Override

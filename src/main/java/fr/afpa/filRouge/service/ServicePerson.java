@@ -5,29 +5,41 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Person;
-import fr.afpa.filRouge.repository.IPersonRepository;
+import fr.afpa.filRouge.repository.PersonRepository;
 
 /**
  * @author FR DESCOMBES
  *
  */
+@Service
 public class ServicePerson implements IservicePerson {
 
-	private IPersonRepository personRepository;
+	private Person person;
+	
+	@Autowired
+	private PersonRepository personRepository;
 
-	public ServicePerson(IPersonRepository personRepository) {
+	public ServicePerson(PersonRepository personRepository) {
 		this.personRepository = personRepository;
 	}
-
+	
+	@Override
+	public Person findByPseudoUserAndPasswordUser(String username,String password) {
+		person = personRepository.findByPseudoUserAndPasswordUser(username,password);
+		return person;
+	}
 	@Override
 	public List<Person> getAll() {
-		return personRepository.findAll();
+		return (List<Person>) personRepository.findAll();
 	}
 
 	@Override
 	public Person getOne(int idUser) {
-		return personRepository.findOne(idUser);
+		return personRepository.findOneByIdUser(idUser);
 	}
 
 	@Override
@@ -46,5 +58,7 @@ public class ServicePerson implements IservicePerson {
 		personRepository.delete(person);
 
 	}
+
+
 
 }

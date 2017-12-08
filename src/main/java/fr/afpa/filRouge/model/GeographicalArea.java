@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -31,8 +32,10 @@ public class GeographicalArea implements Serializable{
 	private String nameArea;
 	@Column(name = "description_area")
 	private String descriptionArea;
-	
+	@OneToMany
 	private Set<Locations> locations;
+	
+	@OneToMany
 	private Set<Groupe> groupes;
 	
 	public String getNameArea() {

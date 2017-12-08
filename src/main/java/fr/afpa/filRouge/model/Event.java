@@ -5,6 +5,8 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,159 +15,192 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
  * @author L. CASTAGNEDOLI
  *
  */
-@Entity 
-@Table(name="event")
+@Entity
+@Table(name = "event")
 public class Event implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@Column(name="id_event")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idEvent;
+	@Column(name="title_event")
 	private String titleEvent;
+	@Column(name="description_event")
 	private String resumeEvent;
+	@Column(name="details_event")
 	private String detailsEvent;
+	@Column(name="date_event")
 	private Calendar dateEvent;
-	private Administrator administrator;
+	@OneToOne
+	private Person adminEvent;
+	@OneToOne
 	private Theme theme;
-	
+	@OneToOne
 	private Locations location;
-	//private Groupe groupe; //voir methode ManyToOne GeetGroup() , a tester
+	@Column(name="maxParticipants")
 	private int maxParticipants;
+	@Column(name="rate_event")
 	private int rateEvent;
+	@OneToOne
+    private Groupe groupe;
 	
 	
-	
-	public Event() {
-	}
-	
-	/**
-	 * @param idEvent
-	 * @param titleEvent
-	 * @param resumeEvent
-	 * @param detailsEvent
-	 * @param maxParticipants
-	 * @param rateEvent
-	 * @param dateEvent
-	 */
-	public Event(int idEvent, String titleEvent, String resumeEvent, String detailsEvent, int maxParticipants,
-			int rateEvent, Calendar dateEvent) {
-		setIdEvent(idEvent);
-		setTitleEvent(titleEvent);
-		setResumeEvent(resumeEvent);
-		setDetailsEvent(detailsEvent);
-		setMaxParticipants(maxParticipants);
-		setRateEvent(rateEvent);
-		setDateEvent(dateEvent);
-	}
+	//GETTERS & SETTERS
 	
 	/**
-	 * @param titleEvent
-	 * @param resumeEvent
-	 * @param rateEvent
-	 * @param dateEvent
+	 * @return the idEvent
 	 */
-	public Event(String titleEvent, String resumeEvent, Administrator administrator,
-			int rateEvent, Calendar dateEvent) {
-		setTitleEvent(titleEvent);
-		setResumeEvent(resumeEvent);
-		setAdministrator(administrator);
-		setRateEvent(rateEvent);
-		setDateEvent(dateEvent);
-	}
-	
-	
 	public int getIdEvent() {
 		return idEvent;
 	}
-	public void setIdEvent(int idEvent) {
-		this.idEvent = idEvent;
+	/**
+	 * @return the adminEvent
+	 */
+	public Person getAdminEvent() {
+		return adminEvent;
 	}
-	public String getTitleEvent() {
-		return titleEvent;
+	/**
+	 * @param adminEvent the adminEvent to set
+	 */
+	public void setAdminEvent(Person adminEvent) {
+		this.adminEvent = adminEvent;
 	}
-	public void setTitleEvent(String titleEvent) {
-		this.titleEvent = titleEvent;
+	/**
+	 * @return the groupe
+	 */
+	public Groupe getGroupe() {
+		return groupe;
 	}
-	public String getResumeEvent() {
-		return resumeEvent;
-	}
-	public void setResumeEvent(String resumeEvent) {
-		this.resumeEvent = resumeEvent;
-	}
-	public String getDetailsEvent() {
-		return detailsEvent;
-	}
-	public void setDetailsEvent(String detailsEvent) {
-		this.detailsEvent = detailsEvent;
-	}
-	
-@OneToMany(mappedBy = "Administrator")
-@JoinTable(name = "administrator", joinColumns = @JoinColumn(name = "id_person"), inverseJoinColumns = @JoinColumn(name = "id_event"))
-	public Administrator getAdministrator() {
-		return administrator;
-	}
-
-	public void setAdministrator(Administrator creator) {
-		this.administrator = creator;
-	}
-
-@OneToMany(mappedBy = "Theme")
-@JoinTable(name = "theme", joinColumns = @JoinColumn(name = "name_theme"), inverseJoinColumns = @JoinColumn(name="id_event"))
-	public Theme getTheme() {
-		return theme;
-	}
-
-	public void setTheme(Theme theme) {
-		this.theme = theme;
-	}
-
-@OneToMany(mappedBy = "Location")
-@JoinTable(name = "location", joinColumns = @JoinColumn(name = "id_location"), inverseJoinColumns = @JoinColumn(name="id_event"))
-	public Locations getLocation() {
-		return location;
-	}
-
-	public void setLocation(Locations location) {
-		this.location = location;
-	}
-	@ManyToOne
-	private Groupe groupe;
-	// a Tester les methodes  ManyToOne mirroir dans 2 classes
-	//public Groupe getGroupe() {
-		//return groupe;
-	//}
-
+	/**
+	 * @param groupe the groupe to set
+	 */
 	public void setGroupe(Groupe groupe) {
 		this.groupe = groupe;
 	}
-
+	/**
+	 * @param idEvent the idEvent to set
+	 */
+	public void setIdEvent(int idEvent) {
+		this.idEvent = idEvent;
+	}
+	/**
+	 * @return the titleEvent
+	 */
+	public String getTitleEvent() {
+		return titleEvent;
+	}
+	/**
+	 * @param titleEvent the titleEvent to set
+	 */
+	public void setTitleEvent(String titleEvent) {
+		this.titleEvent = titleEvent;
+	}
+	/**
+	 * @return the resumeEvent
+	 */
+	public String getResumeEvent() {
+		return resumeEvent;
+	}
+	/**
+	 * @param resumeEvent the resumeEvent to set
+	 */
+	public void setResumeEvent(String resumeEvent) {
+		this.resumeEvent = resumeEvent;
+	}
+	/**
+	 * @return the detailsEvent
+	 */
+	public String getDetailsEvent() {
+		return detailsEvent;
+	}
+	/**
+	 * @param detailsEvent the detailsEvent to set
+	 */
+	public void setDetailsEvent(String detailsEvent) {
+		this.detailsEvent = detailsEvent;
+	}
+	/**
+	 * @return the dateEvent
+	 */
 	public Calendar getDateEvent() {
 		return dateEvent;
 	}
+	/**
+	 * @param dateEvent the dateEvent to set
+	 */
 	public void setDateEvent(Calendar dateEvent) {
 		this.dateEvent = dateEvent;
 	}
+	/**
+	 * @return the person
+	 */
+	public Person getPerson() {
+		return adminEvent;
+	}
+	/**
+	 * @param person the person to set
+	 */
+	public void setPerson(Person person) {
+		this.adminEvent = person;
+	}
+	/**
+	 * @return the theme
+	 */
+	public Theme getTheme() {
+		return theme;
+	}
+	/**
+	 * @param theme the theme to set
+	 */
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
+	/**
+	 * @return the location
+	 */
+	public Locations getLocation() {
+		return location;
+	}
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(Locations location) {
+		this.location = location;
+	}
+	/**
+	 * @return the maxParticipants
+	 */
 	public int getMaxParticipants() {
 		return maxParticipants;
 	}
+	/**
+	 * @param maxParticipants the maxParticipants to set
+	 */
 	public void setMaxParticipants(int maxParticipants) {
 		this.maxParticipants = maxParticipants;
 	}
+	/**
+	 * @return the rateEvent
+	 */
 	public int getRateEvent() {
 		return rateEvent;
 	}
+	/**
+	 * @param rateEvent the rateEvent to set
+	 */
 	public void setRateEvent(int rateEvent) {
 		this.rateEvent = rateEvent;
 	}
-	
-	
 
+	
 }

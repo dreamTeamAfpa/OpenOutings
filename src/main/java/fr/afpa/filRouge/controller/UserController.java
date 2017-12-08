@@ -1,13 +1,22 @@
 package fr.afpa.filRouge.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import fr.afpa.filRouge.model.Person;
+import fr.afpa.filRouge.service.IservicePerson;
 
 @Controller
 @RequestMapping("/")
 public class UserController {
+	
+	@Autowired
+	private IservicePerson serviceperson;
 	
 	//affiche page signUp
 	@GetMapping("signUp")
@@ -19,6 +28,18 @@ public class UserController {
 	@GetMapping("signIn")
 	public String signIn(Model model) {
 		return "sign_in";
+	}
+	
+	@PostMapping("signIn")
+	public String postSignIn(Model model,@RequestParam(value = "username") String pseudoUser
+			,@RequestParam(value = "password") String passwordUser) {
+		if (serviceperson.findByPseudoUserAndPasswordUser(pseudoUser, passwordUser) == null ) {
+			Person person = serviceperson.findByPseudoUserAndPasswordUser(pseudoUser, passwordUser);
+		return "sign_in";
+		}
+		
+		return "index_logged";
+		
 	}
 
 }
