@@ -7,35 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.service.IservicePerson;
 
 @Controller
 @RequestMapping("/")
 public class UserController {
-
+	
 	private Person person;
 	private String message;
 	@Autowired
 	private IservicePerson serviceperson;
 
-	// affiche page profil user
-	@GetMapping("profiluser")
-	public String profilUser(Model model) {
-		return "UserProfil";
-	}
-
-	// affiche page modification profil
-	@GetMapping("editprofilmembre")
-	public String editprofil(Model model) {
-		return "UserProfil";
-		
-	}
-	
 	// affiche page signUp
 	@GetMapping("signUp")
-	public String signUp(Model model) {
+	public String signUp(Model models) {
 		return "sign_up";
 	}
 
@@ -44,8 +30,6 @@ public class UserController {
 	public String inscription(Model model, @RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password,
 			@RequestParam(value = "passwordVerif") String passwordVerif, @RequestParam(value = "email") String email) {
-
-		
 		if ((password.equals(passwordVerif) != true)) {
 			message = "les mots de passes ne sont pas identiques";
 			model.addAttribute("message", message);
@@ -79,12 +63,14 @@ public class UserController {
 	public String postSignIn(Model model, @RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
 		if (serviceperson.findByPseudoUserAndPasswordUser(username, password) == null) {
-			Person person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+			person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
 			message = "Erreur de connexion !";
+			
 			model.addAttribute("message", message);
 			return "sign_in";
 		}
-
+		person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+		model.addAttribute(person);
 		return "index_logged";
 
 	}

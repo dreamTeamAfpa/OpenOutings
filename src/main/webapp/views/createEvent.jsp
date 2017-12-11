@@ -8,28 +8,16 @@
         <meta charset="utf-8">
         <title>Open Outings</title>
          <link rel="stylesheet" type="text/css" href="css/style.css">
+         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/rechercheEvent.css">
         <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     </head>
 
     <body>
-        <header>
-            <div id="blockheader">
-                <a href="index.html">
-                    <div id="logoEnTete"><img src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png" title="Page d'Accueil"/></div>
-                </a>
-                <div id="marecherche" title="Rechercher">
-                    <img src="images/iconeMainMenu_loupe_EnTete_orange32x32.png" />
-                    <input type="search" id="zonerecherche" title="saisissez votre recherche ici..." placeholder="rechercher">
-                    <a href="signIn.html"><input type="button" id="bconnexion"></a>
-                    <a href="signUp.html"><input type="button" id="binscription"></a>
-                </div>
-                <div id="BoutonMenuEnTete">
-                    <a href="menu.html"><img src="images/iconeMainMenu_60x60orange_EnTete.png" title="Accéder au menu"/></a>
-                </div>
-            </div>
-        </header>
+   	<header>
+		<%@include file="/views/MenuHeaderLogged.jsp"%>
+	</header>
 
         <div id="bodyContainer">
 
