@@ -20,6 +20,19 @@ public class UserController {
 	@Autowired
 	private IservicePerson serviceperson;
 
+	// affiche page profil user
+	@GetMapping("profiluser")
+	public String profilUser(Model model) {
+		return "UserProfil";
+	}
+
+	// affiche page modification profil
+	@GetMapping("editprofilmembre")
+	public String editprofil(Model model) {
+		return "UserProfil";
+		
+	}
+	
 	// affiche page signUp
 	@GetMapping("signUp")
 	public String signUp(Model model) {
@@ -68,6 +81,7 @@ public class UserController {
 		if (serviceperson.findByPseudoUserAndPasswordUser(username, password) == null) {
 			Person person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
 			message = "Erreur de connexion !";
+			model.addAttribute("message", message);
 			return "sign_in";
 		}
 
