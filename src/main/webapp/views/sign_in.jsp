@@ -42,6 +42,7 @@
 					<a href="#" class="small">Mot de passe perdu?</a>
 				</p>
 			</form>
+			<div id='messageRetour'>${message}</div>
 		</div>
 	</div>
 	<!-- on inclut la bibliothèque depuis les serveurs de Google -->

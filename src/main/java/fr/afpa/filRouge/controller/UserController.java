@@ -15,7 +15,8 @@ import fr.afpa.filRouge.service.IservicePerson;
 @RequestMapping("/")
 public class UserController {
 
-	Person person;
+	private Person person;
+	private String message;
 	@Autowired
 	private IservicePerson serviceperson;
 
@@ -31,7 +32,7 @@ public class UserController {
 			@RequestParam(value = "password") String password,
 			@RequestParam(value = "passwordVerif") String passwordVerif, @RequestParam(value = "email") String email) {
 
-		String message = null;
+		
 		if ((password.equals(passwordVerif) != true)) {
 			message = "les mots de passes ne sont pas identiques";
 			model.addAttribute("message", message);
@@ -45,7 +46,7 @@ public class UserController {
 			model.addAttribute("message", message);
 			return "sign_up";
 		} else {
-			Person person = new Person(username, password, email);
+			person = new Person(username, password, email);
 			serviceperson.addPerson(person);
 			message = "Bienvenue chez les Outers !";
 			model.addAttribute("message", message);
@@ -66,6 +67,7 @@ public class UserController {
 			@RequestParam(value = "password") String password) {
 		if (serviceperson.findByPseudoUserAndPasswordUser(username, password) == null) {
 			Person person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+			message = "Erreur de connexion !";
 			return "sign_in";
 		}
 

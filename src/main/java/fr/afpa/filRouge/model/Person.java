@@ -43,10 +43,11 @@ public class Person implements Serializable {
 	private int phoneUser;
 	@Column(name = "description_person")
 	private String descriptionPerson;
-	@ManyToOne
-	@JoinTable(name="person_roles", joinColumns={@JoinColumn(name="person_id_person")},
-    inverseJoinColumns={@JoinColumn(name="role_id")})
-	private Role role;
+	@ManyToMany
+	@JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
+    inverseJoinColumns={@JoinColumn(name="role_person")})
+	private Set<Role> groupeRoles;
+	
 	@ManyToOne
 	@JoinColumn(name = "postal_code")
 	private Locations location;
@@ -65,6 +66,17 @@ public class Person implements Serializable {
 	}
 	
 	
+	
+
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
+	}
 	// GETTERS & SETTERS
 	/**
 	 * @return the idUser
@@ -72,162 +84,180 @@ public class Person implements Serializable {
 	public int getIdUser() {
 		return idUser;
 	}
+
 	/**
 	 * @param idUser the idUser to set
 	 */
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
+
 	/**
 	 * @return the pseudoUser
 	 */
 	public String getPseudoUser() {
 		return pseudoUser;
 	}
+
 	/**
 	 * @param pseudoUser the pseudoUser to set
 	 */
 	public void setPseudoUser(String pseudoUser) {
 		this.pseudoUser = pseudoUser;
 	}
+
 	/**
 	 * @return the passwordUser
 	 */
 	public String getPasswordUser() {
 		return passwordUser;
 	}
+
 	/**
 	 * @param passwordUser the passwordUser to set
 	 */
 	public void setPasswordUser(String passwordUser) {
 		this.passwordUser = passwordUser;
 	}
+
 	/**
 	 * @return the firstNameUser
 	 */
 	public String getFirstNameUser() {
 		return firstNameUser;
 	}
+
 	/**
 	 * @param firstNameUser the firstNameUser to set
 	 */
 	public void setFirstNameUser(String firstNameUser) {
 		this.firstNameUser = firstNameUser;
 	}
+
 	/**
 	 * @return the lastNameUser
 	 */
 	public String getLastNameUser() {
 		return lastNameUser;
 	}
+
 	/**
 	 * @param lastNameUser the lastNameUser to set
 	 */
 	public void setLastNameUser(String lastNameUser) {
 		this.lastNameUser = lastNameUser;
 	}
+
 	/**
 	 * @return the dobUser
 	 */
 	public Calendar getDobUser() {
 		return dobUser;
 	}
+
 	/**
 	 * @param dobUser the dobUser to set
 	 */
 	public void setDobUser(Calendar dobUser) {
 		this.dobUser = dobUser;
 	}
+
 	/**
 	 * @return the genderUser
 	 */
 	public char getGenderUser() {
 		return genderUser;
 	}
+
 	/**
 	 * @param genderUser the genderUser to set
 	 */
 	public void setGenderUser(char genderUser) {
 		this.genderUser = genderUser;
 	}
+
 	/**
 	 * @return the emailUser
 	 */
 	public String getEmailUser() {
 		return emailUser;
 	}
+
 	/**
 	 * @param emailUser the emailUser to set
 	 */
 	public void setEmailUser(String emailUser) {
 		this.emailUser = emailUser;
 	}
+
 	/**
 	 * @return the phoneUser
 	 */
 	public int getPhoneUser() {
 		return phoneUser;
 	}
+
 	/**
 	 * @param phoneUser the phoneUser to set
 	 */
 	public void setPhoneUser(int phoneUser) {
 		this.phoneUser = phoneUser;
 	}
+
 	/**
 	 * @return the descriptionPerson
 	 */
 	public String getDescriptionPerson() {
 		return descriptionPerson;
 	}
+
 	/**
 	 * @param descriptionPerson the descriptionPerson to set
 	 */
 	public void setDescriptionPerson(String descriptionPerson) {
 		this.descriptionPerson = descriptionPerson;
 	}
+
 	/**
-	 * @return the role
+	 * @return the groupeRoles
 	 */
-	public Role getRole() {
-		return role;
+	public Set<Role> getGroupeRoles() {
+		return groupeRoles;
 	}
+
 	/**
-	 * @param role the role to set
+	 * @param groupeRoles the groupeRoles to set
 	 */
-	public void setRole(Role role) {
-		this.role = role;
+	public void setGroupeRoles(Set<Role> groupeRoles) {
+		this.groupeRoles = groupeRoles;
 	}
+
 	/**
 	 * @return the location
 	 */
 	public Locations getLocation() {
 		return location;
 	}
+
 	/**
 	 * @param location the location to set
 	 */
 	public void setLocation(Locations location) {
 		this.location = location;
 	}
+
 	/**
 	 * @return the interests
 	 */
 	public Set<Interest> getInterests() {
 		return interests;
 	}
+
 	/**
 	 * @param interests the interests to set
 	 */
 	public void setInterests(Set<Interest> interests) {
 		this.interests = interests;
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
 	}
 
 
