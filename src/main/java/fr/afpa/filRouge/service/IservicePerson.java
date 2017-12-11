@@ -24,4 +24,8 @@ public interface IservicePerson {
 	public void addPerson(Person person);
 
 	public void delPerson(Person person);
+
+	public Person findByPseudoUser(String username);
+
+	public Person findByEmailUser(String email);
 }

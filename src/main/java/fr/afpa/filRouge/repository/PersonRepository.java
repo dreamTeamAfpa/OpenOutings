@@ -16,6 +16,10 @@ import fr.afpa.filRouge.model.Person;
 public interface PersonRepository extends CrudRepository<Person, Integer> {
 
 	Person findByPseudoUserAndPasswordUser(String username, String password);
+
+	Person findByPseudoUser(String username);
+
+	Person findByEmailUser(String email);
 	
 
 }

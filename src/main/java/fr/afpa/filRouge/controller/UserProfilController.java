@@ -15,4 +15,10 @@ public class UserProfilController {
 		return "UserProfil";
 	}
 
+	// affiche page modification profil
+	@GetMapping("editprofilmembre")
+	public String editprofil(Model model) {
+		return "UserProfil";
+		
+	}
 }

@@ -55,6 +55,15 @@ public class Person implements Serializable {
     inverseJoinColumns={@JoinColumn(name="name_interest")})
 	private Set<Interest> interests;
 	
+	//CONSTRUCTEUR 
+	public Person(){}
+	
+	public Person(String pseudoUser, String passwordUser, String emailUser) {
+		this.pseudoUser = pseudoUser;
+		this.passwordUser = passwordUser;
+		this.emailUser = emailUser;
+	}
+	
 	
 	// GETTERS & SETTERS
 	/**
