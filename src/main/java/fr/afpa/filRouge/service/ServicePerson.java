@@ -39,7 +39,7 @@ public class ServicePerson implements IservicePerson {
 
 	@Override
 	public Person getOne(int idUser) {
-		return personRepository.findOneByIdUser(idUser);
+		return personRepository.findOne(idUser);
 	}
 
 	@Override
@@ -57,6 +57,16 @@ public class ServicePerson implements IservicePerson {
 	public void delPerson(Person person) {
 		personRepository.delete(person);
 
+	}
+
+	@Override
+	public Person findByPseudoUser(String username) {
+		return personRepository.findByPseudoUser(username);
+	}
+
+	@Override
+	public Person findByEmailUser(String email) {
+		return personRepository.findByEmailUser(email);
 	}
 
 

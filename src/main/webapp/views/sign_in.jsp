@@ -7,12 +7,21 @@
 <title>Page de connexion</title>
 <link rel="stylesheet" href="/css/animate.css">
 <link rel="stylesheet" href="/css/signIn.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
-	<header> </header>
+	<header>
+		<div id="logoEnTete">
+			<a href="index"><img
+				src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png"
+				title="Page d'Accueil" /></a>
+		</div>
+		<div id="BoutonMenuEnTete">
+			<a href="index"><img
+				src="images/icone mainMenu_60x60orange_EnTete_close.png" /></a>
+		</div>
+	</header>
 
 	<div class="container">
 		<div class="top">
@@ -23,7 +32,7 @@
 				<h2>Connexion</h2>
 			</div>
 
-			<form class="form" method="post" action="">
+			<form class="form" method="post" action="connexion">
 				<label for="username">Nom d'utilisateur</label> <br> <input
 					type="text" id="username" name="username"> <br> <label
 					for="password">Mot de passe</label> <br> <input

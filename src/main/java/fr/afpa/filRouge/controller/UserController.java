@@ -14,32 +14,63 @@ import fr.afpa.filRouge.service.IservicePerson;
 @Controller
 @RequestMapping("/")
 public class UserController {
-	
+
+	Person person;
 	@Autowired
 	private IservicePerson serviceperson;
-	
-	//affiche page signUp
+
+	// affiche page signUp
 	@GetMapping("signUp")
 	public String signUp(Model model) {
 		return "sign_up";
 	}
-	
-	//affiche page signIn
+
+	// validation inscription
+	@PostMapping("inscription")
+	public String inscription(Model model, @RequestParam(value = "username") String username,
+			@RequestParam(value = "password") String password,
+			@RequestParam(value = "passwordVerif") String passwordVerif, @RequestParam(value = "email") String email) {
+
+		String message = null;
+		if ((password.equals(passwordVerif) != true)) {
+			message = "les mots de passes ne sont pas identiques";
+			model.addAttribute("message", message);
+			return "sign_up";
+		} else if (serviceperson.findByPseudoUser(username) != null) {
+			message = "ce nom d'utilisateur est déjà utilisé";
+			model.addAttribute("message", message);
+			return "sign_up";
+		} else if (serviceperson.findByEmailUser(email) != null) {
+			message = "cet email existe déjà dans nos contacts";
+			model.addAttribute("message", message);
+			return "sign_up";
+		} else {
+			Person person = new Person(username, password, email);
+			serviceperson.addPerson(person);
+			message = "Bienvenue chez les Outers !";
+			model.addAttribute("message", message);
+			model.addAttribute("person", person);
+			return "index_logged";
+		}
+
+	}
+
+	// affiche page signIn
 	@GetMapping("signIn")
 	public String signIn(Model model) {
 		return "sign_in";
 	}
-	
-	@PostMapping("signIn")
-	public String postSignIn(Model model,@RequestParam(value = "username") String pseudoUser
-			,@RequestParam(value = "password") String passwordUser) {
-		if (serviceperson.findByPseudoUserAndPasswordUser(pseudoUser, passwordUser) == null ) {
-			Person person = serviceperson.findByPseudoUserAndPasswordUser(pseudoUser, passwordUser);
-		return "sign_in";
+
+	@PostMapping("connexion")
+	public String postSignIn(Model model, @RequestParam(value = "username") String username,
+			@RequestParam(value = "password") String password) {
+		if (serviceperson.findByPseudoUserAndPasswordUser(username, password) == null) {
+			Person person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+			return "sign_in";
 		}
-		
+
 		return "index_logged";
-		
+
 	}
 
 }
