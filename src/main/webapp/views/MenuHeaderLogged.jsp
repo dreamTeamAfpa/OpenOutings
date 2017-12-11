@@ -13,7 +13,7 @@
 	</p>
 	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
 	<a href="editprofilmembre"><button id="bprofil"
-			title="Edition profil " <c:out value="${person.pseudoUser}"/>></button></a>
+			title="Edition profil "${person.pseudoUser}/></button><c:out value="${person.pseudoUser}"></c:out></a>
 </div>
 <div id="BoutonMenuEnTete">
 	<a href="menu"><img
