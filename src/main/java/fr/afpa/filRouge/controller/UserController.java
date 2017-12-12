@@ -27,7 +27,7 @@ public class UserController {
 
 	// validation inscription
 	@PostMapping("inscription")
-	public String inscription(Model model, @RequestParam(value = "username") String username,
+	public String inscription(Model model,@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password,
 			@RequestParam(value = "passwordVerif") String passwordVerif, @RequestParam(value = "email") String email) {
 		if ((password.equals(passwordVerif) != true)) {
