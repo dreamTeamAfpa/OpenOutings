@@ -8,6 +8,7 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,25 +34,39 @@ public class Event implements Serializable {
 	@Column(name="id_event")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idEvent;
+	
 	@Column(name="title_event")
 	private String titleEvent;
+	
 	@Column(name="description_event")
 	private String resumeEvent;
+	
 	@Column(name="details_event")
 	private String detailsEvent;
+	
 	@Column(name="date_event")
 	private Calendar dateEvent;
-	@OneToOne
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="administrator_id_person")
 	private Person adminEvent;
-	@OneToOne
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="name_theme")
 	private Theme theme;
-	@OneToOne
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="postal_code")
 	private Locations location;
+	
 	@Column(name="maxParticipants")
 	private int maxParticipants;
+	
 	@Column(name="rate_event")
 	private int rateEvent;
-	@OneToOne
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_groupe")
     private Groupe groupe;
 	
 	

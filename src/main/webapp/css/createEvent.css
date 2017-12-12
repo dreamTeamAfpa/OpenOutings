@@ -1,4 +1,11 @@
-/*Body */
+html {
+    /*font definition*/
+    font-family: "Montserrat";
+}
+a{
+    width: inherit;
+	color: white;text-decoration: none;
+}
 body {
     /*Background properties*/
     background: url(../images/backgroundImage.jpg);
@@ -8,15 +15,31 @@ body {
     background-position: 0px 0px;
     height: 100%;
     width: 100%;
+    /***no-repeat except homepage***/
+    /*background-repeat: no-repeat;     /*<-- active/desactive background mouvement <-- TODO */
+    /***only homepage***/
     background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
 }
-
+h1{
+	font-family: "Montserrat"; text-align: center;
+	vertical-align: bottom; font-weight: bold;
+	color: whitesmoke; text-shadow: 2px 2px 4px #000000;
+}
+.parent{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.menu{
+	position: relative;
+	top: 20% ;  margin-top: 3%;
+}
 a {
     width: inherit;
 }
-/*animation homePage background*/
 
+/*animation homePage background*/
 @keyframes animatedBackground {
     from {
         background-position: 0 0;
@@ -26,6 +49,14 @@ a {
     }
 }
 
+/*font Montserrat*/
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix);
+    src: url(../fonts/montserrat-light-webfont.eot?#iefix) format("eot"), url(../fonts/montserrat-light-webfont.woff2) format("woff2"), url(../fonts/montserrat-light-webfont.woff) format("woff"), url(../fonts/montserrat-light-webfont.ttf) format("truetype"), url(../fonts/montserrat-light-webfont.svg) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
 
 /*header properties*/
 header {
@@ -105,15 +136,48 @@ header {
 }
     
 
-/*boutton inscription properties*/
+/*boutton profil properties*/
 #bprofil {
     background-image: url(../images/006-social-2-red.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 40px;
     width: 40px;
-    border-radius: 10px;    
+    border-radius: 10px; 
 }
+#bprofil:hover {
+	
+}
+
+/*boutton connection properties*/
+#bconnexion {
+    background: url(../images/bouton_connexion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+/*boutton inscription properties*/
+#binscription {
+    background: url(../images/bouton_inscription.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-bottom: 1%;
+}
+
+
 
 /*bump effect on all buttons*/
 #bPROPOSER:hover,
@@ -163,17 +227,26 @@ header {
 
 
 
-#contentDescription { 
-    border:10px double #7444E6; padding:5px; width:75%;
+#eventDescription { 
+    border:10px double #7444E6; 
+    padding:5px; 
+    width:75%;
     height: 300px;
     margin: auto;
-    justify-content: space-between; margin-top: 1%;
+    justify-content: space-between;
+    margin-top: 1%;
     background-color: rgba(251, 235, 100, 0.5);
     -moz-border-radius:20px;
     -khtml-border-radius:20px;
     -webkit-border-radius:20px;
     border-radius:20px;
     width: 100%;
+}
+
+legend {
+	font-family: "Montserrat";
+    color: #7444E6;
+    font-weight: bold;
 }
 
 #contentCenter{ 
@@ -189,7 +262,6 @@ header {
     -webkit-border-radius:20px;
     border-radius:20px;
     font-family: "Montserrat";
-    text-decoration: underline;
     color: #7444E6;
     margin-top: 1px;
 }
