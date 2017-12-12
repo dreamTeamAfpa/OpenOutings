@@ -1,9 +1,5 @@
 <!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
-<%@ page pageEncoding="UTF-8"%>
-<!-- taglibs a inclure dans toutes les pages -->
-<%@include file="/views/taglibs.jsp"%>
-<!DOCTYPE html >
 <html>
 <head>
         <meta charset="utf-8">
@@ -108,26 +104,20 @@
                                 <input type="button" class="eventButton" value="Valider" id="createEvent">
                                 <span></span>
                                 <input type="button" class="eventButton" value="Annuler" id="cancel">
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div id="bodyRight">
                 <img src="images/sport8.jpg"/>
                 <img src="images/goOut4.jpg"/>
                 <img src="images/sport7.jpg"/>
                 <img src="images/culture4.jpg"/>
             </div>
-
-
         </div>
-
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="script/index.js"></script>
     </body>
-
 </html>

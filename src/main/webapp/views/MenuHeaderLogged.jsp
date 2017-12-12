@@ -11,9 +11,14 @@
 			type="search" id="zonerecherche" title="Votre recherche ici...">
 		<label>${username}</label>
 	</p>
+	<div id="divbdeconnexion">
 	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
-	<a href="editprofilmembre"><button id="bprofil"
-			title="Edition profil " <c:out value="${person.pseudoUser}"/>></button></a>
+	</div>
+	<div id="divbprofil">
+		<a href="editprofilmembre"><button id="bprofil"
+				title="Edition profil" /></button>
+			<br>${personSession.pseudoUser}</a>
+	</div>
 </div>
 <div id="BoutonMenuEnTete">
 	<a href="menu"><img
