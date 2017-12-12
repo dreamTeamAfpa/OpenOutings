@@ -16,6 +16,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+
+@Scope("session")
 @Entity
 @Table(name = "person")
 public class Person implements Serializable {
@@ -23,12 +26,9 @@ public class Person implements Serializable {
 	 * 
 	 * 
 	 */
-
-    
-	
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_person")
 	private int idUser;
 	@Column(name = "pseudo_person")

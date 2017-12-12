@@ -17,7 +17,7 @@
 	<div id="divbprofil">
 		<a href="editprofilmembre"><button id="bprofil"
 				title="Edition profil" /></button>
-			<br>${person.pseudoUser}</a>
+			<br>${personSession.pseudoUser}</a>
 	</div>
 </div>
 <div id="BoutonMenuEnTete">
