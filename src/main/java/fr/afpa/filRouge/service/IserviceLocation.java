@@ -2,6 +2,7 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Locations;
 
 /**
@@ -16,6 +17,8 @@ public interface IserviceLocation {
 	public Locations getOne(int postalCode);
 
 	public Locations getOne(String nameLocation);
+
+	public Locations findByNameLocation(String nameLocation);
 
 	public void modifiedOne(Locations location);
 

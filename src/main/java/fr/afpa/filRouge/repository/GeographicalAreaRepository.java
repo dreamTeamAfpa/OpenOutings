@@ -4,7 +4,7 @@
 package fr.afpa.filRouge.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.GeographicalArea;
 
@@ -12,7 +12,7 @@ import fr.afpa.filRouge.model.GeographicalArea;
  * @author 34011-79-09
  *
  */
-@Repository
+@Component
 public interface GeographicalAreaRepository extends CrudRepository<GeographicalArea, Integer> {
 
 
