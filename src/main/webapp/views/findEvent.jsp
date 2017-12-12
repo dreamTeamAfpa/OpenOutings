@@ -1,12 +1,18 @@
 <%@include file="/views/taglibs.jsp"%><html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+	        <title>Open Outings</title>
+	         <link rel="stylesheet" type="text/css" href="css/style.css">
+	        <link rel="stylesheet" type="text/css" href="css/rechercheEvent.css">
+	        <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    </head>
 <body>
-<header>
-<%@include file="/views/MenuHeader.jsp"%>
-</header>
+	<header>
+		<!-- Menu header -->
+		<%@include file="/views/MenuHeader.jsp"%>
+	</header>
+
 <div id="bodyContainer">
 
             <div id="bodyLeft">
