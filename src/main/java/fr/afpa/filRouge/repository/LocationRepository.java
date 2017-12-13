@@ -4,7 +4,7 @@
 package fr.afpa.filRouge.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.Locations;
 
@@ -12,8 +12,9 @@ import fr.afpa.filRouge.model.Locations;
  * @author 34011-79-09
  *
  */
-@Repository
+@Component
 public interface LocationRepository extends CrudRepository<Locations, Integer> {
-	
+
 	Locations findByNameLocation(String nameLocation);
+
 }

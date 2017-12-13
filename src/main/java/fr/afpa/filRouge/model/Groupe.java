@@ -9,9 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,24 +23,23 @@ public class Groupe implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="id_group")
+	@Column(name="id_groupe")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idGroup;
 	@Column(name="name_Groupe")
 	private String nameGroup;
 	@Column(name="description_Groupe")
 	private String descriptionGroup;
-	@Column(name="permanent")
-	private Boolean permanent;
-	@ManyToOne
-	private Person adminGroupe;
-	@OneToOne
-	private Event event;	
-	@OneToMany
+	@OneToOne(mappedBy="groupe")
+	private Event event;
+	@ManyToMany
 	private Set<Person> usersGroupe;
 	@ManyToMany
+	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
+    inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
 	public Set<Interest> interests = new HashSet<Interest>();
 	@OneToOne
+	@JoinColumn(name = "name_area")
 	private GeographicalArea geographicalArea;
 	
 	//GETTERS & SETTERS
@@ -79,30 +78,6 @@ public class Groupe implements Serializable{
 	 */
 	public void setDescriptionGroup(String descriptionGroup) {
 		this.descriptionGroup = descriptionGroup;
-	}
-	/**
-	 * @return the permanent
-	 */
-	public Boolean getPermanent() {
-		return permanent;
-	}
-	/**
-	 * @param permanent the permanent to set
-	 */
-	public void setPermanent(Boolean permanent) {
-		this.permanent = permanent;
-	}
-	/**
-	 * @return the adminGroupe
-	 */
-	public Person getAdminGroupe() {
-		return adminGroupe;
-	}
-	/**
-	 * @param adminGroupe the adminGroupe to set
-	 */
-	public void setAdminGroupe(Person adminGroupe) {
-		this.adminGroupe = adminGroupe;
 	}
 	/**
 	 * @return the event
@@ -152,10 +127,5 @@ public class Groupe implements Serializable{
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
-	
-	
-
-	
-
 	
 }

@@ -1,6 +1,11 @@
 package fr.afpa.filRouge.controller;
 
+import java.io.Serializable;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +16,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.service.IservicePerson;
 
+@Scope("session")
 @Controller
 @RequestMapping("/")
-public class UserController {
-
+public class UserController implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	private Person person;
 	private String message;
 	@Autowired
@@ -22,17 +35,15 @@ public class UserController {
 
 	// affiche page signUp
 	@GetMapping("signUp")
-	public String signUp(Model model) {
+	public String signUp(Model models) {
 		return "sign_up";
 	}
 
 	// validation inscription
 	@PostMapping("inscription")
-	public String inscription(Model model, @RequestParam(value = "username") String username,
+	public String inscription(HttpSession httpSession, Model model,@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password,
 			@RequestParam(value = "passwordVerif") String passwordVerif, @RequestParam(value = "email") String email) {
-
-		
 		if ((password.equals(passwordVerif) != true)) {
 			message = "les mots de passes ne sont pas identiques";
 			model.addAttribute("message", message);
@@ -51,9 +62,10 @@ public class UserController {
 			message = "Bienvenue chez les Outers !";
 			model.addAttribute("message", message);
 			model.addAttribute("person", person);
+			httpSession.setAttribute("personSession", person);
+			System.out.println(httpSession.getId()); 
 			return "index_logged";
 		}
-
 	}
 
 	// affiche page signIn
@@ -63,16 +75,19 @@ public class UserController {
 	}
 
 	@PostMapping("connexion")
-	public String postSignIn(Model model, @RequestParam(value = "username") String username,
+	public String postSignIn(HttpSession httpSession, Model model, @RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
 		if (serviceperson.findByPseudoUserAndPasswordUser(username, password) == null) {
-			Person person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+			person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
 			message = "Erreur de connexion !";
+			model.addAttribute("message", message);
 			return "sign_in";
 		}
-
+		person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
+		model.addAttribute(person);
+		httpSession.setAttribute("personSession", person);
+		
 		return "index_logged";
-
 	}
 
 }

@@ -1,6 +1,6 @@
 <!-- Menu header -->
 <div id="logoEnTete">
-	<a href=""><img
+	<a href="index"><img
 		src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png"
 		title="Page d'Accueil" /></a>
 </div>

@@ -5,33 +5,34 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.repository.PersonRepository;
 
-/**
- * @author FR DESCOMBES
- *
- */
 @Service
 public class ServicePerson implements IservicePerson {
 
 	private Person person;
-	
+
+	@Autowired
+	private HttpSession httpSession;
 	@Autowired
 	private PersonRepository personRepository;
 
 	public ServicePerson(PersonRepository personRepository) {
 		this.personRepository = personRepository;
 	}
-	
+
 	@Override
-	public Person findByPseudoUserAndPasswordUser(String username,String password) {
-		person = personRepository.findByPseudoUserAndPasswordUser(username,password);
+	public Person findByPseudoUserAndPasswordUser(String username, String password) {
+		person = personRepository.findByPseudoUserAndPasswordUser(username, password);
 		return person;
 	}
+
 	@Override
 	public List<Person> getAll() {
 		return (List<Person>) personRepository.findAll();
@@ -64,11 +65,23 @@ public class ServicePerson implements IservicePerson {
 		return personRepository.findByPseudoUser(username);
 	}
 
+	/**
+	 * @return the httpSession
+	 */
+	public HttpSession getHttpSession() {
+		return httpSession;
+	}
+
+	/**
+	 * @param httpSession the httpSession to set
+	 */
+	public void setHttpSession(HttpSession httpSession) {
+		this.httpSession = httpSession;
+	}
+
 	@Override
 	public Person findByEmailUser(String email) {
 		return personRepository.findByEmailUser(email);
 	}
-
-
 
 }

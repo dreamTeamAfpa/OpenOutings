@@ -1,4 +1,5 @@
 
+
 <!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
 
@@ -63,7 +64,7 @@
         
             <form action="" class="formulaire">
 			<input class="flexdatalist" type="text" name="recherche" list="listInterest"
-				autocomplete="off" placeholder="Choisir intérêt(s)" required data-min-length ="0" multiple ="multiple" data-selection-required='1'>
+				autocomplete="off" placeholder="Choisir intï¿½rï¿½t(s)" required data-min-length ="0" multiple ="multiple" data-selection-required='1'>
 			<datalist  id="listInterest">
 				
 				<c:forEach var="interest" items="${interests}">

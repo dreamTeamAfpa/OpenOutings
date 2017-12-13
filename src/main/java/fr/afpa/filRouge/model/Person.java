@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
@@ -16,15 +17,19 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+
+@Scope("session")
 @Entity
 @Table(name = "person")
 public class Person implements Serializable {
 	/**
 	 * 
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_person")
 	private int idUser;
 	@Column(name = "pseudo_person")
@@ -46,11 +51,10 @@ public class Person implements Serializable {
 	@Column(name = "description_person")
 	private String descriptionPerson;
 	@ManyToMany
-    @JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
+	@JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="id_Groupe")})
-    @MapKeyJoinColumn(name="role_person")
-    private Map<Role,Groupe> groupeRoles;
-	
+	@MapKeyJoinColumn(name="role_person")
+	private Map<Role,Groupe> groupeRoles;
 	@ManyToOne
 	@JoinColumn(name = "postal_code")
 	private Locations location;
@@ -80,6 +84,7 @@ public class Person implements Serializable {
 	public String toString() {
 		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
 	}
+	// GETTERS & SETTERS
 
 	/**
 	 * @return the idUser
@@ -263,11 +268,5 @@ public class Person implements Serializable {
 		this.interests = interests;
 	}
 
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	}
+}
+
