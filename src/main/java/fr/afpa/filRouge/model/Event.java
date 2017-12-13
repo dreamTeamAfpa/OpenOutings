@@ -5,6 +5,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -46,28 +46,24 @@ public class Event implements Serializable {
 	
 	@Column(name="date_event")
 	private Calendar dateEvent;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="administrator_id_person")
-	private Person adminEvent;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="name_theme")
+	@ManyToMany
+	@JoinTable(name="user_participate_in_event", joinColumns={@JoinColumn(name="id_person")},
+    inverseJoinColumns={@JoinColumn(name="event_id_event")})
+	private Set<Role> eventRoles;
+	@OneToOne
 	private Theme theme;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="postal_code")
+	@OneToOne
+	@JoinColumn(name = "postal_code")
 	private Locations location;
 	
 	@Column(name="maxParticipants")
 	private int maxParticipants;
 	
 	@Column(name="rate_event")
-	private int rateEvent;
-	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="id_groupe")
-    private Groupe groupe;
+	private int rateEvent ;
+	@OneToOne
+	@JoinColumn(name="id_Groupe")
+	private Groupe groupe;
 	
 	
 	//GETTERS & SETTERS
@@ -81,15 +77,6 @@ public class Event implements Serializable {
 	/**
 	 * @return the adminEvent
 	 */
-	public Person getAdminEvent() {
-		return adminEvent;
-	}
-	/**
-	 * @param adminEvent the adminEvent to set
-	 */
-	public void setAdminEvent(Person adminEvent) {
-		this.adminEvent = adminEvent;
-	}
 	/**
 	 * @return the groupe
 	 */
@@ -159,15 +146,15 @@ public class Event implements Serializable {
 	/**
 	 * @return the person
 	 */
-	public Person getPerson() {
-		return adminEvent;
-	}
-	/**
-	 * @param person the person to set
-	 */
-	public void setPerson(Person person) {
-		this.adminEvent = person;
-	}
+//	public Person getPerson() {
+//		return adminEvent;
+//	}
+//	/**
+//	 * @param person the person to set
+//	 */
+//	public void setPerson(Person person) {
+//		this.adminEvent = person;
+//	}
 	/**
 	 * @return the theme
 	 */
@@ -215,6 +202,12 @@ public class Event implements Serializable {
 	 */
 	public void setRateEvent(int rateEvent) {
 		this.rateEvent = rateEvent;
+	}
+	public Set<Role> getEventRoles() {
+		return eventRoles;
+	}
+	public void setEventRoles(Set<Role> eventRoles) {
+		this.eventRoles = eventRoles;
 	}
 
 	
