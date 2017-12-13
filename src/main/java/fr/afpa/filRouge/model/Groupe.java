@@ -35,7 +35,7 @@ public class Groupe implements Serializable{
 	@ManyToMany
 	private Set<Person> usersGroupe;
 	@ManyToMany
-	@JoinTable(name="groupe_corresponds_in_interest", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
+	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
 	public Set<Interest> interests = new HashSet<Interest>();
 	@OneToOne
