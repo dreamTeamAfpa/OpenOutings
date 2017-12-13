@@ -10,6 +10,8 @@
     <title>Open Outings</title>
     <link rel="stylesheet" type="text/css" href="css/profilMembre2.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.flexdatalist.min.css">
+    
 </head>
 
 <body>
@@ -53,20 +55,29 @@
                     <li id="pseudo"><a target="_blank" href="">PSEUDO</a></li>
                     <li id="age"><a target="_blank" href="">AGE</a></li>
                     <li id="ville"><a target="_blank" href="">VILLE</a></li>
-                    <li>
-                </ul>
-            </div>
-
-            <ul id="liste" class="drop">
-                <li><a href="#">CENTRES d'INTERETS</a>
-                    <ul>
-                        <li><a href="#">SPORT</a></li>
-                        <li><a href="#">CULTURE</a></li>
-                        <li><a href="#">SORTIE</a></li>
                     </ul>
-                </li>
-            </ul>
-
+                  
+            </div>
+              <a href="#">CENTRES d'INTERETS</a>
+             <div id="searchbar">
+        
+            <form action="" class="formulaire">
+			<input class="flexdatalist" type="text" name="recherche" list="listInterest"
+				autocomplete="off" placeholder="Choisir intérêt(s)" required data-min-length ="0" multiple ="multiple" data-selection-required='1'>
+			<datalist  id="listInterest">
+				
+				<c:forEach var="interest" items="${interests}">
+					<option value="${interest}"/></option> 	
+					</c:forEach>	
+					
+			</datalist>
+			
+		</form>
+		
+		</div> 
+	
+		<input class="bouton" type="submit" value="valider" /><input
+				type="reset" value="Effacer" id="reset" name="reset" />
             <div id="boutonGroup">
                 <a href="groupe.html"><button id="buttongroup1" title="Bowling"></button></a>
                 <button id="buttongroup2"></button>
@@ -76,7 +87,6 @@
 
         </div>
         <div id="bodyCenter">
-
             <figure class="description">
                 
                 <figcaption>
@@ -115,7 +125,10 @@
 		<%@include file="/views/footer.jsp"%>
 	</footer>
 
-
+<script src="script/editProfilMembre.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-flexdatalist/2.2.2/jquery.flexdatalist.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="script/jquery.flexdatalist.min.js"></script>
 </body>
 
 </html>

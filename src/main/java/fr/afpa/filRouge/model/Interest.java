@@ -6,8 +6,6 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -24,15 +22,26 @@ public class Interest implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nameInterest  + " " + "(" + descriptionInterest + ")";
+	}
 	@Id
 	@Column(name="name_interest")
 	private String nameInterest;
 	@Column(name="description_interest")
 	private String descriptionInterest;
+	
 	@ManyToMany
 	private Set<Groupe> groupes;
 	@ManyToMany(mappedBy = "interests")
 	private Set<Person> persons;
+	
 	
 	//GETTERS & SETTERS	
 	/**
@@ -83,6 +92,7 @@ public class Interest implements Serializable{
 	public void setPersons(Set<Person> persons) {
 		this.persons = persons;
 	}
+
 	
 	
 	

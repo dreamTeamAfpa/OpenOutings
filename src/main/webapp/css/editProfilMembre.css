@@ -458,7 +458,7 @@ section img {
     margin-left: 10px;
 }
 
-#bodyLeft input { border: 1px solid lightgrey; }
+#bodyLeft input { border: 1px solid lightgrey; visibility: visible;}
 #bodyLeft label { border: 1px solid lightgrey; }
 
 /*Body */

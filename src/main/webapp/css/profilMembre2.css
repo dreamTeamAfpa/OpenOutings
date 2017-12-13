@@ -288,7 +288,7 @@ nav ul li:hover {
 
 .navi ul li a:hover {
     background: #69f;
-    color: #fff;
+
     -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
     -moz-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
@@ -467,8 +467,8 @@ section img {
 }
 
 #bodyLeft input {
-    border: 1px solid lightgrey;
-    visibility: hidden;
+   
+    visibility: visible;
 }
 
 #bodyLeft label {
@@ -567,6 +567,8 @@ header {
     opacity: 1;
 }
 
+
+
 /*loupe properties*/
 #marecherche img {
 
@@ -620,7 +622,9 @@ header {
 }
 
 
-
+#searchbar{
+	background-color: none;
+}
 
 /*Bloc Central*/
 
