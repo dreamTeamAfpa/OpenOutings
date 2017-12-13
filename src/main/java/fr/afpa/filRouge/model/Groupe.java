@@ -128,9 +128,4 @@ public class Groupe implements Serializable{
 		this.geographicalArea = geographicalArea;
 	}
 	
-	
-
-	
-
-	
 }

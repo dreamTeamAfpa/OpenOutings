@@ -18,11 +18,11 @@
 	<div id="titrelogo">Open Outings</div>
 	<div id="contener">
 		<div>
-			<a href="create-event.html"><button id="bPROPOSER"
+			<a href="createEvent"><button id="bPROPOSER"
 					title="Proposer une sortie !"></button></a>
 		</div>
 		<div>
-			<a href="rechercheEvent.html"><button id="bTROUVER"
+			<a href="rechercheEvent"><button id="bTROUVER"
 					title="Trouver une sortie !"></button></a>
 		</div>
 	</div>

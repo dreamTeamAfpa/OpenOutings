@@ -3,8 +3,10 @@ package fr.afpa.filRouge.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -18,19 +20,26 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "theme")
-public class Theme implements Serializable{
+public class Theme implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="name_theme")
+	@Column(name = "name_theme")
 	private String nameTheme;
-	@OneToMany
+
+	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Interest> interests;
 
-	
+	// CONSTRUCTOR
+	public Theme() {
+	}
+
+	public Theme(String nameTheme) {
+		this.nameTheme = nameTheme;
+	}
+
+	// GETTERS & SETTERS
+
 	public String getNameTheme() {
 		return nameTheme;
 	}
@@ -39,7 +48,6 @@ public class Theme implements Serializable{
 		this.nameTheme = nameTheme;
 	}
 
-	
 	public Set<Interest> getInterests() {
 		return interests;
 	}

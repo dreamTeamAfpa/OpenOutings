@@ -1,5 +1,7 @@
 package fr.afpa.filRouge.controller;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class BaseController {
+public class BaseController implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	// affiche page index
 	@GetMapping({"","index"})

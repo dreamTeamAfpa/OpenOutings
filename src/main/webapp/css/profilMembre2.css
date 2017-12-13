@@ -468,7 +468,7 @@ section img {
 
 #bodyLeft input {
     border: 1px solid lightgrey;
-    visibility: hidden;
+    visibility: visible;
 }
 
 #bodyLeft label {

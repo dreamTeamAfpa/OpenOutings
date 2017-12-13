@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,12 +34,16 @@ public class Event implements Serializable {
 	@Column(name="id_event")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idEvent;
+	
 	@Column(name="title_event")
 	private String titleEvent;
+	
 	@Column(name="description_event")
 	private String resumeEvent;
+	
 	@Column(name="details_event")
 	private String detailsEvent;
+	
 	@Column(name="date_event")
 	private Calendar dateEvent;
 	@ManyToMany
@@ -50,13 +55,15 @@ public class Event implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "postal_code")
 	private Locations location;
+	
 	@Column(name="maxParticipants")
 	private int maxParticipants;
+	
 	@Column(name="rate_event")
 	private int rateEvent ;
 	@OneToOne
 	@JoinColumn(name="id_Groupe")
-    private Groupe groupe;
+	private Groupe groupe;
 	
 	
 	//GETTERS & SETTERS
@@ -70,15 +77,6 @@ public class Event implements Serializable {
 	/**
 	 * @return the adminEvent
 	 */
-//	public Person getAdminEvent() {
-//		return adminEvent;
-//	}
-//	/**
-//	 * @param adminEvent the adminEvent to set
-//	 */
-//	public void setAdminEvent(Person adminEvent) {
-//		this.adminEvent = adminEvent;
-//	}
 	/**
 	 * @return the groupe
 	 */
