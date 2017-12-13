@@ -1,15 +1,18 @@
 package fr.afpa.filRouge.service;
 
-import java.util.List;
 
-import org.springframework.stereotype.Service;
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.Interest;
 
-@Service
+@Component
 public interface IserviceInterest {
+	
+	public Interest findByNameInterestAllIgnoreCase(String nameInterest);
 
-	public List<Interest> getAll();
+	public ArrayList<Interest> getAll();
 
 	public Interest getOne(String nameArea);
 

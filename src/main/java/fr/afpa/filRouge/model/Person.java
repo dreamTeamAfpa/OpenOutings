@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
@@ -268,3 +269,4 @@ public class Person implements Serializable {
 	}
 
 }
+
