@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -30,8 +31,9 @@ public class Groupe implements Serializable{
 	private String nameGroup;
 	@Column(name="description_Groupe")
 	private String descriptionGroup;
-	@OneToOne(mappedBy="groupe")
-	private Event event;
+	@OneToMany
+    @JoinColumn(name = "id_Groupe")
+    private Set<Event> events;
 	@ManyToMany
 	private Set<Person> usersGroupe;
 	@ManyToMany
@@ -82,15 +84,16 @@ public class Groupe implements Serializable{
 	/**
 	 * @return the event
 	 */
-	public Event getEvent() {
-		return event;
-	}
-	/**
-	 * @param event the event to set
-	 */
-	public void setEvent(Event event) {
-		this.event = event;
-	}
+	public Set<Event> getEvents() {
+        return events;
+    }
+
+    /**
+     * @param events the events to set
+     */
+    public void setEvents(Set<Event> events) {
+        this.events = events;
+    }
 	/**
 	 * @return the usersGroupe
 	 */

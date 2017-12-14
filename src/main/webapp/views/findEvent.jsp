@@ -2,7 +2,7 @@
 <%@include file="/views/taglibs.jsp"%>
 <head>
 <title>Open Outings</title>
-<link rel="stylesheet" type="text/css" href="css/createEvent.css">
+<link rel="stylesheet" type="text/css" href="css/rechercheEvent.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -19,51 +19,44 @@
 			<img src="images/sport1.jpg" /> <img src="images/goOut1.png" /> <img
 				src="images/culture1.jpg" /> <img src="images/culture2.jpg" />
 		</div>
-		<div id="bodyLeft2">
-			<img class="images" src="images/culture4.jpg" /> <img class="images"
-				src="images/sport4.jpg" /> <img class="images"
-				src="images/goOut2.jpg" /> <img class="images"
-				src="images/sport3.jpg" />
-		</div>
-		<div id="bodyCenter">
-			<div class="content">
 
-				<span>
-					<p id="iPar1">MONTPELLIER FOOTBALL 02/09</p>
-					<p id="iPar2">MONTPELLIER GO OUT 03/09</p>
-				</span>
-			</div>
+		<div id="bodyCenter">
+			<!-- Sélection des items pour filtrer les événements -->
 			<div class="parent">
-				<th class="choix"><select id="iChoixLieux">
-						<option value="Lieux">LIEUX</option>
-						<option value="Montpellier">MONTPELLIER</option>
-						<option value="Sete">SETE</option>
-						<option value="Nimes">NIMES</option>
-						<option value="Paris">PARIS</option>
-						<option value="Marseille">MARSEILLE</option>
-						<option value="Lille">LILLE</option>
-				</select></th> <input type="text" class="date datePicker" name="dateEvenement"
-					id="iChoixDate">
-				<th class="choix"><select id="iChoixThemes">
-						<option value="Themes">THEMES</option>
-						<option value="Sport">SPORT</option>
-						<option value="Culture">CULTURE</option>
-						<option value="GoOut">GO OUT</option>
-				</select></th> <br /> <input type="button" name="valider" value="Valider"
+				<select id="iChoixLieux">
+					<option value="Lieux">choix du lieu</option>
+					<c:forEach var="myGeo" items="${geo}">
+						<option value="${myGeo.nameArea}"><c:out
+								value="${myGeo.nameArea}" />
+						</option>
+					</c:forEach>
+				</select> <input type="date" class="datePicker" name="dateEvenement"
+					id="iChoixDate"> <select id="iChoixThemes">
+					<option value="Themes">choix du thème</option>
+					<c:forEach var="theme" items="${themes}">
+						<option><c:out value="${theme.nameTheme}" />
+						</option>
+					</c:forEach>
+				</select> <br /> <input type="button" name="valider" value="Valider"
 					id="vBoutton">
+			</div>
+			<!-- Affichage des événements -->
+			<div class="content">
+				<span class="titleMain"><c:forEach var="event"
+						items="${events}">
+						<option value="${event.getIdEvent()}"><c:out
+								value="${event.getTitleEvent()}" /></option>
+					</c:forEach> </span>
 			</div>
 		</div>
 		<div id="bodyRight">
 			<img src="images/sport7.jpg" /> <img src="images/culture3.jpg" /> <img
 				src="images/sport6.jpg" /> <img src="images/culture1.jpg" />
 		</div>
-		<div id="bodyRight2">
-			<img src="images/sport5.jpg" /> <img src="images/sport8.jpg" /> <img
-				src="images/goOut4.jpg" /> <img src="images/goOut2.jpg" />
-		</div>
+
 	</div>
 
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="script/index.js"></script>
 	<footer>
