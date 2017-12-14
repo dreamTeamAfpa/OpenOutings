@@ -1,6 +1,12 @@
 /* multiple select Hobbies list */
 $(document).ready(function() {
-    $('#select option').on('click', function(){             
-    $("#sel").append('<span class="smallBloc">'+$(this).val()+'</span><br>');
+   $('#datalist option').on('click', function(){             
+   $("#data").append('<span class="smallBloc">'+$(this).attr()+'</span><br>');
  });
+    $('.flexdatalist').flexdatalist({
+    	selectionRequired: 1,
+        minLength: 1
+  });
 });
+
+

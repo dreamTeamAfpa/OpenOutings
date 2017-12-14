@@ -69,12 +69,6 @@ public class Person implements Serializable {
 		this.passwordUser = passwordUser;
 		this.emailUser = emailUser;
 	}
-	
-	
-	
-
-	
-	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
