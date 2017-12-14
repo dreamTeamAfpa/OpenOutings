@@ -27,7 +27,7 @@ public class Theme implements Serializable {
 	@Column(name = "name_theme")
 	private String nameTheme;
 
-	@OneToMany(mappedBy = "theme", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
 	private Set<Interest> interests;
 
 	// CONSTRUCTOR

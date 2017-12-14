@@ -29,13 +29,13 @@ public class Locations implements Serializable {
 	private String nameLocation;
 
 	// RELATIONSHIPS
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	private GeographicalArea geographicalArea;
 
-	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
 	private Set<Event> events;
 
-	@OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
 	private Set<Person> persons;
 
 	// CONSTRUCTOR
@@ -55,46 +55,78 @@ public class Locations implements Serializable {
 	public String toString() {
 		return postalCode + " " + nameLocation;
 	}
-
+	
 	// GETTERS & SETTERS
+	/**
+	 * @return the postalCode
+	 */
 	public int getPostalCode() {
 		return postalCode;
 	}
 
+	/**
+	 * @param postalCode the postalCode to set
+	 */
 	public void setPostalCode(int postalCode) {
 		this.postalCode = postalCode;
 	}
 
+	/**
+	 * @return the nameLocation
+	 */
 	public String getNameLocation() {
 		return nameLocation;
 	}
 
+	/**
+	 * @param nameLocation the nameLocation to set
+	 */
 	public void setNameLocation(String nameLocation) {
 		this.nameLocation = nameLocation;
 	}
 
-	public Set<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(Set<Event> events) {
-		this.events = events;
-	}
-
-	public Set<Person> getPersons() {
-		return persons;
-	}
-
-	public void setPersons(Set<Person> persons) {
-		this.persons = persons;
-	}
-
+	/**
+	 * @return the geographicalArea
+	 */
 	public GeographicalArea getGeographicalArea() {
 		return geographicalArea;
 	}
 
+	/**
+	 * @param geographicalArea the geographicalArea to set
+	 */
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
 
+	/**
+	 * @return the events
+	 */
+	public Set<Event> getEvents() {
+		return events;
+	}
+
+	/**
+	 * @param events the events to set
+	 */
+	public void setEvents(Set<Event> events) {
+		this.events = events;
+	}
+
+	/**
+	 * @return the persons
+	 */
+	public Set<Person> getPersons() {
+		return persons;
+	}
+
+	/**
+	 * @param persons the persons to set
+	 */
+	public void setPersons(Set<Person> persons) {
+		this.persons = persons;
+	}
+
+	
+	
 }

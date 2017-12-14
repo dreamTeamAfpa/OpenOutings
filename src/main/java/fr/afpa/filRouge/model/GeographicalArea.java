@@ -34,10 +34,10 @@ public class GeographicalArea implements Serializable {
 	private String nameArea;
 	@Column(name = "description_area")
 	private String descriptionArea;
-	@OneToMany(mappedBy = "geographical_area", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
 	private Set<Locations> locations;
 
-	@OneToMany(mappedBy = "geographical_area", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany
 	private Set<Groupe> groupes;
 
 	public String getNameArea() {
@@ -56,8 +56,6 @@ public class GeographicalArea implements Serializable {
 		this.descriptionArea = descriptionArea;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "location", joinColumns = @JoinColumn(name = "name_area"), inverseJoinColumns = @JoinColumn(name = "postal_code"))
 	public Set<Locations> getLocations() {
 		return locations;
 	}
@@ -66,8 +64,6 @@ public class GeographicalArea implements Serializable {
 		this.locations = locations;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "groupe", joinColumns = @JoinColumn(name = "name_area"), inverseJoinColumns = @JoinColumn(name = "id_group"))
 	public Set<Groupe> getGroupes() {
 		return groupes;
 	}

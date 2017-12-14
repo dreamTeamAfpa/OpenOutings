@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-<header>
+	<header>
 		<div id="logoEnTete">
 			<a href="index"><img
 				src="images/isotype_logo_openOutings_1.6.1_52x52_petitLogoEnTete.png"
@@ -38,7 +38,7 @@
 			<a href="groupe">CREATION GROUPE</a>
 		</H1>
 		<h1 class="menu" id="ilienMessagerie">
-			<a href="page_messagerie">MESSAGERIE</a>
+			<a href="messagerie">MESSAGERIE</a>
 		</h1>
 	</div>
 

@@ -18,7 +18,6 @@ import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 
-@Scope("session")
 @Entity
 @Table(name = "person")
 public class Person implements Serializable {

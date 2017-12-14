@@ -2,6 +2,8 @@ package fr.afpa.filRouge.controller;
 
 import java.io.Serializable;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,12 @@ public class BaseController implements Serializable{
 	@GetMapping("menu")
 	public String menu(Model model) {
 		return "menu";
+	}
+	
+	// affiche page messagerie
+	@GetMapping("messagerie")
+	public String messagerie(HttpSession httpSession, Model model) {
+		return "messaging";
 	}
 
 }

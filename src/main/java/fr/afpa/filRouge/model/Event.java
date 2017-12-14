@@ -144,18 +144,6 @@ public class Event implements Serializable {
 		this.dateEvent = dateEvent;
 	}
 	/**
-	 * @return the person
-	 */
-//	public Person getPerson() {
-//		return adminEvent;
-//	}
-//	/**
-//	 * @param person the person to set
-//	 */
-//	public void setPerson(Person person) {
-//		this.adminEvent = person;
-//	}
-	/**
 	 * @return the theme
 	 */
 	public Theme getTheme() {
