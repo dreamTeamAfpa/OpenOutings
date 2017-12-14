@@ -14,22 +14,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 import fr.afpa.filRouge.model.GeographicalArea;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Interest;
+import fr.afpa.filRouge.service.IserviceGeographicalArea;
 import fr.afpa.filRouge.service.IserviceGroupe;
+import fr.afpa.filRouge.service.IserviceInterest;
 
 @Controller
 @RequestMapping("/")
 public class GroupeController {
 @Autowired
 	private IserviceGroupe serviceGroup;
-
+@Autowired
+private IserviceGeographicalArea serviceGeo;
+@Autowired
+private IserviceInterest serviceInterest;
 	private GeographicalArea geographicalArea;
 	private Interest interest;
 	
 	@GetMapping("rechercheUserGroupe")
 	public String getFormUserGroupSearch(Model model) {
 		ArrayList<Groupe> groups  = serviceGroup.getGroup();
+		ArrayList<GeographicalArea> geoAreas = (ArrayList<GeographicalArea>) serviceGeo.getAll();
+		ArrayList<Interest> interests = (ArrayList<Interest>) serviceInterest.getAll();
 		System.out.println(groups);
+		model.addAttribute("geo", geoAreas);
 		model.addAttribute("groups", groups);
+		model.addAttribute("nameGroup", groups);
+		model.addAttribute("interests", interests);
 		return "rechercheUserGroupe";
 	}
 
