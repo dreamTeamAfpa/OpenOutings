@@ -3,15 +3,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/index.css" />
+<link rel="stylesheet" href="css/index.css" />
 <title>Accueil Open Outings</title>
 </head>
 <body>
 	<header>
 		<%@include file="/views/MenuHeaderLogged.jsp"%>
 	</header>
-	
+
 	<div id="grandlogo">
 		<img src="images/logo_openOutings_1.6.1.png" />
 	</div>

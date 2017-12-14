@@ -1,4 +1,3 @@
-
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
@@ -19,7 +18,6 @@ import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 
-@Scope("session")
 @Entity
 @Table(name = "person")
 public class Person implements Serializable {
@@ -71,12 +69,6 @@ public class Person implements Serializable {
 		this.passwordUser = passwordUser;
 		this.emailUser = emailUser;
 	}
-	
-	
-	
-
-	
-	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -269,4 +261,3 @@ public class Person implements Serializable {
 	}
 
 }
-

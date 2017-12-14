@@ -16,9 +16,8 @@ import fr.afpa.filRouge.repository.GeographicalAreaRepository;
  *
  */
 @Service
-
-
 public class ServiceGeographicalArea implements IserviceGeographicalArea {
+	
 	private GeographicalAreaRepository geographicalAreaRepository;
 
 	public ServiceGeographicalArea(GeographicalAreaRepository geographicalAreaRepository) {
