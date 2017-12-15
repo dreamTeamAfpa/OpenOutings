@@ -92,13 +92,13 @@
 							<div id="eventTiming">
 								<div class="part">
 									<p>Quand ?</p>
-									<input type="date" class="datePicker" name="eventDate">
+									<input type="date" class="datePicker" id="eventDate">
 
 									<br />
 								</div>
 								<div class="part">
 									<p>A partir de quelle heure ?</p>
-									<input type="time" name="eventTime"> <br />
+									<input type="time" id="eventTime"> <br />
 								</div>
 								<br />
 							</div>
@@ -120,6 +120,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 	<script src="script/index.js"></script>
+	<script src="script/event.js"></script>
 		<footer>
 		<%@include file="/views/footer.jsp"%>
 	</footer>

@@ -42,11 +42,14 @@
 			</div>
 			<!-- Affichage des événements -->
 			<div class="content">
-				<span class="titleMain"><c:forEach var="event"
+				<form name="rechercheEvent" action="displayEvent"
+					method="post"><span class="titleMain">
+					<c:forEach var="event"
 						items="${events}">
-						<option value="${event.getIdEvent()}"><c:out
+						<option value="${event.getIdEvent()}" onclick="displayEvent(${event.getIdEvent()});"><c:out
 								value="${event.getTitleEvent()}" /></option>
-					</c:forEach> </span>
+					</c:forEach> 
+				</span>
 			</div>
 		</div>
 		<div id="bodyRight">
@@ -59,6 +62,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="script/index.js"></script>
+	<script src="script/event.js"></script>
 	<footer>
 		<%@include file="/views/footer.jsp"%>
 	</footer>

@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.afpa.filRouge.model.Event;
 import fr.afpa.filRouge.model.GeographicalArea;
@@ -51,4 +53,10 @@ public class EventController {
 			return "findEvent";
 	}
 	
+	@PostMapping("displayEvent")
+	public String displayEvent(Model model, @RequestParam(value = "idEvent") int idevent) {
+		Event event = serviceEvent.getOneEvent(idevent);
+		model.addAttribute(event);
+		return "createEvent";
+	}
 }
