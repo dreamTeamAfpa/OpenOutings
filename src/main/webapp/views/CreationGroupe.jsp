@@ -47,7 +47,7 @@
 					<span class="title"><br />DESCRIPTION</span>
 					<p>
 						Venez sur le playground pour un Basket sur la plage de carnon vers
-						17h30 </br> parking a proximite , prendre des boissons pour l after
+						17h30 <br> parking a proximite , prendre des boissons pour l after
 					</p>
 				</div>
 

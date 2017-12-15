@@ -29,7 +29,7 @@
 			<a href="createEvent">CREATION EVENEMENT</a>
 		</H1>
 		<H1 class="menu" id="ilienProfil">
-			<a href="page_edit_profil">MON PROFIL</a>
+			<a href="editprofilmembre">MON PROFIL</a>
 		</H1>
 		<H1 class="menu" id="ilienOutters">
 			<a href="rechercheUserGroupe">OUTTERS</a>

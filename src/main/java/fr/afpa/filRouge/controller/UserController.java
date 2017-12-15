@@ -1,6 +1,7 @@
 package fr.afpa.filRouge.controller;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.afpa.filRouge.model.Interest;
 import fr.afpa.filRouge.model.Person;
+import fr.afpa.filRouge.service.IserviceInterest;
 import fr.afpa.filRouge.service.IservicePerson;
 
 @Scope("session")
@@ -85,9 +88,29 @@ public class UserController implements Serializable {
 		}
 		person = serviceperson.findByPseudoUserAndPasswordUser(username, password);
 		model.addAttribute(person);
+		
 		httpSession.setAttribute("personSession", person);
 		
 		return "index_logged";
+	}
+	
+	@Autowired
+	private IserviceInterest serviceInterest;
+
+	// affiche page profil user
+	@GetMapping("profiluser")
+	public String profilUser(Model model) {
+		return "UserProfil";
+	}
+
+	// affiche page modification profil
+	@GetMapping("editprofilmembre")
+	public String listInterest(Model model) {
+		ArrayList<Interest> interests = serviceInterest.getAll();
+		model.addAttribute("interests", interests);
+
+		return "UserProfil";
+
 	}
 
 }

@@ -11,7 +11,6 @@ import fr.afpa.filRouge.model.Theme;
 import fr.afpa.filRouge.repository.ThemeRepository;
 
 /**
- * @author PH GUIGUE
  *
  */
 @Service

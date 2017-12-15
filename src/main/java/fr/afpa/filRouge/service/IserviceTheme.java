@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import fr.afpa.filRouge.model.Theme;
 
 /**
- * @author RTI
  *
  */
 @Service

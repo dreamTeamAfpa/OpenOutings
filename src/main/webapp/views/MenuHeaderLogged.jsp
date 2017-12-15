@@ -9,7 +9,6 @@
 	<p>
 		<img src="images/iconeMainMenu_loupe_EnTete_orange32x32.png" /> <input
 			type="search" id="zonerecherche" title="Votre recherche ici...">
-		<label>${username}</label>
 	</p>
 	<div id="divbdeconnexion">
 	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
@@ -17,6 +16,7 @@
 	<div id="divbprofil">
 		<a href="editprofilmembre"><button id="bprofil"
 				title="Edition profil" /></button>
+				<!-- Username --> 
 			<br>${personSession.pseudoUser}</a>
 	</div>
 </div>

@@ -2,6 +2,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -30,10 +32,11 @@ public class Groupe implements Serializable{
 	private String nameGroup;
 	@Column(name="description_Groupe")
 	private String descriptionGroup;
-	@OneToOne(mappedBy="groupe")
-	private Event event;
+	@OneToMany
+	@JoinColumn(name = "id_Groupe")
+	private Set<Event> events;
 	@ManyToMany
-	private Set<Person> usersGroupe;
+	private Set<Person> person;;
 	@ManyToMany
 	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
@@ -42,6 +45,20 @@ public class Groupe implements Serializable{
 	@JoinColumn(name = "name_area")
 	private GeographicalArea geographicalArea;
 	
+	public Groupe() {
+		// TODO Auto-generated constructor stub
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Groupe [idGroup=" + idGroup + ", " + (nameGroup != null ? "nameGroup=" + nameGroup + ", " : "")
+				+ (descriptionGroup != null ? "descriptionGroup=" + descriptionGroup + ", " : "")
+				+ (events != null ? "events=" + events + ", " : "") + (person != null ? "person=" + person + ", " : "")
+				+ (interests != null ? "interests=" + interests + ", " : "")
+				+ (geographicalArea != null ? "geographicalArea=" + geographicalArea : "") + "]";
+	}
 	//GETTERS & SETTERS
 	/**
 	 * @return the idGroup
@@ -80,28 +97,28 @@ public class Groupe implements Serializable{
 		this.descriptionGroup = descriptionGroup;
 	}
 	/**
-	 * @return the event
+	 * @return the events
 	 */
-	public Event getEvent() {
-		return event;
+	public Set<Event> getEvents() {
+		return events;
 	}
 	/**
-	 * @param event the event to set
+	 * @param events the events to set
 	 */
-	public void setEvent(Event event) {
-		this.event = event;
+	public void setEvents(Set<Event> events) {
+		this.events = events;
 	}
 	/**
-	 * @return the usersGroupe
+	 * @return the person
 	 */
-	public Set<Person> getUsersGroupe() {
-		return usersGroupe;
+	public Set<Person> getPerson() {
+		return person;
 	}
 	/**
-	 * @param usersGroupe the usersGroupe to set
+	 * @param person the person to set
 	 */
-	public void setUsersGroupe(Set<Person> usersGroupe) {
-		this.usersGroupe = usersGroupe;
+	public void setPerson(Set<Person> person) {
+		this.person = person;
 	}
 	/**
 	 * @return the interests

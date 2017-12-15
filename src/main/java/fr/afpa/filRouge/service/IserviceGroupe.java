@@ -34,10 +34,5 @@ public interface IserviceGroupe {
 	public List<Groupe> getGroupByGeographicalArea(GeographicalArea geographicalArea) ;
 	
 	public ArrayList<Groupe> getGroupByInterests(Interest interest);
-	
-	/*
-	public void setAdministratorByGroup(Administrator administrator);
-	
-	public Administrator getAdministratorByGroup(int idGroup);
-	*/
+
 }

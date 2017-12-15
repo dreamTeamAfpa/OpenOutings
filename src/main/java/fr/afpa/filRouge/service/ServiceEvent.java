@@ -21,7 +21,6 @@ public class ServiceEvent implements IserviceEvent {
 	
 	public void addEvent(Event event) {
 		eventRepository.save(event);
-		
 	}
 
 	public Event getOneEvent(int idEvent) {

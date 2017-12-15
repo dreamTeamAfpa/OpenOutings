@@ -91,8 +91,6 @@ header {
 	-moz-transition : -moz-transform .9s; //
 	Mozilla -o-transition: -o-transform .9s; //
 	Opéra -ms-transition: -ms-transform .9s;
-	//
-	IE
 }
 
 #logoEnTete img:hover {

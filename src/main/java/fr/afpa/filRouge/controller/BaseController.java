@@ -32,11 +32,7 @@ public class BaseController implements Serializable{
 		return "menu";
 	}
 	
-	// affiche page messagerie
-	@GetMapping("messagerie")
-	public String messagerie(HttpSession httpSession, Model model) {
-		return "messaging";
-	}
+
 
 }
 

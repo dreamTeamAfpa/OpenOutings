@@ -5,9 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/index.css" />
-<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/messaging.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/index.css" />
 <title>Messagerie Open Outings</title>
 </head>
 <body>
@@ -17,24 +17,25 @@
 	<div id="grandcontener">
 		<div id="leftcontener">
 			<div id="boutonGroup">
-				<button id="buttongroup1"></button>
-				<button id="buttongroup2"></button>
-				<button id="buttongroup3"></button>
+				<form method="post" action="choixgroupe">
+					<c:forEach var="groupe" items="${listGroupeUser}">
+						<input type="submit" class="buttongroup1" name="nomgroupe" title="${groupe.nameGroup}" 
+						value="${groupe.nameGroup}">
+					</c:forEach>
+				</form>
 			</div>
 			<span id="outers">OUTERS : <span>XX</span></span>
-			<div id="affichageListeUser">
-				<a href=""><img src="images/006-social-2-red.png"
-					id="photoProfil" />Jean<br /></a> <a href=""><img
-					src="images/006-social-2-red.png" id="photoProfil" />Pierrette<br /></a>
-
-			</div>
+			<div id="affichageListeUser"></div>
 		</div>
 		<div id="centralcontener">
-			<div id="affichageUser">
-				UserName<span><img src="images/006-social-2-red.png"
-					id="photoProfil" /></span>
-			</div>
 
+			<div id="affichageUser">
+				<a href="profiluser"> <!-- Username and Profil's picture --> <img
+					src="images/006-social-2-red.png" id="photoProfil" /> <br>
+					${personSession.pseudoUser}
+
+				</a>
+			</div>
 			<div id="zonetextmessage" contenteditable="true"></div>
 			<div id="mesemoticons">
 				<img id="tete1" src="images/Chocked.png" alt="Chocked"
@@ -49,7 +50,6 @@
 					ONCLICK="insereremoticon(this)"> <img id="tete5"
 					src="images/Lovekiss.png" alt="Lovekiss" title="Lovekiss"
 					ONCLICK="insereremoticon(this)">
-
 			</div>
 			<ul id="nav">
 				<li><a href="#">

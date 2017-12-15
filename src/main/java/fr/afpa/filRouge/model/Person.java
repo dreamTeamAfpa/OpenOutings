@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Map;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +18,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.Table;
 
-import org.springframework.context.annotation.Scope;
-
 @Entity
 @Table(name = "person")
 public class Person implements Serializable {
@@ -27,7 +27,7 @@ public class Person implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_person")
 	private int idUser;
 	@Column(name = "pseudo_person")
@@ -49,7 +49,7 @@ public class Person implements Serializable {
 	@Column(name = "description_person")
 	private String descriptionPerson;
 	@ManyToMany
-	@JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
+	@JoinTable(name="user_participate_groupe", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="id_Groupe")})
 	@MapKeyJoinColumn(name="role_person")
 	private Map<Role,Groupe> groupeRoles;
