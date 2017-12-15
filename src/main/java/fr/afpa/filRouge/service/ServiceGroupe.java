@@ -6,6 +6,7 @@ package fr.afpa.filRouge.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.GeographicalArea;
@@ -19,6 +20,7 @@ import fr.afpa.filRouge.repository.GroupeRepository;
  */
 @Service
 public class ServiceGroupe implements IserviceGroupe {
+	@Autowired
 	private GroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
@@ -58,6 +60,11 @@ public class ServiceGroupe implements IserviceGroupe {
 		
 		return (ArrayList<Groupe>) groupeRepository.findAll();
 	}
-
-
+	 public ArrayList<Groupe> getAllGroupe(int personId) {
+	        ArrayList<Groupe> groups = groupeRepository.findGroupeByPerson(personId);
+	        return groups;
+	 }
+	 public Groupe findGroupeByName(String name) {
+		 return groupeRepository.findGroupeByNameGroup(name);
+	 }
 }

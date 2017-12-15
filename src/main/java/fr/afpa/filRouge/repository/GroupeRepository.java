@@ -25,6 +25,8 @@ public interface GroupeRepository extends CrudRepository<Groupe, Integer> {
 
 	List<Groupe> findGroupByGeographicalArea(GeographicalArea geographicalArea);
 
-
+	ArrayList<Groupe> findGroupeByPerson(int personId);
+	
+	Groupe findGroupeByNameGroup(String name);
 
 }

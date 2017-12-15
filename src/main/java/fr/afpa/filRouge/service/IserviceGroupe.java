@@ -35,6 +35,10 @@ public interface IserviceGroupe {
 	
 	public ArrayList<Groupe> getGroupByInterests(Interest interest);
 	
+	 public ArrayList<Groupe> getAllGroupe(int personId);
+	 
+	 public Groupe findGroupeByName(String name);
+	
 	/*
 	public void setAdministratorByGroup(Administrator administrator);
 	

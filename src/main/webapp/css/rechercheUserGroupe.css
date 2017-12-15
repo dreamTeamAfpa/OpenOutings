@@ -306,12 +306,12 @@ header {
     background-color: white; font-family: "Montserrat";
     color: #7444E6; box-shadow: 2px; font-weight: bold;
 }
-#content{ border:8px double white; padding:5px; width:66%;
+#content{ border:8px double white; padding:1px; width:66%;
   height: 300px;display: flex;   flex-direction: column;
   flex-wrap: wrap;margin: auto; overflow-y: scroll;
   justify-content: space-between; margin-top: 35%;
-  background-color: rgba(251, 235, 100, 0.5); -moz-border-radius:20px;
-  -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;
+  background-color: rgba(251, 235, 100, 0.5); -moz-border-radius:10px;
+  -khtml-border-radius:0px; -webkit-border-radius:10px; border-radius:10px;
 }
 #vBoutton{
     background-color: #7444E6; font-family: "Montserrat";

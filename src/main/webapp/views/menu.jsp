@@ -29,13 +29,13 @@
 			<a href="createEvent">CREATION EVENEMENT</a>
 		</H1>
 		<H1 class="menu" id="ilienProfil">
-			<a href="page_edit_profil">MON PROFIL</a>
-		</H1>
+            <a href="editprofilmembre">MON PROFIL</a>
+        </H1>
 		<H1 class="menu" id="ilienOutters">
 			<a href="rechercheUserGroupe">OUTTERS</a>
 		</H1>
 		<H1 class="menu" id="ilienCreationGrp">
-			<a href="groupe">CREATION GROUPE</a>
+			<a href="CreationGroupe">CREATION GROUPE</a>
 		</H1>
 		<h1 class="menu" id="ilienMessagerie">
 			<a href="messagerie">MESSAGERIE</a>

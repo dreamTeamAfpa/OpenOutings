@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.repository.PersonRepository;
 
@@ -82,6 +83,10 @@ public class ServicePerson implements IservicePerson {
 	@Override
 	public Person findByEmailUser(String email) {
 		return personRepository.findByEmailUser(email);
+	}
+	
+	public List<Person> findPersonbyNameGroup(Groupe groupe){
+		return personRepository.findPersonByGroupeRoles(groupe);
 	}
 
 }

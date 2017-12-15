@@ -49,7 +49,7 @@ public class Person implements Serializable {
 	@Column(name = "description_person")
 	private String descriptionPerson;
 	@ManyToMany
-	@JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
+	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="id_Groupe")})
 	@MapKeyJoinColumn(name="role_person")
 	private Map<Role,Groupe> groupeRoles;

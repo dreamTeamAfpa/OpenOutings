@@ -3,9 +3,12 @@
  */
 package fr.afpa.filRouge.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Person;
 
 /**
@@ -21,5 +24,5 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
 	Person findByEmailUser(String email);
 	
-
+	 List<Person> findPersonByGroupeRoles(Groupe groupe);
 }

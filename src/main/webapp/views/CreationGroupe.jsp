@@ -13,18 +13,18 @@
 
 		<div id="bodyLeft">
 			<div class="parent">
-				<th class="edit"><select id="iChoixEdit" value="MENU">
+			<select id="iChoixEdit" >
 						<option value="Menu">MENU</option>
 						<option value="Modifier">Modifier</option>
 						<option value="Sete">Supprimer</option>
-				</select></th>
-				<th class="edit"><select id="iChoixTheme">
+				</select>
+				<select id="iChoixTheme">
 						<option value="Theme">THEME</option>
 						<option value="Sport">Sport</option>
 						<option value="Culture">Culture</option>
 						<option value="GoOut">Go Out</option>
-				</select></th>
-				<th class="edit"><select id="iChoixLieux" value="Lieux">
+				</select>
+				<select id="iChoixLieux" >
 						<option value="Lieux">LIEUX</option>
 						<option value="Montpellier">Montpellier</option>
 						<option value="Sete">Sete</option>
@@ -32,7 +32,7 @@
 						<option value="Paris">Paris</option>
 						<option value="Marseille">Marseille</option>
 						<option value="Lille">Lille</option>
-				</select></th>
+				</select>
 			</div>
 		</div>
 		<div id="bodyCenter">

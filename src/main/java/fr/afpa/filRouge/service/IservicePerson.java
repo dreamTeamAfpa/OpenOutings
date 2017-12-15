@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Person;
 
 /**
@@ -28,4 +29,6 @@ public interface IservicePerson {
 	public Person findByPseudoUser(String username);
 
 	public Person findByEmailUser(String email);
+	
+	public List<Person> findPersonbyNameGroup(Groupe groupe);
 }
