@@ -19,30 +19,40 @@ import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.service.IserviceInterest;
 import fr.afpa.filRouge.service.IservicePerson;
 
+/*
+ * @Author RTI
+ */
 @Scope("session")
 @Controller
 @RequestMapping("/")
 public class UserController implements Serializable {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
-	/**
-	 * 
-	 */
+
 	private Person person;
 	private String message;
 	@Autowired
 	private IservicePerson serviceperson;
 
-	// affiche page signUp
+	/*
+	 *  rediction sign_Up
+	 */
 	@GetMapping("signUp")
 	public String signUp(Model models) {
 		return "sign_up";
 	}
 
-	// validation inscription
+	/**
+	 * inscription
+	 * 
+	 * @param httpSession
+	 * @param model
+	 * @param username
+	 * @param password
+	 * @param passwordVerif
+	 * @param email
+	 * @return
+	 */
 	@PostMapping("inscription")
 	public String inscription(HttpSession httpSession, Model model,@RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password,
@@ -60,10 +70,11 @@ public class UserController implements Serializable {
 			model.addAttribute("message", message);
 			return "sign_up";
 		} else {
+			/*
+			 *creation Person like a user 
+			 */
 			person = new Person(username, password, email);
 			serviceperson.addPerson(person);
-			message = "Bienvenue chez les Outers !";
-			model.addAttribute("message", message);
 			model.addAttribute("person", person);
 			httpSession.setAttribute("personSession", person);
 			System.out.println(httpSession.getId()); 
@@ -71,12 +82,25 @@ public class UserController implements Serializable {
 		}
 	}
 
-	// affiche page signIn
+	/**
+	 * sign_In
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("signIn")
 	public String signIn(Model model) {
 		return "sign_in";
 	}
 
+	/**
+	 * connexion
+	 * 
+	 * @param httpSession
+	 * @param model
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	@PostMapping("connexion")
 	public String postSignIn(HttpSession httpSession, Model model, @RequestParam(value = "username") String username,
 			@RequestParam(value = "password") String password) {
@@ -97,13 +121,23 @@ public class UserController implements Serializable {
 	@Autowired
 	private IserviceInterest serviceInterest;
 
-	// affiche page profil user
+	/**
+	 * profiluser
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("profiluser")
 	public String profilUser(Model model) {
 		return "UserProfil";
 	}
 
-	// affiche page modification profil
+	/**
+	 * editprofiluser
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("editprofilmembre")
 	public String listInterest(Model model) {
 		ArrayList<Interest> interests = serviceInterest.getAll();

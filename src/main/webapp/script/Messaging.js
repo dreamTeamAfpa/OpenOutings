@@ -1,10 +1,26 @@
-var monheure;
+
+var elem_zonetextmessage = document.getElementById("zonetextmessage");
+var elem_benvoyer = document.getElementById("benvoyer");
 
 //listener boutton envoyer
 document.addEventListener('DOMContentLoaded', function () {
-var elem_benvoyer = document.getElementById("benvoyer");
 elem_benvoyer.addEventListener("click", envoitext, false);
 });
+//listener zonetextmessage
+document.addEventListener('DOMContentLoaded', function () {
+var elem_zonetextmessage = document.getElementById("zonetextmessage");
+elem_zonetextmessage.addEventListener("onchange", envoitext, false);
+}
+
+//listener buttons choixgroupe
+document.addEventListener('DOMContentLoaded',function () {
+	var elem_buttongroupe = document.getElementById("buttongroup1");
+	elem_buttongroupe.addEventListener("click",choixgroupe,false);
+});
+
+function choixgroupe() {
+//	elem_benvoyer.
+}
 
 //inserer l'emoticon
 function insereremoticon(monimage) {
@@ -19,31 +35,6 @@ function insereremoticon(monimage) {
     elem_montext.appendChild(oImg);
 }
 
-//envoi le text dans la partie tchat
-function envoitext() {
-    var montextentier;
-    var elem_montext = document.getElementById("zonetextmessage");
-    zonetextmessage = elem_montext.innerHTML;
-    if (zonetextmessage != "") {
-        montime();
-        montextentier = monheure + " -- moi : " + zonetextmessage;
-        var elem_montextdarrivee = document.getElementById("montextdarrivee");
-        var newDIV = document.createElement("DIV");
-        newDIV.name = "childDivName";
-        newDIV.innerHTML = montextentier;
-        monExemplaire.appendChild(newDIV);
-    }
-}
-
-//check de l'heure actuelle
-function montime() {
-    var date = new Date();
-    var heure = date.getHours();
-    var minutes = date.getMinutes();
-    if (minutes < 10)
-        minutes = "0" + minutes;
-    monheure = heure + "h" + minutes;
-}
 
 //fonction insertion image
 function inserimage(monimage) {

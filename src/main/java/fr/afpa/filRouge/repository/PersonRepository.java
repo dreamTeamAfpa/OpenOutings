@@ -26,6 +26,4 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
 	List<Person> findPersonByGroupeRoles(Groupe groupe);
 
-	
-
 }

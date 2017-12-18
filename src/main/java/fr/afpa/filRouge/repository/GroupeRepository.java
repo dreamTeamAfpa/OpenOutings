@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import fr.afpa.filRouge.model.GeographicalArea;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Interest;
+import fr.afpa.filRouge.model.Message;
 import fr.afpa.filRouge.model.Person;
 
 /**
@@ -26,6 +27,9 @@ public interface GroupeRepository extends CrudRepository<Groupe, Integer> {
 
 	List<Groupe> findGroupByGeographicalArea(GeographicalArea geographicalArea);
 
-	ArrayList<Groupe> findByPerson(Person person);
+	List<Groupe> findPersonByPersonRoles(Person person);
 
+	Groupe findGroupeByNameGroup(String name);
+
+	Message findLogByIdGroup(int idgroupe);
 }

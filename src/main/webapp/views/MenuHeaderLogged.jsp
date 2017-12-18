@@ -11,7 +11,7 @@
 			type="search" id="zonerecherche" title="Votre recherche ici...">
 	</p>
 	<div id="divbdeconnexion">
-	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
+	<a href="signIn"><button id="bdeconnexion"  title="Déconexion">DECONNEXION</button></a>
 	</div>
 	<div id="divbprofil">
 		<a href="editprofilmembre"><button id="bprofil"

@@ -21,14 +21,17 @@ public class BaseController implements Serializable{
 
 	// affiche page index
 	@GetMapping({"","index"})
-	public String index(Model model) {
+	public String index(HttpSession httpSession,Model model) {
+		if (httpSession.getAttribute("personSession") != null) {
+			return "index_logged";
+		}
 		return "index";
 	}
 	
 	
 	// affiche page menu
 	@GetMapping("menu")
-	public String menu(Model model) {
+	public String menu(HttpSession httpSession,Model model) {
 		return "menu";
 	}
 	
