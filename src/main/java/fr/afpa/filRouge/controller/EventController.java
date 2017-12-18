@@ -31,7 +31,10 @@ public class EventController {
 	private IserviceTheme serviceTheme;
 	//affiche page CreateEvent
 	@GetMapping("createEvent")
-	public String createEvent(Model model) {
+	public String createEvent(Model model, @RequestParam(value = "idEvent") int idevent) {
+		if (idevent > 0) {
+			displayEvent(model, idevent);
+		}
 		ArrayList<GeographicalArea> geoAreas = (ArrayList<GeographicalArea>) serviceGeo.getAll();
 		ArrayList<Theme> themes = (ArrayList<Theme>) serviceTheme.getAll();
 		model.addAttribute("geo", geoAreas);
@@ -54,9 +57,8 @@ public class EventController {
 	}
 	
 	@PostMapping("displayEvent")
-	public String displayEvent(Model model, @RequestParam(value = "idEvent") int idevent) {
+	public void displayEvent(Model model, int idevent) {
 		Event event = serviceEvent.getOneEvent(idevent);
-		model.addAttribute(event);
-		return "createEvent";
+		model.addAttribute("event", event);
 	}
 }

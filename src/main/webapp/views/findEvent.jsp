@@ -1,4 +1,3 @@
-<!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
 <head>
 <title>Open Outings</title>
@@ -42,14 +41,18 @@
 			</div>
 			<!-- Affichage des événements -->
 			<div class="content">
-				<form name="rechercheEvent" action="displayEvent"
-					method="post"><span class="titleMain">
+				<form name="rechercheEvent" action="createEvent?idEvent=${event.getIdEvent()}"><span class="titleMain">
+					<select name="idEvent" size="14">
 					<c:forEach var="event"
 						items="${events}">
-						<option value="${event.getIdEvent()}" onclick="displayEvent(${event.getIdEvent()});"><c:out
-								value="${event.getTitleEvent()}" /></option>
-					</c:forEach> 
+						<option value="${event.getIdEvent()}" onclick="document.rechercheEvent.submit()">
+							<c:out value="${event.getTitleEvent()}" />
+						</option>
+						
+					</c:forEach>
+					</select> 
 				</span>
+				</form>
 			</div>
 		</div>
 		<div id="bodyRight">

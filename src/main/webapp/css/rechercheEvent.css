@@ -238,7 +238,10 @@ header {
     cursor: pointer;
 }
 
-
+select {
+	background: transparent;
+	border-style: none;
+}
 
 .parent{
     

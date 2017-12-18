@@ -27,14 +27,13 @@
 	<button type="submit" id="connectBtn">S'inscrire</button>
 </form> -->
 	<div id="bodyContainer">
-	<form action="addEvent">
+	<form action="addEvent" item="${event}">
 		<div id="titleEventEdit">
 			<div id="zoneEventTitle">
 				<h2>Création d'évenement</h2>
 				<div class="part">
-					<input type="text" id="eventTitle"
-						title="donner un titre à votre sortie"
-						placeholder="Nom de la sortie">
+					<input id="eventTitle" title="donner un titre à votre sortie"
+						value="<c:out value='${event.titleEvent}' default='Entrez le titre de la sortie'/>">
 				</div>
 				<div id="eventImg">
 					<img src="images/022-crowd-of-users-red-60x60.png">
@@ -71,11 +70,14 @@
 								id="ajoutPhotoBoutton" />
 						</div>
 						<div id="contentCenter">
-							<fieldset id="eventDescription" contenteditable="true">
+							<fieldset id="eventDescription" item="${eventDescription}" contenteditable="true">
 								<legend>DESCRIPTION </legend>
-								<br />
+								<br /><c:out value="${event.resumeEvent}"/>
 							</fieldset>
-
+							<fieldset id="eventDetails" contenteditable="true">
+								<legend>Details </legend>
+								<br /><c:out value="${event.detailsEvent}"/>
+							</fieldset>
 							<div class="part"></div>
 
 							<div class="part">
