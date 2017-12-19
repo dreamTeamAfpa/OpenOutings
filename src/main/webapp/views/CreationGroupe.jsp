@@ -13,57 +13,73 @@
 
 		<div id="bodyLeft">
 			<div class="parent">
-			<select id="iChoixEdit" >
+			<select id="iChoixEdit" name="iChoixEdit" onchange="updateGroup(this.value)">
 						<option value="Menu">MENU</option>
 						<option value="Modifier">Modifier</option>
-						<option value="Sete">Supprimer</option>
+						<option value="Supprimer">Supprimer</option>
 				</select>
-				<select id="iChoixTheme">
-						<option value="Theme">THEME</option>
-						<option value="Sport">Sport</option>
-						<option value="Culture">Culture</option>
-						<option value="GoOut">Go Out</option>
+				
+				<select id="iChoixTheme" name="iChoixTheme">
+						<option><c:out value="${groupe.interests}" />
+							</option>
+							<option></option>
+							
 				</select>
-				<select id="iChoixLieux" >
-						<option value="Lieux">LIEUX</option>
-						<option value="Montpellier">Montpellier</option>
-						<option value="Sete">Sete</option>
-						<option value="Nimes">Nimes</option>
-						<option value="Paris">Paris</option>
-						<option value="Marseille">Marseille</option>
-						<option value="Lille">Lille</option>
+				<input id="txtCiblTheme" placeholder="${groupe.interests}" name="txtCibltheme"
+					value="" type="text" size="20">
+				<select id="iChoixLieux" name= "iChoixTheme">
+							<option><c:out value="${groupe.geographicalArea.nameArea}" />
+							</option>
+								<option></option>
 				</select>
+				<input id="txtCiblLieux" placeholder="${groupe.geographicalArea.nameArea}" name="txtCiblLieux"
+					value="" type="text" size="20">
 			</div>
 		</div>
 		<div id="bodyCenter">
 			<input type="search" id="nomGroupe"
-				title="saisissez votre nom de groupe.." placeholder="NOM GROUPE">
+				title="saisissez votre nom de groupe.." value="${groupe.nameGroup}">
 			<img src="images/sportPlanSportPlanLarge1.jpg" id="imageProfil">
 			<input type="button" name="ajout" value="Ajouter photo"
 				id="ajoutPhotoBoutton" />
 
 			<div id="contentCenter">
 				<div id="content">
-					<span class="title"><br />DESCRIPTION</span>
-					<p>
-						Venez sur le playground pour un Basket sur la plage de carnon vers
-						17h30 </br> parking a proximite , prendre des boissons pour l after
+					<span class="title"><br />Description</span>
+					<div id="iDescription">
+					<p id="pDescription">
+						${groupe.descriptionGroup}
 					</p>
+					</div>
 				</div>
-
-
 
 				<div id="content2">
-					<span class="title">MEMBRES<img id="imagePlus"
+					<span class="title" id="titleContent2">MEMBRES<img id="imagePlus"
 						src="images/005-rounded-add-button-red.png" />
-					</span> <span><img class="iconProfil"
-						src="images/006-social-2-red.png" />Loulou</br></span> <span><img
-						class="iconProfil" src="images/006-social-2-red.png" />Riri</br></span> <span><img
-						class="iconProfil" src="images/006-social-2-red.png" />Fifi</br></span>
+					</span>
+					<c:forEach var="person" items="${persons}">
+							<span><img class="iconProfil"
+						src="images/006-social-2-red.png" />${person.pseudoUser}</span>
+						</c:forEach> 
 				</div>
 			</div>
-			<input type="button" name="valider" value="Valider Creation"
+			<div id="divForm">
+		<form action="modifGroupe" name="modifGroup">
+			<input id="txtCiblNomGroup" placeholder="nom" name="txtCiblNomGroup" value="${groupe.nameGroup}"
+					type="text" size="20"> 
+					<input id="ciblIdGroup" placeholder="id" name="ciblIdGroup" value="${groupe.idGroup}"
+					type="text" size="20"> 
+					<input id="ciblInterest" placeholder="Interest" name="ciblInterest" value=""
+					type="text" size="20"> 
+					<input id="ciblLieux" placeholder="lieux" name="ciblLieux" value=""
+					type="text" size="20"> 
+				<input id="ciblDescr" placeholder="descr" name="ciblDescr" value=""
+					type="text" size="140"> 
+				
+			<input type="submit" name="valider" value="Valider Creation"  onclick="getInfo();document.updateGroup.submit();getInfo"
 				id="vBoutton" />
+				</form>
+				</div>
 		</div>
 
 		<div id="bodyRight">
@@ -75,8 +91,9 @@
 				src="images/sport5.jpg" /> <img src="images/goOut1.png" />
 		</div>
 
-
 	</div>
+	<script type="text/javascript"
+		src="script/creationGroup.js"></script>
 	<footer>
 		<%@include file="/views/footer.jsp"%>
 	</footer>

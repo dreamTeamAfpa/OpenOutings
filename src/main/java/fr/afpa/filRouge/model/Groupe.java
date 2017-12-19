@@ -2,6 +2,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -35,7 +36,7 @@ public class Groupe implements Serializable{
 	@JoinColumn(name = "id_Groupe")
 	private Set<Event> events;
 	@ManyToMany
-	private Set<Person> person;
+	private List<Person> person;
 	@ManyToMany
 	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
@@ -97,18 +98,13 @@ public class Groupe implements Serializable{
 	/**
 	 * @return the usersGroupe
 	 */
-	public Set<Person> getUsersGroupe() {
+	public List<Person> getUsersGroupe() {
 		return person;
-	}
-	@Override
-	public String toString() {
-		return "Groupe [nameGroup=" + nameGroup + ", interests=" + interests + ", geographicalArea=" + geographicalArea
-				+ "]";
 	}
 	/**
 	 * @param usersGroupe the usersGroupe to set
 	 */
-	public void setUsersGroupe(Set<Person> person) {
+	public void setUsersGroupe(List<Person> person) {
 		this.person = person;
 	}
 	/**
@@ -135,5 +131,9 @@ public class Groupe implements Serializable{
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
-	
+	@Override
+	public String toString() {
+		return "Groupe [nameGroup=" + nameGroup + ", interests=" + interests + ", geographicalArea=" + geographicalArea
+				+ "]";
+	}
 }

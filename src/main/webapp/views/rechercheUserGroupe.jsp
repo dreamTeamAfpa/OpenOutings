@@ -27,32 +27,35 @@
 		</div>
 		<div id="bodyCenter">
 			<div id="content">
-				<c:forEach var="myGroup" items="${nameGroup}">
-					<span class="titleMain"><a href="Groupe.Html"><c:out
-								value="${myGroup.nameGroup} " />
-								<c:out value="${person.pseudoUser}" /><img id="imagePlus"
+				<c:forEach var="myGroup" items="${nameGroup}" varStatus="status">
+					<span class="titleMain"><a
+						href="CreationGroupe?idGroup=
+						${myGroup.idGroup}"><c:out
+								value="${myGroup.nameGroup} " /> <img id="imagePlus"
 							src="images/022-crowd-of-users-red-60x60.png" /></a></span>
 					<table>
-						<tr>
-							<c:forTokens items="${persons}"
-									delims="," var="myPersons" varStatus="status"><td>
-                <c:out value="${status.count}" /><c:out value="${myPersons}" /></td>
-								</c:forTokens> 
-								<%-- <c:forEach var="myPersons" items="${persons}">
-									<span class="listUser"> <a href="userProfil.Html"> <c:out
-												value="${myPersons.pseudoUser}" /></a>
-									</span>
-								</c:forEach> --%>
-						</tr>
+						<c:forEach var="person" items="${myGroup.getUsersGroupe()}">
+							<tr>
+								<td><c:out value="${person.pseudoUser}" /></td>
+							</tr>
+						</c:forEach>
+
 					</table>
 
 				</c:forEach>
-
-
-				<span class="titleMain"><a href="Groupe.Html"><c:out
-							value="${nameOneGroup}" /><img id="imagePlus"
-						src="images/022-crowd-of-users-red-60x60.png" /></a></span>
-
+				<span class="titleMain"><a
+					href="CreationGroupe?idGroup=
+						${idOneGroup}"><c:out
+							value="${nameOneGroup}" /> <c:set var="mode"
+							value="${nameOneGroup}" /> <c:if test="${nameOneGroup!= null}">
+							<img id="imagePlus" src="images/022-crowd-of-users-red-60x60.png" />
+						</c:if></a></span> <span class="titleMain"><a
+					href="UserProfil?idUser=
+						${idOnePerson}"><c:out
+							value="${nameOnePerson}" /> <c:set var="mode"
+							value="${nameOnePerson}" /> <c:if test="${nameOnePerson!= null}">
+							<img id="imagePlus" src="images/006-social-2-red.png" />
+						</c:if></a></span>
 			</div>
 			<div class="parent">
 				<form name="rechercheGroup" action="validFormGroup" method="post">
