@@ -149,10 +149,12 @@ public class GroupeController {
 		Set<Interest> interests = new HashSet<Interest>();
 		Interest i = new Interest();
 		i.setNameInterest(interest);
-		if (serviceInterest.getOnebyName(interest).getNameInterest().equalsIgnoreCase(interest)) {
+		Interest i2 =serviceInterest.getOnebyName(interest);
+		if(i2!=null) {
+		if (i2.getNameInterest().equalsIgnoreCase(interest)) {
 			System.out.println(i +"test egalité interet");
 			i = serviceInterest.getOnebyName(interest);
-			
+		}
 		} else {
 			
 			serviceInterest.addInterest(i);
@@ -161,13 +163,16 @@ public class GroupeController {
 		GeographicalArea geographicalArea = new GeographicalArea();
 		geographicalArea.setNameArea(lieux);
 		GeographicalArea lieux2 = serviceGeo.getOne(lieux);
+		if (lieux2!= null) {
 		if ( lieux2.getNameArea().equalsIgnoreCase(geographicalArea.getNameArea())) {
 			System.out.println(geographicalArea +"test egalité geo");
 			geographicalArea = serviceGeo.getOne(lieux);
-		} else {
+		}
+		}else {
 			serviceGeo.addGeographicalArea(geographicalArea);
 			
 		}
+		
 		g.setGeographicalArea(geographicalArea);
 		g.setDescriptionGroup(description);
 		g.setNameGroup(nomGroup);
