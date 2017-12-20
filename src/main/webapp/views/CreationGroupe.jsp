@@ -48,7 +48,23 @@
 					<div class="title" id="titreDescription"><br />Description</div>
 					<textarea rows="10" cols="50" id="pDescription">${groupe.descriptionGroup}</textarea>
 				</div>
-
+	<div id="divForm">
+		<form action="modifGroupe" name="modifGroup">
+			<input id="txtCiblNomGroup" placeholder="nom" name="txtCiblNomGroup" value=""
+					type="hidden" size="20"> 
+					<input id="ciblIdGroup" placeholder="id" name="ciblIdGroup" value="${groupe.idGroup}"
+					type="hidden" size="20"> 
+					<input id="ciblInterest" placeholder="Interest" name="ciblInterest" value=""
+					type="hidden" size="20"> 
+					<input id="ciblLieux" placeholder="lieux" name="ciblLieux" value=""
+					type="hidden" size="20"> 
+				<input id="ciblDescr" placeholder="descr" name="ciblDescr" value=""
+					type="hidden" size="140"> 
+				
+			<input type="button" name="valider" value="Valider"  onclick="getInfo(); document.modifGroup.submit();"
+				id="vBoutton" />
+				</form>
+				</div>
 				<div id="content2">
 					<span class="title" id="titleContent2">MEMBRES<img id="imagePlus"
 						src="images/005-rounded-add-button-red.png" />
@@ -58,24 +74,9 @@
 						src="images/006-social-2-red.png" />${person.pseudoUser}</span>
 						</c:forEach> 
 				</div>
+			
 			</div>
-			<div id="divForm">
-		<form action="modifGroupe" name="modifGroup">
-			<input id="txtCiblNomGroup" placeholder="nom" name="txtCiblNomGroup" value=""
-					type="text" size="20"> 
-					<input id="ciblIdGroup" placeholder="id" name="ciblIdGroup" value="${groupe.idGroup}"
-					type="text" size="20"> 
-					<input id="ciblInterest" placeholder="Interest" name="ciblInterest" value=""
-					type="text" size="20"> 
-					<input id="ciblLieux" placeholder="lieux" name="ciblLieux" value=""
-					type="text" size="20"> 
-				<input id="ciblDescr" placeholder="descr" name="ciblDescr" value=""
-					type="text" size="140"> 
-				
-			<input type="button" name="valider" value="Valider"  onclick="getInfo(); document.modifGroup.submit();"
-				id="vBoutton" />
-				</form>
-				</div>
+			
 		</div>
 
 		<div id="bodyRight">

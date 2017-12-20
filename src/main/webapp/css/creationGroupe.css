@@ -240,7 +240,7 @@ header {
         cursor: pointer;
 }
 #divForm{
-	margin:auto;
+	margin:auto;display: flex;
 }
 .parent{
      justify-content: space-between;
