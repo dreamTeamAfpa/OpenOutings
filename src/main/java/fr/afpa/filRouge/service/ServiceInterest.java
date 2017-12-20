@@ -66,4 +66,10 @@ public class ServiceInterest implements IserviceInterest {
 		return interest;
 	}
 
+	@Override
+	public Interest getOnebyName(String nameInterest) {
+		// TODO Auto-generated method stub
+		return interestRepository.findByNameInterestAllIgnoreCase(nameInterest);
+	}
+
 }

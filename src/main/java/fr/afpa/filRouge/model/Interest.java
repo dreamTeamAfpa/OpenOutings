@@ -29,7 +29,7 @@ public class Interest implements Serializable{
 	 */
 	@Override
 	public String toString() {
-		return nameInterest  + " " + "(" + descriptionInterest + ")";
+		return nameInterest  ;
 	}
 	@Id
 	@Column(name="name_interest")

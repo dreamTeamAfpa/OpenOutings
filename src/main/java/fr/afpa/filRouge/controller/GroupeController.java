@@ -1,7 +1,10 @@
 package fr.afpa.filRouge.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -118,7 +121,17 @@ public class GroupeController {
 	public String creationGroupe(Model model, @RequestParam(value = "idGroup") int idGroup) {
 		if (idGroup != 0) {
 			Groupe groupe = serviceGroup.getOneGroup(idGroup);
-			System.out.println(groupe);
+			for (int i = 0; i < groupe.getInterests().size(); i++) {
+				String list = Arrays.toString(groupe.getInterests().toArray()).replace("[", "").replace("]", "");
+				model.addAttribute("interest", list);
+			}
+			Set<Interest> interstss = groupe.getInterests();
+			String list = Arrays.toString(interstss.toArray()).replace("[", "").replace("]", "");
+			Set<Interest> interstsss = new HashSet<Interest>();
+			Interest i = new Interest();
+			i.setNameInterest(list);
+			interstsss.add(i);
+			groupe.setInterests(interstsss);
 			List<Person> persons = servicePerson.findPersonbyNameGroup(groupe);
 			model.addAttribute("persons", persons);
 			model.addAttribute("groupe", groupe);
@@ -128,13 +141,41 @@ public class GroupeController {
 
 	}
 
-	@GetMapping("UpdateGroupe")
+	@GetMapping("modifGroupe")
 	public String updateGroup(Model model, @RequestParam(value = "txtCiblNomGroup") String nomGroup,
-			@RequestParam(value = "ciblIdGroup")int idGroup, @RequestParam(value = "ciblInterest") String interest
-			,@RequestParam(value = "ciblLieux")String lieux,
-			@RequestParam(value = "ciblDescr") String description) {
-		return "CreationGroupe";
-			}
+			@RequestParam(value = "ciblIdGroup") int idGroup, @RequestParam(value = "ciblInterest") String interest,
+			@RequestParam(value = "ciblLieux") String lieux, @RequestParam(value = "ciblDescr") String description) {
+		Groupe g = serviceGroup.getOneGroup(idGroup);
+		Set<Interest> interests = new HashSet<Interest>();
+		Interest i = new Interest();
+		i.setNameInterest(interest);
+		if (serviceInterest.getOnebyName(interest).getNameInterest()..equalsIgnoreCase(interest)) {
+			System.out.println(i +"test egalité interet");
+			i = serviceInterest.getOnebyName(interest);
 			
+		} else {
+			
+			serviceInterest.addInterest(i);
+		}
+		
+		GeographicalArea geographicalArea = new GeographicalArea();
+		geographicalArea.setNameArea(lieux);
+		GeographicalArea lieux2 = serviceGeo.getOne(lieux);
+		if ( lieux2.getNameArea().equalsIgnoreCase(geographicalArea.getNameArea())) {
+			System.out.println(geographicalArea +"test egalité geo");
+			geographicalArea = serviceGeo.getOne(lieux);
+		} else {
+			serviceGeo.addGeographicalArea(geographicalArea);
+			
+		}
+		g.setGeographicalArea(geographicalArea);
+		g.setDescriptionGroup(description);
+		g.setNameGroup(nomGroup);
+		interests.add(i);
+		g.setInterests(interests);
+		serviceGroup.addGroup(g);
+		getFormUserGroupSearch(model);
+		return "rechercheUserGroupe";
+	}
 
 }

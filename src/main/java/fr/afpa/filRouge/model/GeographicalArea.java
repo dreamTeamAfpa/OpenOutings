@@ -34,6 +34,7 @@ public class GeographicalArea implements Serializable {
 	private String nameArea;
 	@Column(name = "description_area")
 	private String descriptionArea;
+
 	@OneToMany
 	private Set<Locations> locations;
 

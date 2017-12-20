@@ -272,8 +272,16 @@ th{
   height: 300px;display: flex;
  flex-wrap: wrap;margin: auto;
     justify-content: space-between; margin-top: 1%;
-  background-color: rgba(251, 235, 100, 0.5);; -moz-border-radius:20px;
+  background-color: rgba(251, 235, 100, 0.5); -moz-border-radius:20px;
   -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;
+}
+#pDescription{
+	width :100%;  background-color: rgba(251, 235, 100, 0.5); overflow-y: scroll;
+	
+}
+#titreDescription{
+	 font-family: "Montserrat";
+	  text-decoration: underline;color: #7444E6; margin-top: -15px;
 }
 #content2 {
      border:10px double #7444E6; width:25%;

@@ -25,15 +25,15 @@
 							<option></option>
 							
 				</select>
-				<input id="txtCiblTheme" placeholder="${groupe.interests}" name="txtCibltheme"
-					value="" type="text" size="20">
+				<input id="txtCiblTheme"  name="txtCibltheme"
+					value="${interest}" type="text" size="20">
 				<select id="iChoixLieux" name= "iChoixTheme">
 							<option><c:out value="${groupe.geographicalArea.nameArea}" />
 							</option>
 								<option></option>
 				</select>
-				<input id="txtCiblLieux" placeholder="${groupe.geographicalArea.nameArea}" name="txtCiblLieux"
-					value="" type="text" size="20">
+				<input id="txtCiblLieux" name="txtCiblLieux"
+					value="${groupe.geographicalArea.nameArea}" type="text" size="20">
 			</div>
 		</div>
 		<div id="bodyCenter">
@@ -45,12 +45,8 @@
 
 			<div id="contentCenter">
 				<div id="content">
-					<span class="title"><br />Description</span>
-					<div id="iDescription">
-					<p id="pDescription">
-						${groupe.descriptionGroup}
-					</p>
-					</div>
+					<div class="title" id="titreDescription"><br />Description</div>
+					<textarea rows="10" cols="50" id="pDescription">${groupe.descriptionGroup}</textarea>
 				</div>
 
 				<div id="content2">
@@ -65,7 +61,7 @@
 			</div>
 			<div id="divForm">
 		<form action="modifGroupe" name="modifGroup">
-			<input id="txtCiblNomGroup" placeholder="nom" name="txtCiblNomGroup" value="${groupe.nameGroup}"
+			<input id="txtCiblNomGroup" placeholder="nom" name="txtCiblNomGroup" value=""
 					type="text" size="20"> 
 					<input id="ciblIdGroup" placeholder="id" name="ciblIdGroup" value="${groupe.idGroup}"
 					type="text" size="20"> 
@@ -76,7 +72,7 @@
 				<input id="ciblDescr" placeholder="descr" name="ciblDescr" value=""
 					type="text" size="140"> 
 				
-			<input type="submit" name="valider" value="Valider Creation"  onclick="getInfo();document.updateGroup.submit();getInfo"
+			<input type="button" name="valider" value="Valider"  onclick="getInfo(); document.modifGroup.submit();"
 				id="vBoutton" />
 				</form>
 				</div>

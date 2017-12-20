@@ -15,10 +15,12 @@ public interface IserviceInterest {
 	public ArrayList<Interest> getAll();
 
 	public Interest getOne(String nameArea);
-
+	
 	public void modifiedOne(Interest interest);
 
 	public void addInterest(Interest interest);
 
 	public void delInterest(Interest interest);
+	
+	public Interest getOnebyName(String nameInterest);
 }
