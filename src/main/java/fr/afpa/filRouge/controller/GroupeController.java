@@ -149,7 +149,7 @@ public class GroupeController {
 		Set<Interest> interests = new HashSet<Interest>();
 		Interest i = new Interest();
 		i.setNameInterest(interest);
-		if (serviceInterest.getOnebyName(interest).getNameInterest()..equalsIgnoreCase(interest)) {
+		if (serviceInterest.getOnebyName(interest).getNameInterest().equalsIgnoreCase(interest)) {
 			System.out.println(i +"test egalité interet");
 			i = serviceInterest.getOnebyName(interest);
 			
