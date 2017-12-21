@@ -66,6 +66,10 @@ public class ServicePerson implements IservicePerson {
 	public Person findByEmailUser(String email) {
 		return personRepository.findByEmailUser(email);
 	}
+	
+	public List<Person> findPersonbyNameGroup(Groupe groupe){
+		return personRepository.findPersonByGroupeRoles(groupe);
+	}
 
 	public List<Person> findPersonByGroupe(Groupe groupe) {
 		return  personRepository.findPersonByGroupeRoles(groupe);

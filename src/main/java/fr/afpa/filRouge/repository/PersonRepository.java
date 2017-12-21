@@ -20,7 +20,7 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 	Person findByPseudoUser(String username);
 
 	Person findByEmailUser(String email);
-
-	List<Person> findPersonByGroupeRoles(Groupe groupe);
+	
+	 List<Person> findPersonByGroupeRoles(Groupe groupe);
 
 }

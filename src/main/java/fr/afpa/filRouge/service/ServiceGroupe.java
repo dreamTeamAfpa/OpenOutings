@@ -23,7 +23,7 @@ import fr.afpa.filRouge.repository.GroupeRepository;
 @Service
 public class ServiceGroupe implements IserviceGroupe {
 
-	@Autowired
+  @Autowired
 	private GroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
@@ -61,15 +61,21 @@ public class ServiceGroupe implements IserviceGroupe {
 		return (ArrayList<Groupe>) groupeRepository.findAll();
 	}
 
+	 public ArrayList<Groupe> getAllGroupe(int personId) {
+	        ArrayList<Groupe> groups = groupeRepository.findGroupeByPerson(personId);
+	        return groups;
+	 }
+	 public Groupe findGroupeByName(String name) {
+		 return groupeRepository.findGroupeByNameGroup(name);
+	 }
+
 	public List<Groupe> getGroupeByPerson(Person person) {
 		List<Groupe> groups = groupeRepository.findPersonByPersonRoles(person);
 		return groups;
 	}
 
-	@Override
 	public Groupe getGroupeByName(String nomgroupe) {
-		Groupe groupe = groupeRepository.findGroupeByNameGroup(nomgroupe);
-		return groupe;
+		 return groupeRepository.findGroupeByNameGroup(nomgroupe);
 	}
 
 }

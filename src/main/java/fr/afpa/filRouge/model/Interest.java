@@ -95,8 +95,4 @@ public class Interest implements Serializable{
 	public void setPersons(Set<Person> persons) {
 		this.persons = persons;
 	}
-
-	
-	
-	
 }
