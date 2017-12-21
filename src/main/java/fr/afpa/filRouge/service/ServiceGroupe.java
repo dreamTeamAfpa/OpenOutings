@@ -6,11 +6,14 @@ package fr.afpa.filRouge.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.GeographicalArea;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Interest;
+import fr.afpa.filRouge.model.Message;
+import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.repository.GroupeRepository;
 
 /**
@@ -19,6 +22,8 @@ import fr.afpa.filRouge.repository.GroupeRepository;
  */
 @Service
 public class ServiceGroupe implements IserviceGroupe {
+
+	@Autowired
 	private GroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
@@ -40,24 +45,31 @@ public class ServiceGroupe implements IserviceGroupe {
 	public void editGroup(Groupe groupe) {
 		groupeRepository.save(groupe);
 	}
-	public void deleteGroup(Groupe group) {
-		groupeRepository.delete(group);
+	public void deleteGroup(Groupe groupe) {
+		groupeRepository.delete(groupe);
 	}
 
 	public ArrayList<Groupe> getGroupByInterests(Interest interest) {
-		// TODO Auto-generated method stub
 		return groupeRepository.findGroupByInterests(interest);
 	}
 
 	public List<Groupe> getGroupByGeographicalArea(GeographicalArea geographicalArea) {
-		// TODO Auto-generated method stub
 		return groupeRepository.findGroupByGeographicalArea(geographicalArea);
 	}
 
 	public ArrayList<Groupe> getGroup() {
-		
 		return (ArrayList<Groupe>) groupeRepository.findAll();
 	}
 
+	public List<Groupe> getGroupeByPerson(Person person) {
+		List<Groupe> groups = groupeRepository.findPersonByPersonRoles(person);
+		return groups;
+	}
+
+	@Override
+	public Groupe getGroupeByName(String nomgroupe) {
+		Groupe groupe = groupeRepository.findGroupeByNameGroup(nomgroupe);
+		return groupe;
+	}
 
 }

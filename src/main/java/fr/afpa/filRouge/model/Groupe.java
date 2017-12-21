@@ -2,6 +2,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -12,6 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapKeyJoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -30,17 +34,44 @@ public class Groupe implements Serializable{
 	private String nameGroup;
 	@Column(name="description_Groupe")
 	private String descriptionGroup;
-	@OneToOne(mappedBy="groupe")
-	private Event event;
+	@OneToMany
+	@JoinColumn(name = "id_Groupe")
+	private Set<Event> events;
 	@ManyToMany
-	private Set<Person> usersGroupe;
+	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="id_Groupe")},
+    inverseJoinColumns={@JoinColumn(name="person_id_person")})
+	@MapKeyJoinColumn(name="role_person")
+	private Map<Role,Person> personRoles;
 	@ManyToMany
 	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
 	public Set<Interest> interests = new HashSet<Interest>();
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "name_area")
 	private GeographicalArea geographicalArea;
+	
+	@OneToMany(mappedBy="idGroup")
+	private Set<Message> messages;
+	
+	
+	/**
+	 * CONSTRUCTEUR
+	 */
+	public Groupe() {
+		super();
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Groupe [idGroup=" + idGroup + ", " + (nameGroup != null ? "nameGroup=" + nameGroup + ", " : "")
+				+ (descriptionGroup != null ? "descriptionGroup=" + descriptionGroup + ", " : "")
+				+ (events != null ? "events=" + events + ", " : "")
+				+ (personRoles != null ? "personRoles=" + personRoles + ", " : "")
+				+ (interests != null ? "interests=" + interests + ", " : "")
+				+ (geographicalArea != null ? "geographicalArea=" + geographicalArea : "") + "]";
+	}
 	
 	//GETTERS & SETTERS
 	/**
@@ -80,28 +111,28 @@ public class Groupe implements Serializable{
 		this.descriptionGroup = descriptionGroup;
 	}
 	/**
-	 * @return the event
+	 * @return the events
 	 */
-	public Event getEvent() {
-		return event;
+	public Set<Event> getEvents() {
+		return events;
 	}
 	/**
-	 * @param event the event to set
+	 * @param events the events to set
 	 */
-	public void setEvent(Event event) {
-		this.event = event;
+	public void setEvents(Set<Event> events) {
+		this.events = events;
 	}
 	/**
-	 * @return the usersGroupe
+	 * @return the personRoles
 	 */
-	public Set<Person> getUsersGroupe() {
-		return usersGroupe;
+	public Map<Role, Person> getPersonRoles() {
+		return personRoles;
 	}
 	/**
-	 * @param usersGroupe the usersGroupe to set
+	 * @param personRoles the personRoles to set
 	 */
-	public void setUsersGroupe(Set<Person> usersGroupe) {
-		this.usersGroupe = usersGroupe;
+	public void setPersonRoles(Map<Role, Person> personRoles) {
+		this.personRoles = personRoles;
 	}
 	/**
 	 * @return the interests
@@ -127,5 +158,11 @@ public class Groupe implements Serializable{
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
+
+
+
+	
+	
+	
 	
 }
