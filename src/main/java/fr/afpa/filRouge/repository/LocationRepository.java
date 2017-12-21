@@ -1,6 +1,3 @@
-/**
- * 
- */
 package fr.afpa.filRouge.repository;
 
 import org.springframework.data.repository.CrudRepository;

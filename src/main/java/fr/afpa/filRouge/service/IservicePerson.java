@@ -1,14 +1,11 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
-
 import org.springframework.stereotype.Component;
-
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Person;
 
 /**
- * @author FR DESCOMBES
  *
  */
 @Component
@@ -31,5 +28,7 @@ public interface IservicePerson {
 	public Person findByEmailUser(String email);
 	
 	public List<Person> findPersonbyNameGroup(Groupe groupe);
-	
+
+	public List<Person> findPersonByGroupe(Groupe groupe);
+
 }

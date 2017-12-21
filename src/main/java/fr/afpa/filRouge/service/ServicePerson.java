@@ -5,8 +5,6 @@ package fr.afpa.filRouge.service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +17,6 @@ public class ServicePerson implements IservicePerson {
 
 	private Person person;
 
-	@Autowired
-	private HttpSession httpSession;
 	@Autowired
 	private PersonRepository personRepository;
 
@@ -66,20 +62,6 @@ public class ServicePerson implements IservicePerson {
 		return personRepository.findByPseudoUser(username);
 	}
 
-	/**
-	 * @return the httpSession
-	 */
-	public HttpSession getHttpSession() {
-		return httpSession;
-	}
-
-	/**
-	 * @param httpSession the httpSession to set
-	 */
-	public void setHttpSession(HttpSession httpSession) {
-		this.httpSession = httpSession;
-	}
-
 	@Override
 	public Person findByEmailUser(String email) {
 		return personRepository.findByEmailUser(email);
@@ -88,5 +70,11 @@ public class ServicePerson implements IservicePerson {
 	public List<Person> findPersonbyNameGroup(Groupe groupe){
 		return personRepository.findPersonByGroupeRoles(groupe);
 	}
+
+	public List<Person> findPersonByGroupe(Groupe groupe) {
+		return  personRepository.findPersonByGroupeRoles(groupe);
+	}
+
+	
 
 }

@@ -2,6 +2,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.persistence.Column;
@@ -14,9 +15,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.context.annotation.Scope;
 
 @Entity
 @Table(name = "person")
@@ -60,6 +61,12 @@ public class Person implements Serializable {
 	@JoinTable(name="person_have_interests", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="name_interest")})
 	private Set<Interest> interests;
+	@OneToMany(mappedBy="idperson")
+	private Set<Picture> pictures;
+	
+	@OneToMany
+	private List<Message> messages;
+	
 	
 	//CONSTRUCTEUR 
 	public Person(){}
@@ -77,12 +84,32 @@ public class Person implements Serializable {
 		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
 	}
 	// GETTERS & SETTERS
-
 	/**
 	 * @return the idUser
 	 */
 	public int getIdUser() {
 		return idUser;
+	}
+
+	/**
+	 * @return the pictures
+	 */
+	public Set<Picture> getPictures() {
+		return pictures;
+	}
+
+	/**
+	 * @param pictures the pictures to set
+	 */
+	public void setPictures(Set<Picture> pictures) {
+		this.pictures = pictures;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	/**

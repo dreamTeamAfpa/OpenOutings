@@ -31,6 +31,7 @@
 		<H1 class="menu" id="ilienProfil">
             <a href="editprofilmembre">MON PROFIL</a>
         </H1>
+
 		<H1 class="menu" id="ilienOutters">
 			<a href="rechercheUserGroupe">OUTTERS</a>
 		</H1>

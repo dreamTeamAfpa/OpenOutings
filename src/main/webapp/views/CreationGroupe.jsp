@@ -71,6 +71,7 @@
 			<input type="button" name="valider" value="Valider"  onclick="getInfo(); document.modifGroup.submit();"
 				id="vBoutton" />
 				</form>
+
 				</div>
 				<div id="content2">
 					<span class="title" id="titleContent2">MEMBRES<img id="imagePlus"

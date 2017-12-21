@@ -6,14 +6,9 @@ package fr.afpa.filRouge.model;
 import java.io.Serializable;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,37 +35,65 @@ public class GeographicalArea implements Serializable {
 
 	@OneToMany
 	private Set<Groupe> groupes;
-
+	
+	//GETTERS & SETTERS
+	/**
+	 * @return the nameArea
+	 */
 	public String getNameArea() {
 		return nameArea;
 	}
 
+	/**
+	 * @param nameArea the nameArea to set
+	 */
 	public void setNameArea(String nameArea) {
 		this.nameArea = nameArea;
 	}
 
+	/**
+	 * @return the descriptionArea
+	 */
 	public String getDescriptionArea() {
 		return descriptionArea;
 	}
 
+	/**
+	 * @param descriptionArea the descriptionArea to set
+	 */
 	public void setDescriptionArea(String descriptionArea) {
 		this.descriptionArea = descriptionArea;
 	}
 
+	/**
+	 * @return the locations
+	 */
 	public Set<Locations> getLocations() {
 		return locations;
 	}
 
+	/**
+	 * @param locations the locations to set
+	 */
 	public void setLocations(Set<Locations> locations) {
 		this.locations = locations;
 	}
 
+	/**
+	 * @return the groupes
+	 */
 	public Set<Groupe> getGroupes() {
 		return groupes;
 	}
 
+	/**
+	 * @param groupes the groupes to set
+	 */
 	public void setGroupes(Set<Groupe> groupes) {
 		this.groupes = groupes;
 	}
+
+	
+	
 
 }
