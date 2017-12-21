@@ -149,30 +149,30 @@ public class GroupeController {
 		Set<Interest> interests = new HashSet<Interest>();
 		Interest i = new Interest();
 		i.setNameInterest(interest);
-		Interest i2 =serviceInterest.getOnebyName(interest);
-		if(i2!=null) {
-		if (i2.getNameInterest().equalsIgnoreCase(interest)) {
-			System.out.println(i +"test egalité interet");
-			i = serviceInterest.getOnebyName(interest);
-		}
+		Interest i2 = serviceInterest.getOnebyName(interest);
+		if (i2 != null) {
+			if (i2.getNameInterest().equalsIgnoreCase(interest)) {
+				System.out.println(i + "test egalité interet");
+				i = serviceInterest.getOnebyName(interest);
+			}
 		} else {
-			
+
 			serviceInterest.addInterest(i);
 		}
-		
+
 		GeographicalArea geographicalArea = new GeographicalArea();
 		geographicalArea.setNameArea(lieux);
 		GeographicalArea lieux2 = serviceGeo.getOne(lieux);
-		if (lieux2!= null) {
-		if ( lieux2.getNameArea().equalsIgnoreCase(geographicalArea.getNameArea())) {
-			System.out.println(geographicalArea +"test egalité geo");
-			geographicalArea = serviceGeo.getOne(lieux);
-		}
-		}else {
+		if (lieux2 != null) {
+			if (lieux2.getNameArea().equalsIgnoreCase(geographicalArea.getNameArea())) {
+				System.out.println(geographicalArea + "test egalité geo");
+				geographicalArea = serviceGeo.getOne(lieux);
+			}
+		} else {
 			serviceGeo.addGeographicalArea(geographicalArea);
-			
+
 		}
-		
+
 		g.setGeographicalArea(geographicalArea);
 		g.setDescriptionGroup(description);
 		g.setNameGroup(nomGroup);
@@ -183,4 +183,21 @@ public class GroupeController {
 		return "rechercheUserGroupe";
 	}
 
+	@GetMapping("deleteGroup")
+	public String deletegroup(Model model, @RequestParam(value = "ciblIdGroup")int idGroup) {
+		Groupe group = serviceGroup.getOneGroup(idGroup);
+//		group.setUsersGroupe(null);
+//		System.out.println(group);
+//		Set<Interest> interests = group.getInterests();
+//		for (int i =0;i<interests.size();i++) {
+//			Interest interest = interests.iterator().next();
+//			serviceInterest.delInterest(interest);
+//		}
+			List<Person> persons = servicePerson.findPersonbyNameGroup(group);
+		group.setUsersGroupe(persons);
+		serviceGroup.deleteGroup(group);
+		
+		getFormUserGroupSearch(model);
+		return "rechercheUserGroupe";
+	}
 }

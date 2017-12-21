@@ -39,9 +39,5 @@ public interface IserviceGroupe {
 	 
 	 public Groupe findGroupeByName(String name);
 	
-	/*
-	public void setAdministratorByGroup(Administrator administrator);
 	
-	public Administrator getAdministratorByGroup(int idGroup);
-	*/
 }

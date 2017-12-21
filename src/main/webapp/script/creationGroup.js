@@ -1,5 +1,6 @@
 document.getElementById('txtCiblTheme').style.visibility = "hidden";
 document.getElementById('txtCiblLieux').style.visibility = "hidden";
+document.getElementById('deletButton').style.visibility = "hidden";
 document.getElementById('pDescription').disabled = true;
 
 	
@@ -9,7 +10,10 @@ function updateGroup(mode){
 			document.getElementById('pDescription').disabled = false;
 			document.getElementById('txtCiblTheme').style.visibility = "visible";
 			document.getElementById('txtCiblLieux').style.visibility = "visible";
+			document.getElementById('iChoixTheme').style.visibility = "hidden";
+			document.getElementById('iChoixLieux').style.visibility = "hidden";
 	}else if (mode ="Supprimer"){
+		document.getElementById('deletButton').style.visibility = "visible";
 		console.log("suppr");
 	}else if (mode ="MENU"){
 		console.log("rien");

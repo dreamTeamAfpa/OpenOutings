@@ -37,6 +37,7 @@ public class Groupe implements Serializable{
 	@JoinColumn(name = "id_Groupe")
 	private Set<Event> events;
 	@ManyToMany
+	
 	private List<Person> person;
 	@ManyToMany
 	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},

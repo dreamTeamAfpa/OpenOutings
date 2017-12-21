@@ -18,6 +18,13 @@
 						<option value="Modifier">Modifier</option>
 						<option value="Supprimer">Supprimer</option>
 				</select>
+				<input type="button" name="valide suppression" value="valider suppression"  onclick=" document.deleteGroup.submit();"
+				id="deletButton" />
+				<form action="deleteGroup" name="deleteGroup">
+				<input id="ciblIdGroup" placeholder="id" name="ciblIdGroup" value="${groupe.idGroup}"
+					type="hidden" size="20"> 
+				</form>
+				
 				
 				<select id="iChoixTheme" name="iChoixTheme">
 						<option><c:out value="${groupe.interests}" />

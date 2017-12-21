@@ -25,4 +25,8 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 	Person findByEmailUser(String email);
 	
 	 List<Person> findPersonByGroupeRoles(Groupe groupe);
+
+
+	
+	
 }
