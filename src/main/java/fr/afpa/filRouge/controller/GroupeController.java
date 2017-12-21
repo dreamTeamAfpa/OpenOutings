@@ -2,6 +2,7 @@ package fr.afpa.filRouge.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -59,17 +60,18 @@ public class GroupeController {
 			System.out.println("test interest" + interest.getNameInterest());
 			ArrayList<Groupe> groupe = serviceGroup.getGroupByInterests(interest);
 			model.addAttribute("nameGroup", groupe);
+			
 			for (int i = 0; i < groupe.size(); i++) {
-				ArrayList<Person> persons = (ArrayList<Person>) servicePerson.findPersonbyNameGroup(groupe.get(i));
+				List<Person> persons = servicePerson.findPersonbyNameGroup(groupe.get(i));
 				if (persons.size() == 0) {
 					Person p = new Person();
 					p.setPseudoUser("noOne");
 					ArrayList<Person> al = new ArrayList<Person>();
 					al.add(p);
-					groupe.get(i).setUsersGroupe(al);
+					
 					model.addAttribute("nameGroup", groupe);
 				} else {
-					groupe.get(i).setUsersGroupe(persons);
+					groupe.get(i).setUsers(persons);
 					getFormUserGroupSearch(model);
 					model.addAttribute("nameGroup", groupe);
 					return "rechercheUserGroupe";
@@ -85,11 +87,12 @@ public class GroupeController {
 				if (persons.size() == 0) {
 					Person p = new Person();
 					p.setPseudoUser("noOne");
-					ArrayList<Person> al = new ArrayList<Person>();
+					List<Person> al = new ArrayList<Person>();
 					al.add(p);
-					groupe.get(i).setUsersGroupe(al);
+					
+				groupe.get(i).setUsers(al);
 				} else {
-					groupe.get(i).setUsersGroupe(persons);
+					groupe.get(i).setUsers(persons);
 				}
 			}
 
@@ -194,7 +197,7 @@ public class GroupeController {
 //			serviceInterest.delInterest(interest);
 //		}
 			List<Person> persons = servicePerson.findPersonbyNameGroup(group);
-		group.setUsersGroupe(persons);
+		//group.setUsersGroupe(persons);
 		serviceGroup.deleteGroup(group);
 		
 		getFormUserGroupSearch(model);

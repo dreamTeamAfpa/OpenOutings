@@ -40,6 +40,9 @@ public class Groupe implements Serializable{
 	@JoinColumn(name = "id_Groupe")
 	private Set<Event> events;
 	@ManyToMany
+	private List<Person> person;
+	
+	@ManyToMany
 	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="person_id_person")})
 	@MapKeyJoinColumn(name="role_person")
@@ -77,6 +80,12 @@ public class Groupe implements Serializable{
 	}
 	
 	//GETTERS & SETTERS
+	public List<Person> getUsersGroupe() {
+		return person;
+	}
+	public void setUsers(List<Person> person) {
+		this.person = person;
+	}
 	/**
 	 * @return the idGroup
 	 */
@@ -163,10 +172,5 @@ public class Groupe implements Serializable{
 		this.geographicalArea = geographicalArea;
 	}
 
-	@Override
-	public String toString() {
-		return "Groupe [nameGroup=" + nameGroup + ", interests=" + interests + ", geographicalArea=" + geographicalArea
-				+ "]";
 	}
-}
 

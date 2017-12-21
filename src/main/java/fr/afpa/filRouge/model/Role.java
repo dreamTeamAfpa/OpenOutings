@@ -39,6 +39,7 @@ public class Role {
 		return roleperson;
 	}
 
+	
 	/**
 	 * @param roleperson the roleperson to set
 	 */
@@ -72,6 +73,10 @@ public class Role {
 	 */
 	public void setRole(String role) {
 		this.role = role;
+	}
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", role=" + role + ", roleperson=" + roleperson + "]";
 	}
 
 
