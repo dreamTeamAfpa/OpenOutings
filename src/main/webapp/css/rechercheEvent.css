@@ -258,15 +258,19 @@ select {
  background-color: rgba(251, 235, 100, 0.5); -moz-border-radius:20px;
   -khtml-border-radius:20px; -webkit-border-radius:20px; border-radius:20px;"
 }
-#vBoutton{
-	background-color:  #7444E6; font-family: "Montserrat";
-	color: white; border-radius: 5px; font-weight: bold;
-}
-#vBoutton:hover{
-	background-color: white; font-family: "Montserrat";
-	color:  #7444E6; box-shadow: 2px;font-weight: bold;
-}
 
+.eventButton {
+    background-color: #7444E6;
+    font-family: "Montserrat";
+    font-size: 14px;
+    color:white; 
+    box-shadow: 1px;
+    border-radius: 5px;
+}
+.eventButton:hover {
+    background-color: white; font-family: "Montserrat";
+    color:#7444E6; box-shadow: 1px;
+}
 #iChoixLieux{
 	font-family: "Montserrat"; color:  #7444E6; font-weight: bold;
 	 border-radius: 5px;

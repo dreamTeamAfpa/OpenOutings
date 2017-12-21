@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import fr.afpa.filRouge.model.Event;
 import fr.afpa.filRouge.model.GeographicalArea;
+import fr.afpa.filRouge.model.Locations;
 import fr.afpa.filRouge.model.Theme;
 import fr.afpa.filRouge.service.IserviceEvent;
 import fr.afpa.filRouge.service.IserviceGeographicalArea;
+import fr.afpa.filRouge.service.IserviceLocation;
 import fr.afpa.filRouge.service.IserviceTheme;
+import fr.afpa.filRouge.service.ServiceLocation;
 
 @Controller
 @RequestMapping("/")
@@ -28,13 +31,12 @@ public class EventController {
 	@Autowired
 	private IserviceGeographicalArea serviceGeo;
 	@Autowired
+	private IserviceLocation servicelocation;
+	@Autowired
 	private IserviceTheme serviceTheme;
 	//affiche page CreateEvent
 	@GetMapping("createEvent")
-	public String createEvent(Model model, @RequestParam(value = "idEvent") int idevent) {
-		if (idevent > 0) {
-			displayEvent(model, idevent);
-		}
+	public String createEvent(Model model) {
 		ArrayList<GeographicalArea> geoAreas = (ArrayList<GeographicalArea>) serviceGeo.getAll();
 		ArrayList<Theme> themes = (ArrayList<Theme>) serviceTheme.getAll();
 		model.addAttribute("geo", geoAreas);
@@ -57,8 +59,21 @@ public class EventController {
 	}
 	
 	@PostMapping("displayEvent")
-	public void displayEvent(Model model, int idevent) {
+	public String displayEvent(Model model, @RequestParam(value = "idEvent") int idevent) {
 		Event event = serviceEvent.getOneEvent(idevent);
 		model.addAttribute("event", event);
+		return "redirect:/createEvent";
+	}
+	
+	@PostMapping("addEvent")
+	public String addEvent(Model model, @RequestParam(value = "titleEvent") String titleevent,@RequestParam(value = "iChoixTheme") String choixTheme, @RequestParam(value = "iChoixLieux") String locationName) {
+		Theme theme = serviceTheme.getOne(choixTheme);
+		Locations locationEvent = servicelocation.getOne(locationName);		
+		Event event = new Event();
+		event.setTitleEvent(titleevent);
+		event.setLocation(locationEvent);
+		event.setTheme(theme);
+		serviceEvent.addEvent(event);
+		return "redirect:/findEvent";
 	}
 }

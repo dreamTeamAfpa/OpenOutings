@@ -37,11 +37,11 @@
 						</option>
 					</c:forEach>
 				</select> <br /> <input type="button" name="valider" value="Valider"
-					id="vBoutton">
+					class="eventButton">
 			</div>
 			<!-- Affichage des événements -->
 			<div class="content">
-				<form name="rechercheEvent" action="createEvent?idEvent=${event.getIdEvent()}"><span class="titleMain">
+				<form name="rechercheEvent" method="post" action="displayEvent"><span class="titleMain">
 					<select name="idEvent" size="14">
 					<c:forEach var="event"
 						items="${events}">
@@ -52,6 +52,11 @@
 					</c:forEach>
 					</select> 
 				</span>
+				</form>
+			</div>
+			<div class="parent">
+				<form method="get" action="createEvent">
+					<input type="submit" class="eventButton" value="Créer un événement">
 				</form>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
 		<%@include file="/views/MenuHeader.jsp"%>
 	</header>
 
-<!-- <form class="form" method="post" action="inscription">
+	<!-- <form class="form" method="post" action="inscription">
 	<label for="username">Nom d'utilisateur</label> <br> <input
 		type="text" id="username" name="username"> <br> <label
 		for="password">Mot de passe</label> <br> <input
@@ -27,37 +27,67 @@
 	<button type="submit" id="connectBtn">S'inscrire</button>
 </form> -->
 	<div id="bodyContainer">
-	<form action="addEvent" item="${event}">
-		<div id="titleEventEdit">
-			<div id="zoneEventTitle">
-				<h2>Création d'évenement</h2>
-				<div class="part">
-					<input id="eventTitle" title="donner un titre à votre sortie"
-						value="<c:out value='${event.titleEvent}' default='Entrez le titre de la sortie'/>">
+		<form action="addEvent" id="menuEvent" method="post">
+			<input type="hidden" id="idEvent" value="${event.idEvent}"/>
+			<select id="iChoixEdit">
+				<option value="Menu">MENU</option>
+				<option value="Creer">Nouvel Evénement</option>
+				<option value="Modifier">Modifier</option>
+				<option value="Supprimer">Supprimer</option>
+			</select> <br /> <br />
+			<div id="titleEventEdit">
+
+				<div id="zoneEventTitle">
+					<h2>
+						Evénement <br />
+						<br />
+					</h2>
+
+					<div class="part">
+						<input type="text" name="titleEvent" id="eventTitle" title="donner un titre à votre sortie"
+							value="<c:out value='${event.titleEvent}' default='Entrez le titre de la sortie'/>" onFocus='value=""' >
+					</div>
+					<div id="eventImg">
+						<img src="images/022-crowd-of-users-red-60x60.png">
+					</div>
 				</div>
-				<div id="eventImg">
-					<img src="images/022-crowd-of-users-red-60x60.png">
-				</div>
-			</div>
 				<div id="eventEdit">
 					<div id="bodyLeft">
-						<div class="part">
-							Choisissez le thème de l'activité <br />
-							<select id="iChoixTheme">
-									<option value="Themes">choix du thème</option>
-									<c:forEach var="theme" items="${themes}">
-										<option><c:out value="${theme.nameTheme}" />
+
+						<div class="choices">
+							<div class="part">
+							Thème <br /> <select name="iChoixTheme" id="iChoixTheme">
+								<option value="Themes">choix du thème</option>
+								<c:forEach var="theme" items="${themes}">
+									<option value=<c:out value="${theme.nameTheme}" />><c:out value="${theme.nameTheme}" />
+									</option>
+								</c:forEach>
+							</select> <br /> 
+							</div>
+							<div class="part">
+								Lieu <br />
+								<select id="iChoixLieux" name="iChoixLieux">
+									<option value="Lieux">choix du lieu</option>
+									<c:forEach var="myGeo" items="${geo}">
+										<option value="${myGeo.nameArea}"><c:out
+												value="${myGeo.nameArea}" />
 										</option>
 									</c:forEach>
-							</select> <br /> <br /> Nombre de Participants maximum <br /> <input
-								type="number" id="eventMaxOuters"> <br /> <br />
-							<select id="iChoixEdit" value="MENU">
-									<option value="Menu">MENU</option>
-									<option value="Modifier">Modifier</option>
-									<option value="Supprimer">Supprimer</option>
-							</select> <br /> <br />
-
-
+								</select>
+							</div>
+							<div id="eventTiming">
+								<div class="part">
+									<p>Date</p>
+									<input type="date" class="datePicker" id="eventDate"> <br />
+								</div>
+								<div class="part">
+									<p>Heure</p>
+									<input type="time" id="eventTime"> <br />
+								</div>
+								<br />
+							</div>
+							<br /> <br />Participants maximum <br /> <input type="number"
+								id="eventMaxOuters" name="maxParticipants"> <br /> <br />
 						</div>
 					</div>
 
@@ -70,43 +100,20 @@
 								id="ajoutPhotoBoutton" />
 						</div>
 						<div id="contentCenter">
-							<fieldset id="eventDescription" item="${eventDescription}" contenteditable="true">
-								<legend>DESCRIPTION </legend>
-								<br /><c:out value="${event.resumeEvent}"/>
+							<fieldset id="eventDescription" var="${eventDescription}" name="eventDescription" class="part">
+								<legend>Petite description </legend>
+								<br />
+								<c:out value="${event.resumeEvent}" />
 							</fieldset>
-							<fieldset id="eventDetails" contenteditable="true">
+							<fieldset id="eventDetails" class="part">
 								<legend>Details </legend>
-								<br /><c:out value="${event.detailsEvent}"/>
+								<br />
+								<c:out value="${event.detailsEvent}" />
 							</fieldset>
 							<div class="part"></div>
-
-							<div class="part">
-								OÙ ?
-										<select id="iChoixLieux">
-											<option value="Lieux">choix du lieu</option>
-											<c:forEach var="myGeo" items="${geo}">
-												<option value="${myGeo.nameArea}"><c:out
-														value="${myGeo.nameArea}" />
-												</option>
-											</c:forEach>
-									</select>
-							</div>
-							<div id="eventTiming">
-								<div class="part">
-									<p>Quand ?</p>
-									<input type="date" class="datePicker" id="eventDate">
-
-									<br />
-								</div>
-								<div class="part">
-									<p>A partir de quelle heure ?</p>
-									<input type="time" id="eventTime"> <br />
-								</div>
-								<br />
-							</div>
 							<div id="validate">
-								<input type="button" class="eventButton" value="Valider"
-									id="createEvent"> <span></span> <input type="button"
+								<input type="submit" class="eventButton" value="Valider"> <span></span> 
+								<input type="button"
 									class="eventButton" value="Annuler" id="cancel">
 							</div>
 						</div>
@@ -121,9 +128,8 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-	<script src="script/index.js"></script>
 	<script src="script/event.js"></script>
-		<footer>
+	<footer>
 		<%@include file="/views/footer.jsp"%>
 	</footer>
 </body>

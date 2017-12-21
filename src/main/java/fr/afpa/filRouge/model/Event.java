@@ -67,7 +67,15 @@ public class Event implements Serializable {
 	
 	
 	//GETTERS & SETTERS
+	public Event() {
+		
+	}
 	
+	public Event(String titleevent2,Locations locationevent) {
+		setTitleEvent(titleevent2);
+		//setMaxParticipants(maxparticipants2);
+		setLocation(locationevent);
+	}
 	/**
 	 * @return the idEvent
 	 */

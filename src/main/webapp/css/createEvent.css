@@ -227,7 +227,7 @@ header {
 
 
 
-#eventDescription { 
+#eventDescription, #eventDetails { 
     border:10px double #7444E6; 
     padding:5px; 
     width:75%;
@@ -241,7 +241,10 @@ header {
     -webkit-border-radius:20px;
     border-radius:20px;
     width: 100%;
+    disabled : true;
 }
+
+
 
 legend {
 	font-family: "Montserrat";
@@ -269,16 +272,19 @@ legend {
 #eventTiming {
     width: 100%;
 }
-.part{
+.part {
     font-size: 18px;
     margin: 5px;
     padding: auto;
     font-family: "Montserrat";
     font-weight: bold;
     color: white;
-    background-color: rgba(116, 68, 230, 0.8);
-    border-radius: 10px;
     justify-content: space-between;
+}
+
+.choices {
+	border-radius: 10px;
+	background-color: rgba(116, 68, 230, 0.8);
 }
 
 #imageEvent {
