@@ -30,7 +30,6 @@ public class ServiceGeographicalArea implements IserviceGeographicalArea {
 
 	@Override
 	public GeographicalArea getOne(String nameArea) {
-		// TODO Auto-generated method stub
 		return geographicalAreaRepository.findByNameAreaAllIgnoreCase(nameArea);
 	}
 

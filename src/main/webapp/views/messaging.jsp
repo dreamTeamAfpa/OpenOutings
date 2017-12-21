@@ -11,6 +11,9 @@
 <title>Messagerie Open Outings</title>
 </head>
 <body>
+	<noscript>
+		<h2>Sorry! Your browser doesn't support Javascript</h2>
+	</noscript>
 	<header>
 		<%@include file="/views/MenuHeaderLogged.jsp"%>
 	</header>
@@ -44,49 +47,56 @@
 					${personSession.pseudoUser}
 				</a>
 			</div>
+			<img id="uploadedImage" name="uploadedImage" />
+<!-- 			<form method="post" action="uploadFile" enctype="multipart/form-data"
+				enctype="multipart/form-data">
+				<input id="imagefile" name="imagefile" type="file"
+					onchange="onFileSelected()" accept="image/*" /> <input
+					type="submit" value="Envoyer Image">
+			</form> -->
+
 			<form action="sendmessage" method="post">
-				<input type="text" name="zonetextmessage" id="zonetextmessage">
-				<div id="mesemoticons">
-					<img id="tete1" src="images/Chocked.png" alt="Chocked"
-						title="Chocked" ONCLICK="insereremoticon(this)"> <img
-						id="tete2" src="images/Smyle.png" alt="Smyle" title="Smyle"
-						ONCLICK="insereremoticon(this)"> <img id="tete3"
-						src="images/Hurt.png" alt="Hurt" title="Hurt"
-						ONCLICK="insereremoticon(this)"> <img id="tete4"
-						src="images/Sunglasses.png" alt="Sunglasses" title="Sunglasses"
-						ONCLICK="insereremoticon(this)"> <img id="tete5"
-						src="images/Cry.png" alt="Cry" title="Cry"
-						ONCLICK="insereremoticon(this)"> <img id="tete5"
-						src="images/Lovekiss.png" alt="Lovekiss" title="Lovekiss"
-						ONCLICK="insereremoticon(this)">
-				</div>
-				<ul id="nav">
-					<li><a href="#">
-							<button class="Bbump" id="bjoindre" title="joindre fichier"></button>
-					</a>
-						<ul>
-							<li><input type="file" name="fichier" accept="image/*"
-								onChange="inserimage(this)" /></li>
-						</ul></li>
-				</ul>
-				<input type="submit" class="Bbump" id="benvoyer" value="Envoyer" />
+				<input type="text" name="zonetextmessage" id="zonetextmessage"
+					onchange="onchangetext()"/>
+					<input type="submit" class="Bbump" id="benvoyer" value="Envoyer" disabled="disabled" />
 			</form>
+
 		</div>
 		<div id="rightcontener">
 			<span>HISTORIQUE DE CONVERSATION</span>
 			<div id="zonetexthistorique">
+
 				<c:forEach var="message" items="${messagehistory}">
-					<div class="bullediscut" id="bullediscut">
-						<c:out value="${message.localdatetime}"/><br>
-						<c:out value="${message.messagetxt}" />
-					</div>
+
+					<c:if
+						test="${message.person.getPseudoUser().equals(personSession.getPseudoUser())}">
+						<div id="mybullediscut">
+							<strong><c:out value="Vous - " /></strong>
+							<c:out value="${message.localdatetime}" />
+							<br>
+							<i>"<c:out value="${message.messagetxt}" />"</i>
+						</div>
+					</c:if>
+					<c:if
+						test="${!message.person.getPseudoUser().equals(personSession.getPseudoUser())}">
+						<div id="bullediscut">
+						<strong><c:out value="${message.person.getPseudoUser()} - " /></strong>
+							<c:out value="${message.localdatetime}" />
+							<br>
+							<i>"<c:out value="${message.messagetxt}" />"</i>
+						</div>
+					</c:if>
+
+
+
 				</c:forEach>
 			</div>
 		</div>
 	</div>
 
-
 	<footer> </footer>
+	<script src="script/Messaging.js"></script>
+
 </body>
-<script src="script/Messaging.js"></script>
+
 </html>

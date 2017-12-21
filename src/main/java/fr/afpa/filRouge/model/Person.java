@@ -2,6 +2,7 @@ package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.persistence.Column;
@@ -62,6 +63,10 @@ public class Person implements Serializable {
 	private Set<Interest> interests;
 	@OneToMany(mappedBy="idperson")
 	private Set<Picture> pictures;
+	
+	@OneToMany
+	private List<Message> messages;
+	
 	
 	//CONSTRUCTEUR 
 	public Person(){}

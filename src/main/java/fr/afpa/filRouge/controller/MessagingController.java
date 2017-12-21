@@ -44,9 +44,6 @@ public class MessagingController {
 	/**
 	 * messagerie
 	 * 
-	 * @param httpSession
-	 * @param model
-	 * @return
 	 */
 	@GetMapping("messagerie")
 	public String messagerie(HttpSession httpSession, Model model) {
@@ -62,12 +59,8 @@ public class MessagingController {
 	}
 
 	/**
-	 * groupe chose
+	 * groupe choice
 	 * 
-	 * @param httpSession
-	 * @param model
-	 * @param nomgroupe
-	 * @return
 	 */
 	@PostMapping("choixgroupe")
 	public String choixgroupe(HttpSession httpSession, Model model,
@@ -85,21 +78,16 @@ public class MessagingController {
 		httpSession.setAttribute("messagehistory", messages);
 		return "messaging";
 	}
+
 	/**
 	 * Send message
 	 * 
-	 * @param httpSession
-	 * @param model
-	 * @param textmessage
-	 * @return
 	 */
 	@PostMapping("sendmessage")
 	public String sendmessage(HttpSession httpSession, Model model,
 			@RequestParam(value = "zonetextmessage") String textmessage) {
 		if ((textmessage != null) && (!textmessage.isEmpty())) {
 			Person person = (Person) httpSession.getAttribute("personSession");
-			String username = person.getPseudoUser();
-			textmessage = username + " - " + textmessage;
 			Message message = new Message();
 			message.setMessagetxt(textmessage);
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -107,15 +95,25 @@ public class MessagingController {
 			String time = dtf.format(now);
 			message.setLocaldatetime(time);
 			Groupe groupe = (Groupe) httpSession.getAttribute("defaultgroupe");
-			message.setIdGroupe(groupe.getIdGroup());
-			serviceMessage.addMessage(message);
-			ArrayList<Message> messages = (ArrayList<Message>) serviceMessage.getMessagegByGroupe(groupe.getIdGroup());
+			if (groupe != null) {
+				message.setIdGroup(groupe.getIdGroup());
+				message.setPerson(person);
+				serviceMessage.addMessage(message);
+				ArrayList<Message> messages = (ArrayList<Message>) serviceMessage
+						.getMessagegByGroupe(groupe.getIdGroup());
+				model.addAttribute("messagehistory", messages);
+				model.addAttribute("time", time);
+			} else {
+				Message messageError = new Message("veuillez choisir un groupe");
+				ArrayList<Message> messages = new ArrayList<>();
+				messages.add(messageError);
+			}
 
-			model.addAttribute("messagehistory", messages);
-			model.addAttribute("time", time);
 			return "messaging";
 		}
-
-		return null;
+		Message message = new Message("Rien à envoyer !!");
+		model.addAttribute("messagehistory", message);
+		return "messaging";
 	}
+
 }

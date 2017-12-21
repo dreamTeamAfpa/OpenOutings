@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -45,9 +46,10 @@ public class Groupe implements Serializable{
 	@JoinTable(name="groupe_corresponds_in_interests", joinColumns={@JoinColumn(name="groupe_id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="interest_name_interest")})
 	public Set<Interest> interests = new HashSet<Interest>();
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "name_area")
 	private GeographicalArea geographicalArea;
+	
 	@OneToMany(mappedBy="idGroup")
 	private Set<Message> messages;
 	

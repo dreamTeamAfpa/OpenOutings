@@ -19,9 +19,7 @@ import fr.afpa.filRouge.model.Person;
 import fr.afpa.filRouge.service.IserviceInterest;
 import fr.afpa.filRouge.service.IservicePerson;
 
-/*
- * @Author RTI
- */
+
 @Scope("session")
 @Controller
 @RequestMapping("/")

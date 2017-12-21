@@ -1,10 +1,12 @@
 package fr.afpa.filRouge.model;
 
+import java.awt.TrayIcon.MessageType;
 import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,18 +22,39 @@ public class Message implements Serializable{
 	 * 
 	 */
 	@Id
-	@Column(name="id_merssage")
+	@Column(name="id_message")
 	private int idmessage;
 	@Column(name="id_groupe")
 	private int idGroup;
-	@Column(name = "message_groupe")
+	@Column(name = "message")
 	private String messagetxt;
 	@Column(name = "time_message")
 	private String localdatetime;
+	@ManyToOne
+	private Person person;
+	@Column(name="type")
+	private MessageType type;
+	
+	
+	public enum MessageType {
+        CHAT,
+        JOIN,
+        LEAVE
+    }
 	
 	// CONSTRUCTEUR
 	public Message(){}
 	
+	public Message(int idmessage, String messagetxt, String localdatetime) {
+		this.idmessage = idmessage;
+		this.messagetxt = messagetxt;
+		this.localdatetime = localdatetime;
+	}
+
+	public Message(String messagetxt) {
+		this.messagetxt = messagetxt;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -42,30 +65,30 @@ public class Message implements Serializable{
 	// GETTERS & SETTERS
 
 	/**
-	 * @return the id_message
+	 * @return the idmessage
 	 */
-	public int getId_message() {
+	public int getIdmessage() {
 		return idmessage;
 	}
 
 	/**
-	 * @param id_message the id_message to set
+	 * @param idmessage the idmessage to set
 	 */
-	public void setId_message(int id_message) {
-		this.idmessage = id_message;
+	public void setIdmessage(int idmessage) {
+		this.idmessage = idmessage;
 	}
 
 	/**
-	 * @return the idGroupe
+	 * @return the idGroup
 	 */
-	public int getIdGroupe() {
+	public int getIdGroup() {
 		return idGroup;
 	}
 
 	/**
-	 * @param idGroupe the idGroupe to set
+	 * @param idGroup the idGroup to set
 	 */
-	public void setIdGroupe(int idGroup) {
+	public void setIdGroup(int idGroup) {
 		this.idGroup = idGroup;
 	}
 
@@ -95,6 +118,34 @@ public class Message implements Serializable{
 	 */
 	public void setLocaldatetime(String localdatetime) {
 		this.localdatetime = localdatetime;
+	}
+
+	/**
+	 * @return the person
+	 */
+	public Person getPerson() {
+		return person;
+	}
+
+	/**
+	 * @param person the person to set
+	 */
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public MessageType getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(MessageType type) {
+		this.type = type;
 	}
 
 

@@ -158,7 +158,7 @@ header {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	border-radius: 10px;
+	border-radius: 6px;
 	margin-top: 1%;
 	margin-left: 1%;
 	padding-bottom: 1%;
@@ -183,7 +183,7 @@ div#divbprofil {
 	background-size: cover;
 	height: 40px;
 	width: 40px;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 
 #bprofil:hover {
@@ -198,7 +198,7 @@ div#divbprofil {
 	background-position: center;
 	height: 80%;
 	width: 80%;
-	border-radius: 10px;
+	border-radius: 6px;
 	margin-top: 1%;
 	margin-left: 1%;
 	padding-bottom: 1%;
@@ -212,7 +212,7 @@ div#divbprofil {
 	background-position: center;
 	height: 80%;
 	width: 80%;
-	border-radius: 10px;
+	border-radius: 6px;
 	margin-top: 1%;
 	margin-left: 1%;
 	padding-bottom: 1%;
@@ -228,7 +228,7 @@ div#divbprofil {
 
 #grandlogo img {
 	height: 20%;
-	/* width: 20%; */
+	width: 20%;
 	align-content: center;
 }
 
@@ -260,7 +260,7 @@ div#divbprofil {
 	background-size: cover;
 	height: 60px;
 	width: 280px;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 
 /*boutton TROUVER properties*/
@@ -270,7 +270,7 @@ div#divbprofil {
 	background-size: cover;
 	height: 60px;
 	width: 280px;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 
 /*bump effect on all buttons*/
