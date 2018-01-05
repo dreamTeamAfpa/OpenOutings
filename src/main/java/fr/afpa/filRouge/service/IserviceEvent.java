@@ -2,7 +2,7 @@ package fr.afpa.filRouge.service;
 
 import java.util.ArrayList;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.Event;
 
@@ -10,7 +10,7 @@ import fr.afpa.filRouge.model.Event;
  * @author L. CASTAGNEDOLI
  *
  */
-@Service
+@Component
 public interface IserviceEvent {
 
 	public void addEvent(Event event);

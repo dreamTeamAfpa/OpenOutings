@@ -21,7 +21,7 @@
 .flexdatalist-multiple li.input-container,.flexdatalist-multiple li.input-container input{
 	border:none;width:40px;height:auto;padding:0 0 0 4px;line-height:24px}
 .flexdatalist-multiple li.value{
-	display:inline-block;padding:2px 25px 2px 7px;background:#eee;border-radius:3px;color:#777;line-height:20px}
+	display:inline-block;padding:2px 25px 2px 7px;background:#eee;border-radius:3px;line-height:20px}
 .flexdatalist-multiple li.toggle{cursor:pointer;transition:opacity ease-in-out .3s}
 .flexdatalist-multiple li.toggle.disabled{text-decoration:line-through;opacity:.8}
 .flexdatalist-multiple li.value span.fdl-remove{

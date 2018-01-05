@@ -1,11 +1,14 @@
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.sql.Date;
 import java.util.Map;
 import java.util.Set;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +19,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.Table;
 
-import org.springframework.context.annotation.Scope;
 
 @Entity
 @Table(name = "person")
@@ -39,7 +41,7 @@ public class Person implements Serializable {
 	@Column(name = "last_name_person")
 	private String lastNameUser;
 	@Column(name = "birth_date_person")
-	private Calendar dobUser;
+	private Date dobUser;
 	@Column(name = "gender_person")
 	private char genderUser;
 	@Column(name = "e_mail_person")
@@ -48,15 +50,15 @@ public class Person implements Serializable {
 	private int phoneUser;
 	@Column(name = "description_person")
 	private String descriptionPerson;
-	@ManyToMany
-	@JoinTable(name="user_participate_group", joinColumns={@JoinColumn(name="person_id_person")},
+	@ManyToMany (fetch =FetchType.EAGER)
+	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="id_Groupe")})
 	@MapKeyJoinColumn(name="role_person")
 	private Map<Role,Groupe> groupeRoles;
 	@ManyToOne
 	@JoinColumn(name = "postal_code")
 	private Locations location;
-	@ManyToMany
+	@ManyToMany (fetch =FetchType.EAGER)
 	@JoinTable(name="person_have_interests", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="name_interest")})
 	private Set<Interest> interests;
@@ -69,6 +71,7 @@ public class Person implements Serializable {
 		this.passwordUser = passwordUser;
 		this.emailUser = emailUser;
 	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -151,14 +154,14 @@ public class Person implements Serializable {
 	/**
 	 * @return the dobUser
 	 */
-	public Calendar getDobUser() {
+	public Date getDobUser() {
 		return dobUser;
 	}
 
 	/**
 	 * @param dobUser the dobUser to set
 	 */
-	public void setDobUser(Calendar dobUser) {
+	public void setDobUser(Date dobUser) {
 		this.dobUser = dobUser;
 	}
 

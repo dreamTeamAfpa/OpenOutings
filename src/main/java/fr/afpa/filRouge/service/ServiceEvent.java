@@ -4,6 +4,10 @@
 package fr.afpa.filRouge.service;
 
 import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import fr.afpa.filRouge.model.Event;
 import fr.afpa.filRouge.repository.EventRepository;
 
@@ -11,8 +15,9 @@ import fr.afpa.filRouge.repository.EventRepository;
  * @author L. CASTAGNEDOLI
  *
  */
+@Service
 public class ServiceEvent implements IserviceEvent {
-	
+	@Autowired
 	private EventRepository eventRepository;
 	
 	public ServiceEvent(EventRepository eventRepository) {

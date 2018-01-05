@@ -15,7 +15,7 @@
 	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
 	</div>
 	<div id="divbprofil">
-		<a href="editprofilmembre"><button id="bprofil"
+		<a href="profilmembre"><button id="bprofil"
 				title="Edition profil" /></button>
 			<br>${personSession.pseudoUser}</a>
 	</div>

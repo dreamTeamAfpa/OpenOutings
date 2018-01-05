@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import fr.afpa.filRouge.model.GeographicalArea;
 import fr.afpa.filRouge.model.Groupe;
 import fr.afpa.filRouge.model.Interest;
+import fr.afpa.filRouge.model.Message;
+import fr.afpa.filRouge.model.Person;
 
 /**
  * @author Y LE BIHAN
@@ -19,6 +21,8 @@ import fr.afpa.filRouge.model.Interest;
 @Service
 public interface IserviceGroupe {
 	
+	
+
 	public ArrayList<Groupe> getGroup() ;
 	
 	public void addGroup(Groupe groupe);
@@ -35,9 +39,10 @@ public interface IserviceGroupe {
 	
 	public ArrayList<Groupe> getGroupByInterests(Interest interest);
 	
-	/*
-	public void setAdministratorByGroup(Administrator administrator);
+	public List<Groupe> getGroupeByPerson(Person person);
+
+	public Groupe getGroupeByName(String nomgroupe);
+
 	
-	public Administrator getAdministratorByGroup(int idGroup);
-	*/
+
 }
