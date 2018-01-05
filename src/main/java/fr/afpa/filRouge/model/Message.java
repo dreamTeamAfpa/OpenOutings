@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.awt.TrayIcon.MessageType;
@@ -150,3 +151,4 @@ public class Message implements Serializable{
 
 
 }
+

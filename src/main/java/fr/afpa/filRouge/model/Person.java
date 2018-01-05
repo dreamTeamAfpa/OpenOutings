@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;

@@ -1,6 +1,7 @@
 package fr.afpa.filRouge.service;
 
-import java.util.List;
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Locations;
@@ -12,7 +13,7 @@ import fr.afpa.filRouge.model.Locations;
 @Service
 public interface IserviceLocation {
 
-	public List<Locations> getAll();
+	public ArrayList<Locations> getAll();
 
 	public Locations getOne(int postalCode);
 

@@ -1,3 +1,4 @@
+
 /**
  * 
  */
@@ -35,3 +36,4 @@ public interface GroupeRepository extends CrudRepository<Groupe, Integer> {
 
 	Message findLogByIdGroup(int idgroupe);
 }
+

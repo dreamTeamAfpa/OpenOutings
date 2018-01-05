@@ -3,8 +3,9 @@
  */
 package fr.afpa.filRouge.service;
 
-import java.util.List;
+import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.afpa.filRouge.model.Locations;
@@ -16,16 +17,20 @@ import fr.afpa.filRouge.repository.LocationRepository;
  */
 @Service
 public class ServiceLocation implements IserviceLocation {
-
+	
+	@Autowired
 	private LocationRepository locationRepository;
 
 	public ServiceLocation(LocationRepository locationRepository) {
 		this.locationRepository = locationRepository;
 	}
 
+		// pgu 14/12/17 - implementation of the method getAll() for display listLocation on editProfilMemnbre
 	@Override
-	public List<Locations> getAll() {
-		return (List<Locations>) locationRepository.findAll();
+	public ArrayList<Locations> getAll() {
+		ArrayList<Locations> listLocation =(ArrayList<Locations>) locationRepository.findAll();
+		
+		return listLocation; 
 	}
 
 	@Override

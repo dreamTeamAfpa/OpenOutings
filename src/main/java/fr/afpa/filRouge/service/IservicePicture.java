@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.service;
 
 import org.springframework.core.io.Resource;
@@ -18,3 +19,4 @@ public interface IservicePicture {
 	
 	public void init();
 }
+

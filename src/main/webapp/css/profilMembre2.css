@@ -39,13 +39,13 @@ h2 {
 }
 
 a {
-    text-decoration: none;
-    color: rgba(34, 50, 123, 0.5); 
+    text-decoration: underline;
+    color: black; 
     width:inherit;
 }
 
 a:hover {
-    color: #aeaeae;
+    color: white;
 }
 
 p.small {
@@ -84,6 +84,17 @@ nav ul li:hover {
     background-color: rgba(116, 68, 230, 0.8);
 }
 
+#buttonValReset {
+    padding: 4px 20px;
+    font: normal 700 16px/1 "Montserrat", sans-serif;
+    text-align: center;
+    text-shadow: 0px 0px #000000;
+    color: white;
+    font-weight: bold;
+    align-self: flex-end;
+   
+	
+}
 .artwork img {
     max-width: 100%;
     margin-left: 1%;
@@ -102,7 +113,7 @@ nav ul li:hover {
     text-decoration: none;
     margin: 0 0 5px 0;
     color: #5f5f5f;
-    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+    
 }
 .artwork h2 {
     margin: 0 0 5px;
@@ -116,7 +127,7 @@ nav ul li:hover {
     text-decoration: none;
     margin: 0 0 5px 0;
     color: #5f5f5f;
-    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+   
 }
 
 .description img {
@@ -213,7 +224,6 @@ nav ul li:hover {
     color: #000;
     margin: 10px 8px 0 0;
     -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
     
 }
@@ -238,7 +248,7 @@ nav ul li:hover {
     border-radius: 6px;
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
-    margin-top: 100px;
+   
 }
 
 .progress-bar {
@@ -246,7 +256,6 @@ nav ul li:hover {
     border-radius: 4px;
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
-    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
     -webkit-transition: 0.4s linear;
     -moz-transition: 0.4s linear;
@@ -263,7 +272,7 @@ nav ul li:hover {
 .navi ul {
     float: left;
     width: 200px;
-    margin: 0;
+   
     padding: 0;
     color: #5f5f5f;
     text-decoration: none;
@@ -279,19 +288,18 @@ nav ul li:hover {
 }
 
 .navi ul li a {
-    display: block;
+    display: contents;
     text-decoration: none;
     margin: 0 0 50px 0px;
     padding: 12px 8px;
-    color: #5f5f5f;
-    box-shadow: 1px 1px 3px rbga(0, 0, 0, .8);
+    color: black;
+    
 }
 
 .navi ul li a:hover {
     background: #69f;
 
     -webkit-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
-    -moz-box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
     box-shadow: 2px 1px 3px rgba(0, 0, 0, .8);
 }
 
@@ -322,7 +330,6 @@ ul.drop li {
     float: left;
     line-height: 1.3em;
     vertical-align: middle;
-    zoom: 1;
     padding: 5px 10px;
 }
 
@@ -360,7 +367,7 @@ ul.drop li:hover>ul {
 
 #boutonGroup {
     margin-left: 10px;
-    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 #buttongroup1 {
@@ -370,8 +377,7 @@ ul.drop li:hover>ul {
     height: 32px;
     width: 32px;
     border-radius: 10px;
-    background-color: rgba(116, 68, 230, 0.4);
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 #buttongroup2 {
@@ -402,6 +408,11 @@ aside {
     height: 43em;
    overflow: hidden;
    overflow-y:scroll;
+}
+
+#validate{
+	margin-top: 270px;
+	
 }
 
 
@@ -473,8 +484,8 @@ section img {
 }
 
 #bodyLeft label {
-    border: 1px solid lightgrey;
-    visibility: hidden;
+    
+    visibility: visible;
 }
 
 
@@ -530,10 +541,8 @@ header {
 
 #logoEnTete img {
     opacity: 0.5;
-    -webkit-transition: -webkit-transform .9s; // Chrome Safari
-    -moz-transition: -moz-transform .9s; // Mozilla
-    -o-transition: -o-transform .9s; // OpÃ©ra
-    -ms-transition: -ms-transform .9s; // IE
+   
+   
 }
 #logoEnTete img:hover {
     opacity: 1;
@@ -624,7 +633,8 @@ header {
 
 
 #searchbar{
-	background-color: none;
+	
+
 }
 
 /*Bloc Central*/
@@ -633,7 +643,6 @@ header {
      height: 700px;
     display: flex;
     margin-right: 1%;
-    padding-left: 1%;
     border-radius: 10px;
     background-color: rgba(175, 47, 117, 0.5);
     position: relative;
@@ -663,4 +672,31 @@ header {
     font-weight: bold;
     font-size: 28px;
     text-align: center;
+}
+input[type=search],
+input[type=text],
+input[type=email],
+input[type=number],
+ label{
+/* nécessaire, sur les navigateurs basés sur Webkit, pour appliquer correctement le style des éléments de formulaire */
+  -webkit-appearance: text; 
+  margin: 0;
+
+
+  font-size: 90%;
+  
+  -moz-box-sizing: content-box;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+  
+}
+
+input:focus:invalid {
+  outline: none;
+}
+abbr {
+	color: red;
 }

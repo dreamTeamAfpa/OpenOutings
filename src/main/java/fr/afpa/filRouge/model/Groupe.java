@@ -3,7 +3,10 @@ package fr.afpa.filRouge.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
+
+
 import java.util.List;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -15,7 +18,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
 import javax.persistence.ManyToOne;
+
 import javax.persistence.MapKeyJoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -40,9 +45,11 @@ public class Groupe implements Serializable{
 	@JoinColumn(name = "id_Groupe")
 	private Set<Event> events;
 	@ManyToMany
+
 	private List<Person> person;
 	
 	@ManyToMany
+
 	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="id_Groupe")},
     inverseJoinColumns={@JoinColumn(name="person_id_person")})
 	@MapKeyJoinColumn(name="role_person")
@@ -55,6 +62,28 @@ public class Groupe implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "name_area")
 	private GeographicalArea geographicalArea;
+	@OneToMany(mappedBy="idGroup")
+	private Set<Message> messages;
+	
+	
+	/**
+	 * CONSTRUCTEUR
+	 */
+	public Groupe() {
+		super();
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Groupe [idGroup=" + idGroup + ", " + (nameGroup != null ? "nameGroup=" + nameGroup + ", " : "")
+				+ (descriptionGroup != null ? "descriptionGroup=" + descriptionGroup + ", " : "")
+				+ (events != null ? "events=" + events + ", " : "")
+				+ (personRoles != null ? "personRoles=" + personRoles + ", " : "")
+				+ (interests != null ? "interests=" + interests + ", " : "")
+				+ (geographicalArea != null ? "geographicalArea=" + geographicalArea : "") + "]";
+	}
 	
 	@OneToMany(mappedBy="idGroup")
 	private Set<Message> messages;
@@ -172,5 +201,4 @@ public class Groupe implements Serializable{
 		this.geographicalArea = geographicalArea;
 	}
 
-	}
 

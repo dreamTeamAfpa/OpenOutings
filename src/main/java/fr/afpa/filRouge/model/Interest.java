@@ -44,7 +44,7 @@ public class Interest implements Serializable{
 	private Set<Person> persons;
 	@OneToOne
 	private Theme theme;
-	
+
 	
 	//GETTERS & SETTERS	
 	/**

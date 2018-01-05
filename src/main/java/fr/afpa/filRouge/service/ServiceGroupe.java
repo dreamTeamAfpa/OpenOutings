@@ -23,7 +23,9 @@ import fr.afpa.filRouge.repository.GroupeRepository;
 @Service
 public class ServiceGroupe implements IserviceGroupe {
 
+
   @Autowired
+
 	private GroupeRepository groupeRepository;
 	
 	public ServiceGroupe(GroupeRepository groupeRepository) {
@@ -74,8 +76,15 @@ public class ServiceGroupe implements IserviceGroupe {
 		return groups;
 	}
 
+
+	@Override
+	public Groupe getGroupeByName(String nomgroupe) {
+		Groupe groupe = groupeRepository.findGroupeByNameGroup(nomgroupe);
+		return groupe;
+
 	public Groupe getGroupeByName(String nomgroupe) {
 		 return groupeRepository.findGroupeByNameGroup(nomgroupe);
+
 	}
 
 }

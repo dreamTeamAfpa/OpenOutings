@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.service;
 
 import java.util.ArrayList;
@@ -37,3 +38,4 @@ public class ServiceMessage implements IserviceMessage{
 
 
 }
+

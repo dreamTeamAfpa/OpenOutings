@@ -39,6 +39,7 @@ public interface IserviceGroupe {
 	
 	public ArrayList<Groupe> getGroupByInterests(Interest interest);
 
+
 	 public ArrayList<Groupe> getAllGroupe(int personId);
 	 
 	 public Groupe findGroupeByName(String name);
@@ -46,5 +47,6 @@ public interface IserviceGroupe {
 	public List<Groupe> getGroupeByPerson(Person person);
 
 	public Groupe getGroupeByName(String nomgroupe);
+
 
 }
