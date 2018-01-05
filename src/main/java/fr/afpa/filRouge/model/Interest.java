@@ -44,6 +44,7 @@ public class Interest implements Serializable{
 	private Set<Person> persons;
 	@OneToOne
 	private Theme theme;
+
 	
 	//GETTERS & SETTERS	
 	/**
@@ -94,8 +95,4 @@ public class Interest implements Serializable{
 	public void setPersons(Set<Person> persons) {
 		this.persons = persons;
 	}
-
-	
-	
-	
 }

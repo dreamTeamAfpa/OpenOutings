@@ -1,14 +1,13 @@
+
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyJoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -41,7 +41,7 @@ public class Person implements Serializable {
 	@Column(name = "last_name_person")
 	private String lastNameUser;
 	@Column(name = "birth_date_person")
-	private Date dobUser;
+	private Calendar dobUser;
 	@Column(name = "gender_person")
 	private char genderUser;
 	@Column(name = "e_mail_person")
@@ -50,7 +50,7 @@ public class Person implements Serializable {
 	private int phoneUser;
 	@Column(name = "description_person")
 	private String descriptionPerson;
-	@ManyToMany (fetch =FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(name="user_participate_in_groupe", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="id_Groupe")})
 	@MapKeyJoinColumn(name="role_person")
@@ -58,10 +58,16 @@ public class Person implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "postal_code")
 	private Locations location;
-	@ManyToMany (fetch =FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(name="person_have_interests", joinColumns={@JoinColumn(name="person_id_person")},
     inverseJoinColumns={@JoinColumn(name="name_interest")})
 	private Set<Interest> interests;
+	@OneToMany(mappedBy="idperson")
+	private Set<Picture> pictures;
+	
+	@OneToMany
+	private List<Message> messages;
+	
 	
 	//CONSTRUCTEUR 
 	public Person(){}
@@ -71,7 +77,6 @@ public class Person implements Serializable {
 		this.passwordUser = passwordUser;
 		this.emailUser = emailUser;
 	}
-	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -80,12 +85,32 @@ public class Person implements Serializable {
 		return this.idUser + " " + this.pseudoUser + " " + this.passwordUser;
 	}
 	// GETTERS & SETTERS
-
 	/**
 	 * @return the idUser
 	 */
 	public int getIdUser() {
 		return idUser;
+	}
+
+	/**
+	 * @return the pictures
+	 */
+	public Set<Picture> getPictures() {
+		return pictures;
+	}
+
+	/**
+	 * @param pictures the pictures to set
+	 */
+	public void setPictures(Set<Picture> pictures) {
+		this.pictures = pictures;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	/**
@@ -154,14 +179,14 @@ public class Person implements Serializable {
 	/**
 	 * @return the dobUser
 	 */
-	public Date getDobUser() {
+	public Calendar getDobUser() {
 		return dobUser;
 	}
 
 	/**
 	 * @param dobUser the dobUser to set
 	 */
-	public void setDobUser(Date dobUser) {
+	public void setDobUser(Calendar dobUser) {
 		this.dobUser = dobUser;
 	}
 

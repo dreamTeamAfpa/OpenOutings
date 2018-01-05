@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.controller;
 
 import java.io.Serializable;
@@ -175,3 +176,4 @@ public class UserController implements Serializable {
 
 	}
 }
+

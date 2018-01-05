@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.service;
 
 import java.util.List;
@@ -27,6 +28,9 @@ public interface IservicePerson {
 
 	public Person findByEmailUser(String email);
 	
+	public List<Person> findPersonbyNameGroup(Groupe groupe);
+
 	public List<Person> findPersonByGroupe(Groupe groupe);
 
 }
+

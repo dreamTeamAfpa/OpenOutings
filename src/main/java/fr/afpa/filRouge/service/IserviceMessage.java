@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.service;
 
 import java.util.List;
@@ -19,3 +20,4 @@ public interface IserviceMessage {
 	public void addMessage(Message message);
 
 }
+

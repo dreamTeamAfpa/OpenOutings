@@ -4,7 +4,6 @@
 package fr.afpa.filRouge.service;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -31,7 +30,6 @@ public class ServiceGeographicalArea implements IserviceGeographicalArea {
 
 	@Override
 	public GeographicalArea getOne(String nameArea) {
-		// TODO Auto-generated method stub
 		return geographicalAreaRepository.findByNameAreaAllIgnoreCase(nameArea);
 	}
 

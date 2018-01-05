@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.model;
 
 import java.io.Serializable;
@@ -101,3 +102,4 @@ public class Picture implements Serializable{
 	
 	
 }
+

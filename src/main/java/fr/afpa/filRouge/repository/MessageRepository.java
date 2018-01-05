@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.repository;
 
 import java.util.List;
@@ -18,3 +19,4 @@ public interface MessageRepository extends CrudRepository<Message, Integer> {
 
 
 }
+

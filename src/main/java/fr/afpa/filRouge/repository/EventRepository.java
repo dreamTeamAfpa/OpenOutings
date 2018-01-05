@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import fr.afpa.filRouge.model.Event;
 import fr.afpa.filRouge.model.Locations;
 import fr.afpa.filRouge.model.Theme;
 
-@Repository
+@Component
 public interface EventRepository extends CrudRepository<Event,Integer>{
 
 	List<Event> findByLocation(Locations location);

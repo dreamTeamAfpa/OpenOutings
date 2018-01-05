@@ -1,3 +1,4 @@
+
 <!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
 <div id="logoEnTete">
@@ -12,7 +13,7 @@
 		<label>${username}</label>
 	</p>
 	<div id="divbdeconnexion">
-	<a href="signIn"><button id="bdeconnexion" title="Déconexion">DECONNEXION</button></a>
+	<a href="signIn"><button id="bdeconnexion" title="DÃ©conexion">DECONNEXION</button></a>
 	</div>
 	<div id="divbprofil">
 		<a href="profilmembre"><button id="bprofil"
@@ -23,5 +24,4 @@
 <div id="BoutonMenuEnTete">
 	<a href="menu"><img
 		src="images/icone mainMenu_60x60orange_EnTete.png"
-		title="Accéder au menu" /></a>
-</div>
+		title="AccÃ©der au menu" /></a>

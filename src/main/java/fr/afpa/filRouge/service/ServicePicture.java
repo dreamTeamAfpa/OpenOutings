@@ -1,3 +1,4 @@
+
 package fr.afpa.filRouge.service;
 
 import java.io.IOException;
@@ -58,3 +59,4 @@ public class ServicePicture implements IservicePicture{
     }
 	
 }
+

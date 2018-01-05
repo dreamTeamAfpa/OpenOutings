@@ -1,4 +1,5 @@
 
+
 <!-- taglibs a inclure dans toutes les pages -->
 <%@include file="/views/taglibs.jsp"%>
 
@@ -47,4 +48,5 @@
 		<%@include file="/views/footer.jsp"%>
 	</footer>
 </body>
+
 </html>
