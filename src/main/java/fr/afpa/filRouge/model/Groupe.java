@@ -66,28 +66,8 @@ public class Groupe implements Serializable{
 	private Set<Message> messages;
 	
 	
-	/**
-	 * CONSTRUCTEUR
-	 */
-	public Groupe() {
-		super();
-	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Groupe [idGroup=" + idGroup + ", " + (nameGroup != null ? "nameGroup=" + nameGroup + ", " : "")
-				+ (descriptionGroup != null ? "descriptionGroup=" + descriptionGroup + ", " : "")
-				+ (events != null ? "events=" + events + ", " : "")
-				+ (personRoles != null ? "personRoles=" + personRoles + ", " : "")
-				+ (interests != null ? "interests=" + interests + ", " : "")
-				+ (geographicalArea != null ? "geographicalArea=" + geographicalArea : "") + "]";
-	}
 	
-	@OneToMany(mappedBy="idGroup")
-	private Set<Message> messages;
-	
+
 	
 	/**
 	 * CONSTRUCTEUR
@@ -200,5 +180,6 @@ public class Groupe implements Serializable{
 	public void setGeographicalArea(GeographicalArea geographicalArea) {
 		this.geographicalArea = geographicalArea;
 	}
+}
 
 

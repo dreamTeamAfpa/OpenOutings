@@ -4,6 +4,7 @@ package fr.afpa.filRouge.controller;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -132,7 +133,7 @@ public class UserController implements Serializable {
 	}
 
 	public String updateInfo(Model model, @RequestParam(value = "pseudo") String pseudo,
-			@RequestParam(value = "interet") String interest, @RequestParam(value = "dateNaissance") Date dateNaissance,
+			@RequestParam(value = "interet") String interest, @RequestParam(value = "dateNaissance") Calendar dateNaissance,
 			@RequestParam(value = "nom") String nom, @RequestParam(value = "prenom") String prenom,@RequestParam(value = "id") int id,
 			@RequestParam(value = "email") String email, @RequestParam(value = "telephone") int telephone,
 			@RequestParam(value = "description") String description, @RequestParam(value = "ville") int villeCp) {

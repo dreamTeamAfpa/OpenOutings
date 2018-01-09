@@ -77,10 +77,6 @@ public class ServiceGroupe implements IserviceGroupe {
 	}
 
 
-	@Override
-	public Groupe getGroupeByName(String nomgroupe) {
-		Groupe groupe = groupeRepository.findGroupeByNameGroup(nomgroupe);
-		return groupe;
 
 	public Groupe getGroupeByName(String nomgroupe) {
 		 return groupeRepository.findGroupeByNameGroup(nomgroupe);
