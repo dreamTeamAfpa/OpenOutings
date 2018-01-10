@@ -105,7 +105,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://10.111.61.76:8080/manager/text</url>
+					<url>http://10.111.61.225:8080/manager/text</url>
 					<server>TomcatServer</server>
 					<path>/OpenOutings</path>
 				</configuration>
@@ -118,6 +118,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
+</build>
 
 </project>
